@@ -36,6 +36,7 @@ class WishListControllerImp extends WishListController {
   void getAllfavoritefavorite() async {
     try {
       statusRequest = StatusRequest.loading;
+      favoriteList.clear();
       update();
       var favorite = await myClass.getData(
         "${AppLinkApi.favoriteList}/$userId",
