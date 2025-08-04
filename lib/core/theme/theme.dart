@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:trendify_app/core/constant/app_colors.dart';
+import 'theme_widgets/text_theme.dart';
+import 'theme_widgets/elevated_button_theme.dart';
+
+class AppTheme {
+  static ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
+    fontFamily: 'Nunito',
+    brightness: Brightness.light,
+    primaryColor: AppColors.primary,
+    disabledColor: AppColors.grey,
+    textTheme: AppTextTheme.lightTextTheme,
+    scaffoldBackgroundColor: AppColors.light,
+    elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
+  );
+
+  static ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
+    fontFamily: 'Nunito',
+    brightness: Brightness.dark,
+    primaryColor: AppColors.primary,
+    disabledColor: AppColors.grey,
+    textTheme: AppTextTheme.darkTextTheme,
+    scaffoldBackgroundColor: AppColors.black,
+    elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
+  );
+}
