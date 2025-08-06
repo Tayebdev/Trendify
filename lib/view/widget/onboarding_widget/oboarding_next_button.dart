@@ -17,7 +17,13 @@ class OboardingNextButton extends StatelessWidget {
       bottom: AppSizes.spaceBtwItems + 30,
       child: UElevatedButton(
         onPressed: controller.nextPage,
-        child: Obx(()=>Text(controller.currentPage.value == onboardingList.length ? 'Get Started':'Next')),
+        child: Obx(
+          () => Text(
+            controller.currentPage.value == onboardingList.length - 1
+                ? 'Get Started'
+                : 'Next',
+          ),
+        ),
       ),
     );
   }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
+import 'theme_widgets/checkbox_theme.dart';
+import 'theme_widgets/outlined_button_theme.dart';
+import 'theme_widgets/text_field_theme.dart';
 import 'theme_widgets/text_theme.dart';
 import 'theme_widgets/elevated_button_theme.dart';
 
@@ -13,6 +16,9 @@ class AppTheme {
     textTheme: AppTextTheme.lightTextTheme,
     scaffoldBackgroundColor: AppColors.light,
     elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
+    outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
+    checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
+    inputDecorationTheme: AppTextFormFieldTheme.lightInputDecorationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -24,5 +30,8 @@ class AppTheme {
     textTheme: AppTextTheme.darkTextTheme,
     scaffoldBackgroundColor: AppColors.black,
     elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
+    outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
+    checkboxTheme: AppCheckboxTheme.darkCheckboxTheme,
+    inputDecorationTheme: AppTextFormFieldTheme.darkInputDecorationTheme,
   );
 }

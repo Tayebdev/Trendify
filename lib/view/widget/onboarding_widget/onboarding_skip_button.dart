@@ -22,7 +22,7 @@ class OnboardingSkipButton extends StatelessWidget {
                 onPressed: controller.skipPage,
                 child: const Text(
                   'Skip',
-                  style: TextStyle(color: AppColors.primary, fontSize: 20),
+                  style: TextStyle(color: AppColors.primary, fontSize: 18),
                 ),
               ),
             ),

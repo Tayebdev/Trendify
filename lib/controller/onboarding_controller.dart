@@ -35,7 +35,6 @@ class OnboardingControllerImp extends OnboardingController {
 
   @override
   skipPage() {
-    print('hello world');
     currentPage.value=onboardingList.length-1;
     pageController.jumpToPage(currentPage.value);
   }
