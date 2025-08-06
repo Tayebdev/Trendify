@@ -16,6 +16,7 @@ class AppTexts {
       'Log in to Access Exclusive Deals and Simplify Your Shopping Experience';
   static const String email = 'Email';
   static const String password = 'Password';
+  static const String confirmPassword = 'Confirm Password';
   static const String rememberMe = 'Remember Me';
   static const String forgetPassword = 'Forget Password';
   static const String signIn = 'Sign In';
@@ -47,8 +48,7 @@ class AppTexts {
 
   // Verify Email Screen
   static const String verifyEmailTitle = 'Verify your email address!';
-  static const String verifyEmailSubTitle =
-      'We’ve sent a verification link to your email. Please check your inbox and click the link to verify your account';
+  static const String verifyEmailSubTitle ='We’ve sent a verification code to your email. Please check your inbox and enter the code to verify your account.';
   static const String uContinue = 'Continue';
   static const String resendEmail = 'Resend Email';
 

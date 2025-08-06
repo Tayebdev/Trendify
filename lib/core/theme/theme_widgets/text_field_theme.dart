@@ -4,6 +4,7 @@ import 'package:trendify_app/core/constant/app_sizes.dart';
 
 class AppTextFormFieldTheme {
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
+    
     errorMaxLines: 3,
     prefixIconColor: AppColors.darkGrey,
     suffixIconColor: AppColors.darkGrey,
