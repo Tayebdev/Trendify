@@ -21,6 +21,7 @@ class AppTheme {
     checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
     inputDecorationTheme: AppTextFormFieldTheme.lightInputDecorationTheme,
     appBarTheme: UAppBarTheme.lightAppBarTheme,
+    
   );
 
   static ThemeData darkTheme = ThemeData(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:trendify_app/core/constant/app_colors.dart';
 import '../../../controller/onboarding_controller.dart';
 import '../../../data/static/static.dart';
 import '../../../helpers/device_helpers.dart';
@@ -14,10 +15,11 @@ class OnboardingDotNavigation extends StatelessWidget {
       left: UDeviceHelper.getScreenWidth(context) / 3,
       right: UDeviceHelper.getScreenWidth(context) / 3,
       child: SmoothPageIndicator(
+         
         controller: controller.pageController,
         onDotClicked: (index) => controller.dotNavigationClick(index),
         count: onboardingList.length,
-        effect: ExpandingDotsEffect(dotHeight: 6),
+        effect: ExpandingDotsEffect(dotHeight: 6,activeDotColor: AppColors.primary),
       ),
     );
   }

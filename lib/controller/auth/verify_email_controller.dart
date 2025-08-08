@@ -14,6 +14,6 @@ class VerifyEmailControllerImp extends VerifyEmailController {
   
   @override
   goToVerifyCode() {
-    Get.offAllNamed(AppRoutes.verifyCode);
+    Get.toNamed(AppRoutes.verifyCode);
   }
 }

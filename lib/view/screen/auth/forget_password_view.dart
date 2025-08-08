@@ -42,7 +42,7 @@ class ForgetPasswordView extends StatelessWidget {
               textEditingController: controller.email,
             ),
             SizedBox(height: AppSizes.spaceBtwSections),
-            UElevatedButton(onPressed: () {}, child: Text(AppTexts.submit)),
+            UElevatedButton(onPressed: () {controller.goToVerifyCode();}, child: Text(AppTexts.submit)),
           ],
         ),
       ),

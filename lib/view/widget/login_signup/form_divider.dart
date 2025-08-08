@@ -16,8 +16,8 @@ class AppFormDivider extends StatelessWidget {
           child: Divider(
             indent: 60,
             endIndent: 5,
-            thickness: 0.5,
-            color: dark ? AppColors.darkGrey : AppColors.grey,
+            thickness: 0.8,
+            color: dark ? AppColors.darkGrey : AppColors.black,
           ),
         ),
         Text(
@@ -28,8 +28,8 @@ class AppFormDivider extends StatelessWidget {
           child: Divider(
             indent: 5,
             endIndent: 60,
-            thickness: 0.5,
-            color: dark ? AppColors.darkGrey : AppColors.grey,
+            thickness: 0.8,
+            color: dark ? AppColors.darkGrey : AppColors.black,
           ),
         ),
       ],

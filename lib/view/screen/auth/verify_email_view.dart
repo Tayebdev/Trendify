@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/helpers/device_helpers.dart';
-
 import '../../../controller/auth/verify_email_controller.dart';
-import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../widget/button/elevated_button.dart';
 
@@ -39,7 +36,7 @@ class VerifyEmailView extends StatelessWidget {
               height: UDeviceHelper.getScreenHeight(context) * 0.4,
             ),
             Text(
-              AppTexts.resetPasswordTitle,
+              AppTexts.verifyEmailTitle,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             SizedBox(height: AppSizes.spaceBtwItems),
@@ -54,20 +51,11 @@ class VerifyEmailView extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
             ),
             SizedBox(height: AppSizes.spaceBtwSections),
-            UElevatedButton(onPressed: () {controller.goToVerifyCode();}, child: Text(AppTexts.uContinue)),
-            SizedBox(height: AppSizes.spaceBtwItems),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                AppTexts.resendEmail,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
-                  decoration: TextDecoration.underline,
-                  decorationColor: AppColors.primary,
-                ),
-              ),
+            UElevatedButton(
+              onPressed: () {
+                controller.goToVerifyCode();
+              },
+              child: Text(AppTexts.uContinue),
             ),
           ],
         ),

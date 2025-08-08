@@ -4,6 +4,7 @@ class AppImages {
   static const String onboarding2Animation = 'assets/animations/cart.json';
   static const String onboarding3Animation = 'assets/animations/delivery.json';
   static const String loadingAnimation = 'assets/animations/loading.json';
+  static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
 
   // animations
   static const String pencilAnimation = 'assets/animations/pencil_drawing.json';

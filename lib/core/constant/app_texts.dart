@@ -42,16 +42,21 @@ class AppTexts {
 
   // Reset Password Screen
   static const String resetPasswordTitle = 'Password Reset Email Sent';
+  static const String checkYourMessage = 'Check your Messages';
+
   static const String resetPasswordSubTitle =
       'We’ve sent a password reset link to your email. Please check your inbox and follow the instructions to reset your password';
   static const String done = 'Done';
 
   // Verify Email Screen
-  static const String verifyEmailTitle = 'Verify your email address!';
-  static const String verifyEmailSubTitle ='We’ve sent a verification code to your email. Please check your inbox and enter the code to verify your account.';
+  static const String verifyEmailTitle = 'Verify your email address !';
+  static const String verifyEmailSubTitle =
+      'We’ve sent a verification code to your email. Please check your inbox and enter the code to verify your account.';
   static const String uContinue = 'Continue';
   static const String resendEmail = 'Resend Email';
-
+  static const String sendCode = 'Send Code';
+  static const String verifyCode =
+      "We've sent a confirmation code to your email address. Enter the code below to verify your email and continue the process.";
   // Account Created Successfully Screen
   static const String accountCreatedTitle = 'Your account successfully created';
   static const String accountCreatedSubTitle =
