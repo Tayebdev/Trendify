@@ -65,7 +65,7 @@ class VerifyCodeView extends StatelessWidget {
               ),
               SizedBox(height: AppSizes.spaceBtwSections),
               UElevatedButton(
-                onPressed: () {},
+                onPressed: () {controller.goToSuccesCreated();},
                 child: Text(AppTexts.uContinue),
               ),
               SizedBox(height: AppSizes.spaceBtwItems),

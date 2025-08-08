@@ -58,7 +58,7 @@ class AppTexts {
   static const String verifyCode =
       "We've sent a confirmation code to your email address. Enter the code below to verify your email and continue the process.";
   // Account Created Successfully Screen
-  static const String accountCreatedTitle = 'Your account successfully created';
+  static const String accountCreatedTitle = 'Account created successfully';
   static const String accountCreatedSubTitle =
       'Congratulations! Your account has been successfully created. You can now explore all the amazing features, start personalizing your experience, and enjoy seamless access to our services. Let’s get started!';
 

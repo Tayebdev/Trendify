@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trendify_app/navigation_menu.dart';
+import 'package:trendify_app/view/screen/auth/success_created_view.dart';
 import '../view/screen/auth/verify_code_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
@@ -11,5 +13,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.signUp:(context)=>SignupView(),
   AppRoutes.forgetPassword:(context)=>ForgetPasswordView(),
   AppRoutes.verifyEmail :(context)=>VerifyEmailView(),
-  AppRoutes.verifyCode :(context)=>VerifyCodeView()
+  AppRoutes.verifyCode :(context)=>VerifyCodeView(),
+  AppRoutes.successCreated:(context)=>SuccessCreatedView(),
+  AppRoutes.navigationMenu:(context)=>NavigationMenu()
 };
