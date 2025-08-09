@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 
 import 'helpers/function_helpers.dart';
+import 'view/screen/home_view.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -83,7 +84,7 @@ class NavigationController extends GetxController {
   RxInt selectedIndex = 0.obs;
 
   List<Widget> screens = [
-    Center(child: Text("home")),
+    HomeView(),
     Center(child: Text("store")),
     Center(child: Text("wishlist")),
     Center(child: Text("profile")),

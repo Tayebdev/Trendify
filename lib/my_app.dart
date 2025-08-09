@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/theme/theme.dart';
 import 'package:trendify_app/navigation_menu.dart';
-import '../view/screen/onboarding_view.dart';
 import '../routes.dart';
 
 class MyApp extends StatelessWidget {

@@ -10,6 +10,10 @@ class AppTexts {
   static const String onBoardingSubTitle3 =
       'Get your favorite items delivered straight to your doorstep anytime, anywhere, with speed and reliability you can count on.';
 
+
+
+  // Home Screen
+  static const String goodMorning='Good Morning';
   // Login Screen
   static const String loginTitle = 'Shop Smarter';
   static const String loginSubTitle =

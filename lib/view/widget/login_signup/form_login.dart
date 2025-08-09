@@ -52,7 +52,7 @@ class AppFormLogin extends StatelessWidget {
         ),
 
         SizedBox(height: AppSizes.spaceBtwSections / 2),
-        UElevatedButton(onPressed: () {}, child: Text(AppTexts.signIn)),
+        UElevatedButton(onPressed: () {controller.goToNavigationMenu();}, child: Text(AppTexts.signIn)),
         SizedBox(height: AppSizes.spaceBtwItems),
         UOutlinedButton(onPressed: () {controller.goToSignUp();}, child: Text(AppTexts.createAccount)),
       ],
