@@ -7,7 +7,7 @@ import '../../../helpers/device_helpers.dart';
 
 class OnboardingDotNavigation extends StatelessWidget {
   const OnboardingDotNavigation({super.key});
-  static final controller=OnboardingControllerImp.instance;
+  static final controller = OnboardingControllerImp.instance;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -15,11 +15,13 @@ class OnboardingDotNavigation extends StatelessWidget {
       left: UDeviceHelper.getScreenWidth(context) / 3,
       right: UDeviceHelper.getScreenWidth(context) / 3,
       child: SmoothPageIndicator(
-         
         controller: controller.pageController,
         onDotClicked: (index) => controller.dotNavigationClick(index),
         count: onboardingList.length,
-        effect: ExpandingDotsEffect(dotHeight: 6,activeDotColor: AppColors.primary),
+        effect: ExpandingDotsEffect(
+          dotHeight: 6,
+          activeDotColor: AppColors.primary,
+        ),
       ),
     );
   }

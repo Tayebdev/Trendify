@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/theme/theme.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import '../routes.dart';
+import 'view/screen/onboarding_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

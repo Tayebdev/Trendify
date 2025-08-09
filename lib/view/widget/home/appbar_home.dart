@@ -17,7 +17,7 @@ class AppbarHome extends StatelessWidget {
             AppTexts.goodMorning,
             style: Theme.of(
               context,
-            ).textTheme.titleSmall!.apply(color: AppColors.grey),
+            ).textTheme.bodySmall!.apply(color: AppColors.grey),
           ),
           Text(
             'Boulekzazel Tayeb',

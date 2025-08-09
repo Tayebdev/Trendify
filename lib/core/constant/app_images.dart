@@ -5,7 +5,7 @@ class AppImages {
   static const String onboarding3Animation = 'assets/animations/delivery.json';
   static const String loadingAnimation = 'assets/animations/loading.json';
   static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
-
+  static const String sport = 'assets/images/sports.png';
   // animations
   static const String pencilAnimation = 'assets/animations/pencil_drawing.json';
   static const String cartEmptyAnimation = 'assets/animations/cart_empty.json';
@@ -23,7 +23,7 @@ class AppImages {
   static const String homeBanner1 = 'assets/banners/banner_1.jpg';
   static const String homeBanner2 = 'assets/banners/banner_2.jpg';
   static const String homeBanner3 = 'assets/banners/banner_3.jpg';
-  static const String homeBanner4 = 'assets/banners/banner_4.jpg';
+  static const String homeBanner4 = 'assets/banners/banner_6.jpg';
   static const String homeBanner5 = 'assets/banners/banner_5.jpg';
 
   // Payment Methods

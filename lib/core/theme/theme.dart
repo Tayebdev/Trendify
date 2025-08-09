@@ -25,6 +25,7 @@ class AppTheme {
     appBarTheme: UAppBarTheme.lightAppBarTheme,
     bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
     chipTheme: AppChipTheme.lightChipTheme,
+    
   );
 
   static ThemeData darkTheme = ThemeData(

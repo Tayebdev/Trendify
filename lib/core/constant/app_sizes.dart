@@ -59,4 +59,7 @@ class AppSizes {
 
   static const double brandCardWidth = 170.0; // 170
   static const double brandCardHeight = 70.0; // 70
+
+  static const double primaryHeaderHight = 320.0;
+  static const double searchAppHeight =55.0;
 }
