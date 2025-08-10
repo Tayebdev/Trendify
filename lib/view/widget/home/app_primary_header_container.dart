@@ -6,8 +6,13 @@ import 'custom_rounded_edge.dart';
 
 // ignore: must_be_immutable
 class AppPrimaryHeaderContainer extends StatelessWidget {
-  const AppPrimaryHeaderContainer({super.key, required this.child});
+  const AppPrimaryHeaderContainer({
+    super.key,
+    required this.child,
+    required this.height,
+  });
   final Widget child;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
       clipper: CustomRoundedEdge(),
       child: Container(
         color: AppColors.primary,
-        height: AppSizes.primaryHeaderHight,
+        height: height,
         child: Stack(
           children: [
             Positioned(
@@ -23,8 +28,8 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
               right: -160,
               child: CircularContainer(
                 backgroundColor: AppColors.white.withValues(alpha: 0.1),
-                height: AppSizes.primaryHeaderHight,
-                width: AppSizes.primaryHeaderHight,
+                height: AppSizes.homeprimaryHeaderHight,
+                width: AppSizes.homeprimaryHeaderHight,
               ),
             ),
             Positioned(
@@ -32,8 +37,8 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
               right: -250,
               child: CircularContainer(
                 backgroundColor: AppColors.white.withValues(alpha: 0.1),
-                height: AppSizes.primaryHeaderHight,
-                width: AppSizes.primaryHeaderHight,
+                height: AppSizes.homeprimaryHeaderHight,
+                width: AppSizes.homeprimaryHeaderHight,
               ),
             ),
             child,

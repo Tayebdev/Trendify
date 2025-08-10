@@ -71,4 +71,6 @@ class AppTexts {
   static const String searchBarTitle = 'Search in Store';
   static const String popularCategories = 'Popular Categories';
   static const String viewAll="View all";
+  static const String store="Store";
+  static const String brand= "Brand";
 }

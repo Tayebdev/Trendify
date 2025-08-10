@@ -7,6 +7,7 @@ class AppImages {
   static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
   static const String sport = 'assets/images/sports.png';
   static const String product = 'assets/images/product.png';
+  static const String brand = "assets/images/bata.png";
   // animations
   static const String pencilAnimation = 'assets/animations/pencil_drawing.json';
   static const String cartEmptyAnimation = 'assets/animations/cart_empty.json';
