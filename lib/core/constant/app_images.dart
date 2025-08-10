@@ -6,6 +6,7 @@ class AppImages {
   static const String loadingAnimation = 'assets/animations/loading.json';
   static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
   static const String sport = 'assets/images/sports.png';
+  static const String product = 'assets/images/product.png';
   // animations
   static const String pencilAnimation = 'assets/animations/pencil_drawing.json';
   static const String cartEmptyAnimation = 'assets/animations/cart_empty.json';

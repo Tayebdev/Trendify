@@ -13,13 +13,13 @@ class AppCircularIcon extends StatelessWidget {
     this.height,
     this.size = AppSizes.iconMd,
     this.icon,
-    required this.color,
-    required this.backgroundColor,
+    this.color,
+    this.backgroundColor,
     this.onPressed,
   });
   final double? width, height, size;
   final IconData? icon;
-  final Color color, backgroundColor;
+  final Color? color, backgroundColor;
   final VoidCallback? onPressed;
 
   @override

@@ -50,7 +50,7 @@ class AppSizes {
   static const double cardRadiusXs = 6.0;
 
   // Grid view spacing
-  static const double gridViewSpacing = 16.0;
+  static const double gridViewSpacing = 20.0;
 
   // Card Sizes
   static const double homePrimaryHeaderHeight = 320.0; // 320

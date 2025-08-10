@@ -7,20 +7,20 @@ class AppRoundedContainer extends StatelessWidget {
     super.key,
     this.width,
     this.height,
-    this.radius = AppSizes.borderRadiusLg,
+    this.radius = AppSizes.cardRadiusLg,
     this.child,
     this.showBorder = false,
     this.borderColor = AppColors.borderPrimary,
     this.backgroundColor = AppColors.white,
-    required this.padding,
-    required this.margin,
+    this.padding,
+    this.margin,
   });
   final double? width, height;
   final double radius;
   final Widget? child;
   final bool showBorder;
   final Color borderColor, backgroundColor;
-  final EdgeInsetsGeometry padding, margin;
+  final EdgeInsetsGeometry? padding, margin;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +34,7 @@ class AppRoundedContainer extends StatelessWidget {
         border: showBorder ? Border.all(color: borderColor) : null,
         borderRadius: BorderRadius.circular(radius),
       ),
+      child: child,
     );
   }
 }
