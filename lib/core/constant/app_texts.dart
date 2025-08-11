@@ -73,4 +73,5 @@ class AppTexts {
   static const String viewAll="View all";
   static const String store="Store";
   static const String brand= "Brand";
+  static const String youMightLike="You might like";
 }

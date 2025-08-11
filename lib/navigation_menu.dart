@@ -6,6 +6,7 @@ import 'package:trendify_app/core/constant/app_colors.dart';
 import 'helpers/function_helpers.dart';
 import 'view/screen/home_view.dart';
 import 'view/screen/store_view.dart';
+import 'view/screen/wish_list_view.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -113,7 +114,7 @@ class NavigationController extends GetxController {
   List<Widget> screens = [
     HomeView(),
     StoreView(),
-    Center(child: Text("wishlist")),
+    WishListView(),
     Center(child: Text("profile")),
   ];
 }

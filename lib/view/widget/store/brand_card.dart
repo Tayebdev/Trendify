@@ -10,19 +10,27 @@ class BrandCard extends StatelessWidget {
     required this.title,
     required this.numberProduct,
     required this.imageUrl,
+    this.showBorder = true,
   });
   final String title, numberProduct, imageUrl;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
     return AppRoundedContainer(
       width: AppSizes.brandCardWidth,
-      showBorder: true,
+      height: AppSizes.brandCardHeight,
+      showBorder: showBorder,
       padding: EdgeInsets.all(AppSizes.sm),
       backgroundColor: Colors.transparent,
       child: Row(
         children: [
-          AppRoundedImage(imageUrl: imageUrl),
+          Flexible(
+            child: AppRoundedImage(
+              imageUrl: imageUrl,
+              backgroundColor: Colors.transparent,
+            ),
+          ),
           SizedBox(width: AppSizes.spaceBtwItems / 2),
           Expanded(
             child: Column(
@@ -30,7 +38,7 @@ class BrandCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BrandTitleWithIcon(title: title),
-                SizedBox(height: AppSizes.sm,),
+                SizedBox(height: AppSizes.sm),
                 Text(
                   numberProduct,
                   style: Theme.of(context).textTheme.labelMedium,

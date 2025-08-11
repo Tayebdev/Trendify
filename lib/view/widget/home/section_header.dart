@@ -19,7 +19,9 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(
+            context,
+          ).textTheme.headlineMedium!.copyWith(fontSize: 20),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -29,7 +31,7 @@ class SectionHeader extends StatelessWidget {
             textButton,
             style: Theme.of(
               context,
-            ).textTheme.bodySmall!.apply(color: AppColors.primary),
+            ).textTheme.bodyMedium!.apply(color: AppColors.primary),
           ),
         ),
       ],
