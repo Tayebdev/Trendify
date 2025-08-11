@@ -1,8 +1,6 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/view/widget/home/app_primary_header_container.dart';
-
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../appbar/appbar.dart';

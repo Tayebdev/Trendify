@@ -19,7 +19,7 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineSmall,
+          style: Theme.of(context).textTheme.headlineMedium,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),

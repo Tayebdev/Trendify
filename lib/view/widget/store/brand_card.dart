@@ -16,7 +16,7 @@ class BrandCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppRoundedContainer(
-      height: 80,
+      width: AppSizes.brandCardWidth,
       showBorder: true,
       padding: EdgeInsets.all(AppSizes.sm),
       backgroundColor: Colors.transparent,
@@ -24,17 +24,20 @@ class BrandCard extends StatelessWidget {
         children: [
           AppRoundedImage(imageUrl: imageUrl),
           SizedBox(width: AppSizes.spaceBtwItems / 2),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BrandTitleWithIcon(title: title),
-              Text(
-                numberProduct,
-                style: Theme.of(context).textTheme.labelMedium,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                BrandTitleWithIcon(title: title),
+                SizedBox(height: AppSizes.sm,),
+                Text(
+                  numberProduct,
+                  style: Theme.of(context).textTheme.labelMedium,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
           ),
         ],
       ),

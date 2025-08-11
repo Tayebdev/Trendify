@@ -63,4 +63,5 @@ class AppSizes {
   static const double homeprimaryHeaderHight = 320.0;
   static const double storePrimaryHeaderHight = 170.0;
   static const double searchAppHeight =55.0;
+
 }
