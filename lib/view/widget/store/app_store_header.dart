@@ -15,7 +15,7 @@ class AppStoreHeader extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(height: AppSizes.storePrimaryHeaderHight + 10),
-        AppPrimaryHeaderContainer(
+        AppHomePrimaryHeaderContainer(
           height: AppSizes.storePrimaryHeaderHeight,
           child: UAppBar(
             title: Text(

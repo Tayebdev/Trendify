@@ -5,8 +5,8 @@ import '../circular_contianer/circular_container.dart';
 import 'custom_rounded_edge.dart';
 
 // ignore: must_be_immutable
-class AppPrimaryHeaderContainer extends StatelessWidget {
-  const AppPrimaryHeaderContainer({
+class AppHomePrimaryHeaderContainer extends StatelessWidget {
+  const AppHomePrimaryHeaderContainer({
     super.key,
     required this.child,
     required this.height,

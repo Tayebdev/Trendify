@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(height: AppSizes.homeprimaryHeaderHight),
-                AppPrimaryHeaderContainer(
+                AppHomePrimaryHeaderContainer(
                   height: AppSizes.homePrimaryHeaderHeight,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

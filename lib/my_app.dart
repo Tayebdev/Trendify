@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Trendify',
       debugShowCheckedModeBanner: false,
       routes: routes,
-       //home: OnboardingView(),
+      //home: OnboardingView(),
       home: NavigationMenu(),
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.system,
