@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:trendify_app/view/widget/setting/app_curved_edges_widget.dart';
-
+import 'package:trendify_app/core/constant/app_sizes.dart';
+import 'package:trendify_app/view/widget/product/app_product_attribute.dart';
+import 'package:trendify_app/view/widget/product/app_product_image_slider.dart';
+import '../widget/product/app_product_meta.dart';
+import '../widget/product/app_rating_and_share.dart';
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
@@ -11,13 +14,23 @@ class ProductDetailsView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // UAppBar(
-            //   showBackArrow: true,
-            //   actions: [
-            //     IconButton(onPressed: () {}, icon: Icon(Iconsax.heart)),
-            //   ],
-            // ),
-            AppCurvedEdgesWidget()
+            AppProductImageSlider(),
+            Padding(
+              padding: EdgeInsets.only(
+                left: AppSizes.defaultSpace,
+                bottom: AppSizes.defaultSpace,
+                right: AppSizes.defaultSpace,
+              ),
+              child: Column(
+                children: [
+                  AppRatingAndShare(),
+                  AppProductMeta(),
+                  AppProductAttribute()
+                  
+                
+                ],
+              ),
+            ),
           ],
         ),
       ),

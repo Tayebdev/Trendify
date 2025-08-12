@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/view/widget/appbar/appbar.dart';
+import '../widget/circular_icon/circular_icon.dart';
 import '../widget/home/grid_layout.dart';
 import '../widget/product/product_cart_vertical.dart';
 
@@ -16,7 +17,7 @@ class WishListView extends StatelessWidget {
           'Wishlist',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Iconsax.add))],
+        actions: [AppCircularIcon(icon: Iconsax.add,onPressed: (){},)],
       ),
       body: SingleChildScrollView(
         child: Padding(
