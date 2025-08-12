@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trendify_app/controller/product_controller.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/app_rounded_image.dart';
@@ -9,14 +11,18 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../circular_icon/circular_icon.dart';
 
+// ignore: must_be_immutable
 class ProductCartVertical extends StatelessWidget {
-  const ProductCartVertical({super.key});
+  ProductCartVertical({super.key});
+  ProductControllerImp controller = Get.put(ProductControllerImp());
 
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        controller.goToDetailsProduct();
+      },
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -63,6 +69,7 @@ class ProductCartVertical extends StatelessWidget {
                     child: AppCircularIcon(
                       color: dark ? AppColors.light : AppColors.dark,
                       icon: Iconsax.heart,
+                      onPressed: () {},
                     ),
                   ),
                 ],

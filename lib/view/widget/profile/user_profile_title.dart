@@ -3,7 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 
-import '../image/circular_image.dart';
+import '../image_widget/circular_image.dart';
 
 class AppUserProfileTile extends StatelessWidget {
   const AppUserProfileTile({super.key, required this.onPressed});

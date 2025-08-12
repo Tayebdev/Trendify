@@ -24,7 +24,7 @@ class WishListView extends StatelessWidget {
           child: GridLayout(
             itemCount: 10,
             mainAxisCount: 261.5,
-            itemBuilder: (context, index) => const ProductCartVertical(),
+            itemBuilder: (context, index) =>  ProductCartVertical(),
           ),
         ),
       ),

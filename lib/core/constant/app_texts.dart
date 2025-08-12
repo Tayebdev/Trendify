@@ -10,10 +10,8 @@ class AppTexts {
   static const String onBoardingSubTitle3 =
       'Get your favorite items delivered straight to your doorstep anytime, anywhere, with speed and reliability you can count on.';
 
-
-
   // Home Screen
-  static const String goodMorning='Good Morning';
+  static const String goodMorning = 'Good Morning';
   // Login Screen
   static const String loginTitle = 'Shop Smarter';
   static const String loginSubTitle =
@@ -70,8 +68,40 @@ class AppTexts {
   static const String homeAppBarSubTitle = 'Unknown Pro';
   static const String searchBarTitle = 'Search in Store';
   static const String popularCategories = 'Popular Categories';
-  static const String viewAll="View all";
-  static const String store="Store";
-  static const String brand= "Brand";
-  static const String youMightLike="You might like";
+  static const String viewAll = "View all";
+  static const String store = "Store";
+  static const String brand = "Brand";
+  static const String youMightLike = "You might like";
+  static const String account = "Account";
+  static const String profile="Profile";
+  static const String acountSetting = "Account Settings";
+  static const String address = "My Addresses";
+  static const String subTitleAddress = "Set shopping delivery address";
+  static const String cart = "My Cart";
+  static const String subTitleCart =
+      "Add, remove products and move to checkout";
+  static const String order = "My Orders";
+  static const String subTitleOrders = "In-progress and Completed Orders";
+  static const String acountBank = "Bank Account";
+  static const String subTitleAcountBank =
+      "Withdraw balance to registered bank account";
+  static const String coupons = "My Coupons";
+  static const String subTitleCoupons = "List of all the discounted coupons";
+  static const String notification = "Notifications";
+  static const String subTitleNotification =
+      "Set any kind of notification message";
+  static const String accountPrivacy = "Account Privacy";
+  static const String subTitleAccount =
+      "Manage data usage and connected accounts";
+  static const String setting = "App Settings";
+  static const String loadData = "Load Data";
+  static const String subTitleLoadData = "Upload Data to your Cloud Firebase";
+  static const String geolocation = "Geolocation";
+  static const String subTitleGeolocation =
+      "Set recommendation based on location";
+  static const String safeMode = "Safe Mode";
+  static const String subTitleSafeMode = "Search result is safe for all ages";
+  static const String imageQuality = "HD Image Quality";
+  static const String subTitleImageQuality = "Set image quality to be seen";
+  static const String logout = "Logout";
 }

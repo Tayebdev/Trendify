@@ -32,7 +32,7 @@ class AppCategoryTab extends StatelessWidget {
               GridLayout(
                 itemCount: 10,
                 mainAxisCount: 261.5,
-                itemBuilder: (context, index) => const ProductCartVertical(),
+                itemBuilder: (context, index) => ProductCartVertical(),
               ),
             ],
           ),

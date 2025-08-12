@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trendify_app/controller/setting_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
+import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/view/widget/appbar/appbar.dart';
 import '../../core/constant/app_sizes.dart';
 import '../widget/home/section_header.dart';
@@ -9,8 +13,10 @@ import '../widget/setting/app_setting_primary_header_container.dart';
 import '../widget/setting/setting_menu_title.dart';
 import '../widget/switch/app_switch.dart';
 
+// ignore: must_be_immutable
 class SettingView extends StatelessWidget {
-  const SettingView({super.key});
+  SettingView({super.key});
+  SettingControllerImp controller = Get.put(SettingControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class SettingView extends StatelessWidget {
                 children: [
                   UAppBar(
                     title: Text(
-                      'Account',
+                      AppTexts.account,
                       style: Theme.of(
                         context,
                       ).textTheme.headlineMedium!.apply(color: AppColors.white),
@@ -31,7 +37,7 @@ class SettingView extends StatelessWidget {
                   ),
                   AppUserProfileTile(
                     onPressed: () {
-                      //=> Get.to(() => const ProfileScreen()),
+                      controller.goToProfile();
                     },
                   ),
                   const SizedBox(height: AppSizes.spaceBtwSections),
@@ -44,85 +50,86 @@ class SettingView extends StatelessWidget {
                 children: [
                   /// Account Settings
                   const SectionHeader(
-                    title: 'Account Settings'
+                    title: AppTexts.acountSetting,
+                    textButton: '',
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
 
                   AppSettingsMenuTile(
                     icon: Iconsax.safe_home,
-                    title: 'My Addresses',
-                    subTitle: 'Set shopping delivery address',
+                    title: AppTexts.address,
+                    subTitle: AppTexts.subTitleAddress,
                     onTap: () {
                       //=> Get.to(() => const UserAddressScreen())
                     },
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
-                    title: 'My Cart',
-                    subTitle: 'Add, remove products and move to checkout',
+                    title: AppTexts.cart,
+                    subTitle: AppTexts.subTitleCart,
                     onTap: () {},
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.bag_tick,
-                    title: 'My Orders',
-                    subTitle: 'In-progress and Completed Orders',
+                    title: AppTexts.order,
+                    subTitle: AppTexts.subTitleOrders,
                     onTap: () {
                       // => Get.to(() => const OrdersScreen())
                     },
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.bank,
-                    title: 'Bank Account',
-                    subTitle: 'Withdraw balance to registered bank account',
+                    title: AppTexts.acountBank,
+                    subTitle: AppTexts.subTitleAcountBank,
                     onTap: () {},
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.discount_shape,
-                    title: 'My Coupons',
-                    subTitle: 'List of all the discounted coupons',
+                    title: AppTexts.coupons,
+                    subTitle: AppTexts.subTitleCoupons,
                     onTap: () {},
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.notification,
-                    title: 'Notifications',
-                    subTitle: 'Set any kind of notification message',
+                    title: AppTexts.notification,
+                    subTitle: AppTexts.subTitleNotification,
                     onTap: () {},
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.security_card,
-                    title: 'Account Privacy',
-                    subTitle: 'Manage data usage and connected accounts',
+                    title: AppTexts.accountPrivacy,
+                    subTitle: AppTexts.subTitleAccount,
                     onTap: () {},
                   ),
 
                   /// App Settings
                   const SizedBox(height: AppSizes.spaceBtwSections),
-                  const SectionHeader(title: 'App Settings'),
+                  const SectionHeader(title: AppTexts.setting, textButton: ''),
                   const SizedBox(height: AppSizes.spaceBtwItems),
                   AppSettingsMenuTile(
                     icon: Iconsax.document_upload,
-                    title: 'Load Data',
-                    subTitle: 'Upload Data to your Cloud Firebase',
+                    title: AppTexts.loadData,
+                    subTitle: AppTexts.subTitleLoadData,
                     onTap: () {},
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.location,
-                    title: 'Geolocation',
-                    subTitle: 'Set recommendation based on location',
+                    title: AppTexts.geolocation,
+                    subTitle: AppTexts.subTitleGeolocation,
                     onTap: () {},
                     trailing: AppSwitch(onChanged: (value) {}),
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.security_user,
-                    title: 'Safe Mode',
-                    subTitle: 'Search result is safe for all ages',
+                    title: AppTexts.safeMode,
+                    subTitle: AppTexts.subTitleSafeMode,
                     onTap: () {},
                     trailing: AppSwitch(onChanged: (value) {}),
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.image,
-                    title: 'HD Image Quality',
-                    subTitle: 'Set image quality to be seen',
+                    title: AppTexts.imageQuality,
+                    subTitle: AppTexts.subTitleImageQuality,
                     onTap: () {},
                     trailing: AppSwitch(onChanged: (value) {}),
                   ),
@@ -133,10 +140,17 @@ class SettingView extends StatelessWidget {
                     width: double.infinity,
                     child: OutlinedButton(
                       onPressed: () => {},
-                      child: const Text('Logout'),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Iconsax.logout, size: AppSizes.iconMd,color: AppColors.primary,),
+                          SizedBox(width: AppSizes.sm),
+                           Text(AppTexts.logout,style: Theme.of(context).textTheme.titleLarge),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(height: AppSizes.spaceBtwSections),
+                  const SizedBox(height: AppSizes.spaceBtwSections / 8),
                 ],
               ),
             ),

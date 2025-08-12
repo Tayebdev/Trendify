@@ -6,4 +6,6 @@ class AppRoutes {
   static const String verifyCode = '/verifyCode';
   static const String successCreated='/successCreated';
   static const String navigationMenu='/navigationMenu';
+  static const String profile="/profile";
+  static const String productDetails="/productDetails";
 }

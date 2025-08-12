@@ -7,10 +7,12 @@ class SectionHeader extends StatelessWidget {
     required this.title,
     this.onPressed,
     this.textButton,
+    this.showButton = true,
   });
   final String title;
   final VoidCallback? onPressed;
   final String? textButton;
+  final bool? showButton;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +27,17 @@ class SectionHeader extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        TextButton(
-          onPressed: onPressed,
-          child: Text(
-            textButton!,
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium!.apply(color: AppColors.primary),
-          ),
-        ),
+        showButton!
+            ? TextButton(
+                onPressed: onPressed,
+                child: Text(
+                  textButton!,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium!.apply(color: AppColors.primary),
+                ),
+              )
+            : const SizedBox.shrink(),
       ],
     );
   }
