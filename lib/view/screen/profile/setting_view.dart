@@ -5,12 +5,12 @@ import 'package:trendify_app/controller/setting_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/view/widget/appbar/appbar.dart';
-import '../../core/constant/app_sizes.dart';
-import '../widget/home/section_header.dart';
-import '../widget/profile/user_profile_title.dart';
-import '../widget/setting/app_setting_primary_header_container.dart';
-import '../widget/setting/setting_menu_title.dart';
-import '../widget/switch/app_switch.dart';
+import '../../../core/constant/app_sizes.dart';
+import '../../widget/home/section_header.dart';
+import '../../widget/profile/user_profile_title.dart';
+import '../../widget/setting/app_setting_primary_header_container.dart';
+import '../../widget/setting/setting_menu_title.dart';
+import '../../widget/switch/app_switch.dart';
 
 // ignore: must_be_immutable
 class SettingView extends StatelessWidget {
@@ -59,7 +59,7 @@ class SettingView extends StatelessWidget {
                     title: AppTexts.address,
                     subTitle: AppTexts.subTitleAddress,
                     onTap: () {
-                      //=> Get.to(() => const UserAddressScreen())
+                      controller.goToAddressUser();
                     },
                   ),
                   AppSettingsMenuTile(

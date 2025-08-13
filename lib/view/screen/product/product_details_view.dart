@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/view/widget/home/section_header.dart';
 import 'package:trendify_app/view/widget/product/app_product_attribute.dart';
 import 'package:trendify_app/view/widget/product/app_product_image_slider.dart';
-import '../widget/button/elevated_button.dart';
-import '../widget/cart/bottom_add_to_cart.dart';
-import '../widget/product/app_product_meta.dart';
-import '../widget/product/app_rating_and_share.dart';
+import '../../../controller/product_controller.dart';
+import '../../widget/button/elevated_button.dart';
+import '../../widget/cart/bottom_add_to_cart.dart';
+import '../../widget/product/app_product_meta.dart';
+import '../../widget/product/app_rating_and_share.dart';
 
+// ignore: must_be_immutable
 class ProductDetailsView extends StatelessWidget {
-  const ProductDetailsView({super.key});
+  ProductDetailsView({super.key});
+  ProductControllerImp controller = Get.put(ProductControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +61,13 @@ class ProductDetailsView extends StatelessWidget {
                   //SizedBox(height: AppSizes.spaceBtwItems),
                   Divider(),
                   SizedBox(height: AppSizes.spaceBtwItems),
-                  SectionHeader(title: 'Reviews (199)', textButton: 'View all'),
+                  SectionHeader(
+                    title: 'Reviews (199)',
+                    textButton: 'View all',
+                    onPressed: () {
+                      controller.goToReviewsProduct();
+                    },
+                  ),
                   //SizedBox(height: AppSizes.spaceBtwSections/2),
                 ],
               ),

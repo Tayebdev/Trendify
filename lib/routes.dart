@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/navigation_menu.dart';
+import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';
-import 'package:trendify_app/view/screen/product_details_view.dart';
-import 'package:trendify_app/view/screen/profile_view.dart';
+import 'package:trendify_app/view/screen/product/product_details_view.dart';
+import 'package:trendify_app/view/screen/product/product_reviews.dart';
+import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import '../view/screen/auth/verify_code_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
@@ -19,5 +21,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.successCreated:(context)=>SuccessCreatedView(),
   AppRoutes.navigationMenu:(context)=>NavigationMenu(),
   AppRoutes.profile:(context)=>ProfileView(),
-  AppRoutes.productDetails:(context)=>ProductDetailsView()
+  AppRoutes.productDetails:(context)=>ProductDetailsView(),
+  AppRoutes.productReviews:(context)=>ProductReviews(),
+  AppRoutes.addressUser:(context)=>AddressView(),
 };

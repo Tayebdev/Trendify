@@ -8,4 +8,6 @@ class AppRoutes {
   static const String navigationMenu='/navigationMenu';
   static const String profile="/profile";
   static const String productDetails="/productDetails";
+  static const String productReviews="/productReviews";
+  static const String addressUser="/addressUser";
 }

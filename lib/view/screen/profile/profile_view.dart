@@ -6,11 +6,11 @@ import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/section_header.dart';
 
-import '../../core/constant/app_colors.dart';
-import '../../core/constant/app_texts.dart';
-import '../widget/appbar/appbar.dart';
-import '../widget/image_widget/circular_image.dart';
-import '../widget/profile/profile_menu.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_texts.dart';
+import '../../widget/appbar/appbar.dart';
+import '../../widget/image_widget/circular_image.dart';
+import '../../widget/profile/profile_menu.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

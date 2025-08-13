@@ -5,10 +5,11 @@ import 'package:trendify_app/core/constant/app_routes.dart';
 abstract class SettingController extends GetxController {
   goToProfile();
   toggleTheme(bool value);
+  goToAddressUser();
 }
 
 class SettingControllerImp extends SettingController {
-  var isDarkMode = true.obs;
+  RxBool isDarkMode = true.obs;
 
   @override
   goToProfile() {
@@ -19,5 +20,10 @@ class SettingControllerImp extends SettingController {
   void toggleTheme(value) {
     isDarkMode.value = value;
     Get.changeThemeMode(value ? ThemeMode.dark : ThemeMode.light);
+  }
+
+  @override
+  goToAddressUser() {
+    Get.toNamed(AppRoutes.addressUser);
   }
 }
