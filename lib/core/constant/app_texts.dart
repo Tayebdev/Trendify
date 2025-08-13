@@ -102,7 +102,5 @@ class AppTexts {
       "Set recommendation based on location";
   static const String safeMode = "Safe Mode";
   static const String subTitleSafeMode = "Search result is safe for all ages";
-  static const String imageQuality = "HD Image Quality";
-  static const String subTitleImageQuality = "Set image quality to be seen";
   static const String logout = "Logout";
 }

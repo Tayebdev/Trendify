@@ -44,6 +44,8 @@ dependencies:
   carousel_slider: ^5.1.1
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
+  readmore: ^3.0.0
+  share_plus: ^11.1.0
 
 dev_dependencies:
   flutter_test:

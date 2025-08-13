@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:flutter/foundation.dart';
 
 class AppRatingAndShare extends StatelessWidget {
   const AppRatingAndShare({super.key});
@@ -28,7 +30,21 @@ class AppRatingAndShare extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(onPressed: () {}, icon: Icon(Iconsax.share)),
+        IconButton(
+          onPressed: () {
+            if (defaultTargetPlatform == TargetPlatform.android ||
+                defaultTargetPlatform == TargetPlatform.iOS) {
+              // ignore: deprecated_member_use
+              Share.share(
+                'check out my website https://example.com',
+                subject: 'My Website',
+              );
+            } else {
+              debugPrint("Sharing not supported on this platform");
+            }
+          },
+          icon: Icon(Iconsax.share),
+        ),
       ],
     );
   }

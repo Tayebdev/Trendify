@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/setting_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
@@ -116,22 +115,31 @@ class SettingView extends StatelessWidget {
                     icon: Iconsax.location,
                     title: AppTexts.geolocation,
                     subTitle: AppTexts.subTitleGeolocation,
-                    onTap: () {},
-                    trailing: AppSwitch(onChanged: (value) {}),
+                    trailing: AppSwitch(onChanged: (value) {}, changed: true),
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.security_user,
                     title: AppTexts.safeMode,
                     subTitle: AppTexts.subTitleSafeMode,
-                    onTap: () {},
-                    trailing: AppSwitch(onChanged: (value) {}),
+                    trailing: AppSwitch(onChanged: (value) {}, changed: true),
                   ),
-                  AppSettingsMenuTile(
-                    icon: Iconsax.image,
-                    title: AppTexts.imageQuality,
-                    subTitle: AppTexts.subTitleImageQuality,
-                    onTap: () {},
-                    trailing: AppSwitch(onChanged: (value) {}),
+
+                  Obx(
+                    () => AppSettingsMenuTile(
+                      icon: controller.isDarkMode.value
+                          ? Iconsax.sun_1
+                          : Iconsax.moon,
+                      title: "Theme",
+                      subTitle: controller.isDarkMode.value
+                          ? "Dark theme enabled"
+                          : "Light theme enabled",
+                      trailing: AppSwitch(
+                        onChanged: (value) {
+                          controller.toggleTheme(value);
+                        },
+                        changed: controller.isDarkMode.value,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: AppSizes.spaceBtwSections),
 
@@ -143,9 +151,16 @@ class SettingView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Iconsax.logout, size: AppSizes.iconMd,color: AppColors.primary,),
+                          Icon(
+                            Iconsax.logout,
+                            size: AppSizes.iconMd,
+                            color: AppColors.primary,
+                          ),
                           SizedBox(width: AppSizes.sm),
-                           Text(AppTexts.logout,style: Theme.of(context).textTheme.titleLarge),
+                          Text(
+                            AppTexts.logout,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
                         ],
                       ),
                     ),
