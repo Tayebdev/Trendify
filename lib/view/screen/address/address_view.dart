@@ -29,6 +29,13 @@ class AddressView extends StatelessWidget {
             children: [
               AppSingleAddress(selected: true),
               AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
+              AppSingleAddress(selected: false),
             ],
           ),
         ),
