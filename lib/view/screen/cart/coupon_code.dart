@@ -47,7 +47,7 @@ class CouponCode extends StatelessWidget {
                   color: AppHelperFunctions.isDarkMode(context)
                       ? AppColors.white
                       : AppColors.grey,
-                  width: 1.5,
+                  width: 1.4,
                 ),
               ),
               child: Text("Applay"),
