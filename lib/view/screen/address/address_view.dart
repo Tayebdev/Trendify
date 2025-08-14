@@ -19,7 +19,7 @@ class AddressView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {controller.goToAddNewAddress();},
         backgroundColor: AppColors.primary,
-        child: Icon(Iconsax.add, size: AppSizes.iconLg),
+        child: Icon(Iconsax.add, size: AppSizes.iconLg,color: AppColors.white,),
       ),
       appBar: UAppBar(showBackArrow: true, title: Text("Addresses")),
       body: SingleChildScrollView(

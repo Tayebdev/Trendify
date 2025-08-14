@@ -6,6 +6,7 @@ abstract class SettingController extends GetxController {
   goToProfile();
   toggleTheme(bool value);
   goToAddressUser();
+  goToCart();
 }
 
 class SettingControllerImp extends SettingController {
@@ -25,5 +26,10 @@ class SettingControllerImp extends SettingController {
   @override
   goToAddressUser() {
     Get.toNamed(AppRoutes.addressUser);
+  }
+
+  @override
+  goToCart() {
+    Get.toNamed(AppRoutes.cart);
   }
 }

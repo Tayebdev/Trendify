@@ -3,7 +3,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/view/widget/button/elevated_button.dart';
-import '../../../core/constant/app_colors.dart';
 import '../../widget/appbar/appbar.dart';
 import '../../widget/text_field/text_field.dart';
 

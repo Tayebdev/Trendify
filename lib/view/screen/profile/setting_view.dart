@@ -66,7 +66,9 @@ class SettingView extends StatelessWidget {
                     icon: Iconsax.shopping_cart,
                     title: AppTexts.cart,
                     subTitle: AppTexts.subTitleCart,
-                    onTap: () {},
+                    onTap: () {
+                      controller.goToCart();
+                    },
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.bag_tick,
