@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:trendify_app/controller/cart_controller.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/view/widget/button/elevated_button.dart';
@@ -7,8 +9,10 @@ import '../../widget/appbar/appbar.dart';
 import '../../widget/cart/app_cart_item.dart';
 import '../../widget/cart/app_product_quantity_add_remove.dart';
 
+// ignore: must_be_immutable
 class CartView extends StatelessWidget {
-  const CartView({super.key});
+  CartView({super.key});
+  CartControllerImp controller = Get.put(CartControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,9 @@ class CartView extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: AppPadding.screenPadding,
         child: UElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.goToOrderReview();
+          },
           child: Text("Checkout : \$256"),
         ),
       ),
