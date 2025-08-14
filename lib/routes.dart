@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/navigation_menu.dart';
+import 'package:trendify_app/view/screen/address/add_new_address_view.dart';
 import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
@@ -24,4 +25,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.productDetails:(context)=>ProductDetailsView(),
   AppRoutes.productReviews:(context)=>ProductReviews(),
   AppRoutes.addressUser:(context)=>AddressView(),
+  AppRoutes.addNewAddress:(context)=>AddNewAddressView(),
 };
