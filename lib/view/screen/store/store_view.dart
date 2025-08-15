@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:trendify_app/controller/store_controller.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
-import '../../core/constant/app_texts.dart';
-import '../widget/home/section_header.dart';
-import '../widget/store/App_store_header.dart';
-import '../widget/store/app_category_tab.dart';
-import '../widget/store/app_tab_bar.dart';
-import '../widget/store/brand_card.dart';
+import '../../../core/constant/app_texts.dart';
+import '../../widget/home/section_header.dart';
+import '../../widget/store/App_store_header.dart';
+import '../../widget/store/app_category_tab.dart';
+import '../../widget/store/app_tab_bar.dart';
+import '../../widget/store/brand_card.dart';
 
+// ignore: must_be_immutable
 class StoreView extends StatelessWidget {
-  const StoreView({super.key});
+  StoreView({super.key});
+  StoreControllerImp controller = Get.put(StoreControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,9 @@ class StoreView extends StatelessWidget {
                           children: [
                             SectionHeader(
                               title: AppTexts.brand,
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.goToAllBrands();
+                              },
                               textButton: AppTexts.viewAll,
                             ),
                             SizedBox(
@@ -47,6 +53,7 @@ class StoreView extends StatelessWidget {
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   return BrandCard(
+                                    onTap: () {},
                                     imageUrl: AppImages.brand,
                                     numberProduct: "172 product",
                                     title: "Bata",

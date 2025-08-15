@@ -11,6 +11,8 @@ import 'package:trendify_app/view/screen/product/all_product_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
+import 'package:trendify_app/view/screen/store/all_brand_view.dart';
+import 'package:trendify_app/view/screen/store/brand_product_view.dart';
 import '../view/screen/auth/verify_code_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
@@ -36,4 +38,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.paymentSuccess:(context)=>PaymentSuccessView(),
   AppRoutes.subCetgory:(context)=>SubCategoryView(),
   AppRoutes.allProduct:(context)=>AllProductView(),
+  AppRoutes.allBrands:(context)=>AllBrandView(),
+  AppRoutes.brandProduct:(context)=>BrandProductView(),
 };

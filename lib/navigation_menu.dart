@@ -6,7 +6,7 @@ import 'package:trendify_app/core/constant/app_colors.dart';
 import 'helpers/function_helpers.dart';
 import 'view/screen/home/home_view.dart';
 import 'view/screen/profile/setting_view.dart';
-import 'view/screen/store_view.dart';
+import 'view/screen/store/store_view.dart';
 import 'view/screen/wish_list_view.dart';
 
 class NavigationMenu extends StatelessWidget {

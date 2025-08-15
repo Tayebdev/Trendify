@@ -23,6 +23,7 @@ class AppBrandShowCase extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           BrandCard(
+            onTap: () {},
             showBorder: false,
             imageUrl: AppImages.brand,
             numberProduct: "172 product",
