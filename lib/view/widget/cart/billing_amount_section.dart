@@ -3,8 +3,8 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../helpers/function_helpers.dart';
-import '../../widget/home/section_header.dart';
-import '../../widget/rounded_container/rounded_container.dart';
+import '../home/section_header.dart';
+import '../rounded_container/rounded_container.dart';
 
 class BillingAmountSection extends StatelessWidget {
   const BillingAmountSection({super.key});

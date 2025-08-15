@@ -43,4 +43,5 @@ class AppImages {
   static const String successfulPaymentIcon =
       "assets/icons/payment_methods/successful_payment_icon.png";
   static const String codIcon = "assets/icons/payment_methods/cod.png";
+  static const String payment='assets/animations/OnlinePayment.json';
 }

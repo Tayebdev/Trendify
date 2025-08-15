@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:trendify_app/controller/order_review_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/helpers/function_helpers.dart';
@@ -7,13 +9,15 @@ import '../../widget/rounded_container/rounded_container.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../widget/appbar/appbar.dart';
 import '../../widget/cart/app_cart_item.dart';
-import 'billing_address_section.dart';
-import 'billing_amount_section.dart';
-import 'billing_payment_section.dart';
+import '../../widget/cart/billing_address_section.dart';
+import '../../widget/cart/billing_amount_section.dart';
+import '../../widget/cart/billing_payment_section.dart';
 import 'coupon_code.dart';
 
+// ignore: must_be_immutable
 class OrderReviewView extends StatelessWidget {
-  const OrderReviewView({super.key});
+  OrderReviewView({super.key});
+  OrderReviewControllerImp controller = Get.put(OrderReviewControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,9 @@ class OrderReviewView extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: AppPadding.screenPadding,
         child: UElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.goToPaymentSuccess();
+          },
           child: Text("Checkout : \$256"),
         ),
       ),

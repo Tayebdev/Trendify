@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
+import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
@@ -36,7 +38,10 @@ class AppCategoryHome extends StatelessWidget {
                 return AppVerticalImageText(
                   title: "Sport",
                   image: AppImages.sport,
-                  onTap: () {},
+                  onTap: () {
+                    // go to sub Category
+                    Get.toNamed(AppRoutes.subCetgory);
+                  },
                   textColor: AppColors.white,
                 );
               },

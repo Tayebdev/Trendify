@@ -5,6 +5,8 @@ import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';
 import 'package:trendify_app/view/screen/cart/cart_view.dart';
 import 'package:trendify_app/view/screen/cart/order_review_view.dart';
+import 'package:trendify_app/view/screen/cart/payment_success_view.dart';
+import 'package:trendify_app/view/screen/home/sub_category_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
@@ -30,4 +32,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.addNewAddress:(context)=>AddNewAddressView(),
   AppRoutes.cart:(context)=>CartView(),
   AppRoutes.orderReview:(context)=>OrderReviewView(),
+  AppRoutes.paymentSuccess:(context)=>PaymentSuccessView(),
+  AppRoutes.subCetgory:(context)=>SubCategoryView(),
 };

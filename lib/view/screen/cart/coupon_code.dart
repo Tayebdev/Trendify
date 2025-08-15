@@ -41,6 +41,7 @@ class CouponCode extends StatelessWidget {
                     ? AppColors.white.withOpacity(0.5)
                     // ignore: deprecated_member_use
                     : AppColors.dark.withOpacity(0.5),
+                // ignore: deprecated_member_use
                 backgroundColor: Colors.grey.withOpacity(0.1),
                 side: BorderSide(
                   // 🔹 Border color & width
