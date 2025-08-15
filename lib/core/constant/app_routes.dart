@@ -15,4 +15,5 @@ class AppRoutes {
   static const String orderReview="/orderReview";
   static const String paymentSuccess="/paymentSuccess";
   static const String subCetgory="/subCategory";
+  static const String allProduct="/allProduct";
 }

@@ -5,6 +5,7 @@ import 'package:trendify_app/core/constant/app_routes.dart';
 abstract class HomeController extends GetxController {
   dotNavigationClick(int index);
   goToCart();
+  goToAllProduct();
 }
 
 class HomeControllerImp extends HomeController {
@@ -20,5 +21,10 @@ class HomeControllerImp extends HomeController {
   @override
   goToCart() {
     Get.toNamed(AppRoutes.cart);
+  }
+  
+  @override
+  goToAllProduct() {
+    Get.toNamed(AppRoutes.allProduct);
   }
 }

@@ -23,7 +23,7 @@ class AppProductQuantityAddRemove extends StatelessWidget {
               : AppColors.black,
           backgroundColor: AppHelperFunctions.isDarkMode(context)
               ? AppColors.darkerGrey
-              : AppColors.light,
+              : AppColors.grey,
         ),
         SizedBox(width: AppSizes.spaceBtwItems),
         Text("2", style: Theme.of(context).textTheme.titleSmall),

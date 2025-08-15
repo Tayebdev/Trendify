@@ -129,8 +129,8 @@ class SettingView extends StatelessWidget {
                   Obx(
                     () => AppSettingsMenuTile(
                       icon: controller.isDarkMode.value
-                          ? Iconsax.sun_1
-                          : Iconsax.moon,
+                          ? Iconsax.moon
+                          : Iconsax.sun_1,
                       title: "Theme",
                       subTitle: controller.isDarkMode.value
                           ? "Dark theme enabled"

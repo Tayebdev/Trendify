@@ -55,7 +55,7 @@ class HomeView extends StatelessWidget {
                   SizedBox(height: AppSizes.defaultSpace / 4),
                   SectionHeader(
                     title: AppTexts.popularProducts,
-                    onPressed: () {},
+                    onPressed: () {controller.goToAllProduct();},
                     textButton: AppTexts.viewAll,
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems / 2),
