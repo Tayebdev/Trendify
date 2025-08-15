@@ -28,5 +28,5 @@ class AppTabBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(UDeviceHelper.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(UDeviceHelper.getAppBarHeight()/2);
 }

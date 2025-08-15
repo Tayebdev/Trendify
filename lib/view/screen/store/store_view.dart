@@ -73,8 +73,6 @@ class StoreView extends StatelessWidget {
                     ],
                   ),
                 ),
-
-                //
                 bottom: AppTabBar(
                   lisTab: [
                     Text('Electronics'),

@@ -10,6 +10,7 @@ import 'package:trendify_app/view/screen/home/sub_category_view.dart';
 import 'package:trendify_app/view/screen/product/all_product_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
+import 'package:trendify_app/view/screen/profile/order_view.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import 'package:trendify_app/view/screen/store/all_brand_view.dart';
 import 'package:trendify_app/view/screen/store/brand_product_view.dart';
@@ -40,4 +41,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.allProduct:(context)=>AllProductView(),
   AppRoutes.allBrands:(context)=>AllBrandView(),
   AppRoutes.brandProduct:(context)=>BrandProductView(),
+  AppRoutes.order:(context)=>OrderView(),
 };
