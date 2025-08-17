@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trendify_app/helpers/function_helpers.dart';
+
+import '../../core/constant/app_colors.dart';
 
 class AnimatedAppName extends StatefulWidget {
   @override
@@ -34,18 +37,24 @@ class _AnimatedAppNameState extends State<AnimatedAppName>
 
   @override
   Widget build(BuildContext context) {
+    final dark = AppHelperFunctions.isDarkMode(context);
     return SlideTransition(
       position: _offset,
       child: FadeTransition(
         opacity: _opacity,
         child: Text(
           'Trendify',
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 42,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: dark ? AppColors.black : AppColors.white,
             letterSpacing: 3,
-            shadows: [Shadow(blurRadius: 10, color: Colors.white54)],
+            shadows: [
+              Shadow(
+                blurRadius: 10,
+                color: dark ? Colors.black54 : Colors.white54,
+              ),
+            ],
           ),
         ),
       ),

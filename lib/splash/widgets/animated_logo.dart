@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trendify_app/helpers/function_helpers.dart';
+import '../../core/constant/app_colors.dart';
 import 'shopping_bags_logo.dart';
 
 class AnimatedLogo extends StatefulWidget {
@@ -16,7 +18,6 @@ class _AnimatedLogoState extends State<AnimatedLogo>
   late final Animation<double> _scale;
   late final Animation<double> _rotate;
 
-
   @override
   void initState() {
     super.initState();
@@ -27,8 +28,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     _scale = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
         parent: _logoCtrl,
-        curve: const Interval(0.0, 0.7,
-            curve: Cubic(0.68, -0.55, 0.265, 1.55)),
+        curve: const Interval(0.0, 0.7, curve: Cubic(0.68, -0.55, 0.265, 1.55)),
       ),
     );
     _rotate = Tween<double>(begin: -3.14, end: 0).animate(
@@ -55,6 +55,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
 
   @override
   Widget build(BuildContext context) {
+    final dark = AppHelperFunctions.isDarkMode(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +75,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
               width: 120,
               height: 120,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: dark ? AppColors.black : AppColors.white,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(

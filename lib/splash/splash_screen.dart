@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      duration: 3000,
+      duration: 4000,
       splash: _buildSplashContent(),
       splashIconSize: double.infinity,
       backgroundColor: Colors.transparent,
@@ -40,11 +40,11 @@ class SplashScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               AnimatedLogo(),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               AnimatedAppName(),
               const SizedBox(height: 15),
               AnimatedTagline(),
-              const SizedBox(height: 50),
+              const SizedBox(height: 100),
               AnimatedLoadingSpinner(),
             ],
           ),
