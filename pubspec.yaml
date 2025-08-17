@@ -48,6 +48,9 @@ dependencies:
   share_plus: ^11.1.0
   flutter_rating_bar: ^4.0.1
   flutter_launcher_icons: ^0.14.4
+  animated_splash_screen: ^1.3.0
+  rive: ^0.13.20
+  page_transition: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -58,7 +61,8 @@ flutter_icons:
   android: true
   iOS: true
   image_path: "assets/logo/logo.png"
-  adaptive_icon_foreground: "assets/logo/logo_new.png"
+  adaptive_icon_foreground: "assets/logo/adaptive.png"
+  adaptive_icon_background: "#0857A0"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+class AnimatedAppName extends StatefulWidget {
+  @override
+  _AnimatedAppNameState createState() => _AnimatedAppNameState();
+}
+
+class _AnimatedAppNameState extends State<AnimatedAppName>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl;
+  late final Animation<Offset> _offset;
+  late final Animation<double> _opacity;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+    _offset = Tween<Offset>(
+      begin: const Offset(-1, 0),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOutBack));
+    _opacity = Tween<double>(begin: 0, end: 1).animate(_ctrl);
+    Future.delayed(const Duration(milliseconds: 800), () => _ctrl.forward());
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _offset,
+      child: FadeTransition(
+        opacity: _opacity,
+        child: Text(
+          'Trendify',
+          style: const TextStyle(
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            letterSpacing: 3,
+            shadows: [Shadow(blurRadius: 10, color: Colors.white54)],
+          ),
+        ),
+      ),
+    );
+  }
+}
