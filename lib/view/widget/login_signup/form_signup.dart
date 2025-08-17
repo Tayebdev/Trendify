@@ -19,6 +19,7 @@ class AppFormSignup extends StatelessWidget {
           children: [
             Expanded(
               child: AppTextField(
+                validator: (p0) {return null;},
                 icon: Iconsax.user,
                 text: AppTexts.firstName,
                 textEditingController: controller.firsName,
@@ -28,6 +29,7 @@ class AppFormSignup extends StatelessWidget {
             SizedBox(width: AppSizes.spaceBtwInputFields),
             Expanded(
               child: AppTextField(
+                validator: (p0) {return null;},
                 icon: Iconsax.user,
                 text: AppTexts.lastName,
                 textEditingController: controller.lastName,
@@ -38,6 +40,7 @@ class AppFormSignup extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.spaceBtwInputFields),
         AppTextField(
+          validator: (p0) {return null;},
           icon: Iconsax.direct_right,
           text: AppTexts.email,
           textEditingController: controller.email,
@@ -45,6 +48,7 @@ class AppFormSignup extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.spaceBtwInputFields),
         AppTextField(
+          validator: (p0) {return null;},
           icon: Iconsax.call,
           text: AppTexts.phoneNumber,
           textEditingController: controller.phone,
@@ -54,6 +58,7 @@ class AppFormSignup extends StatelessWidget {
         AppTextFieldPasswordSignup(),
         SizedBox(height: AppSizes.spaceBtwInputFields),
         AppTextField(
+          validator: (p0) {return null;},
           icon: Iconsax.password_check,
           text: AppTexts.confirmPassword,
           textEditingController: controller.confirmPassword,

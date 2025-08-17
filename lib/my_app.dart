@@ -2,10 +2,9 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/theme/theme.dart';
-import 'package:trendify_app/navigation_menu.dart';
+import 'package:trendify_app/view/screen/auth/login_view.dart';
 import '../routes.dart';
 import 'splash/splash_screen.dart';
-import 'view/screen/onboarding_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Trendify',
       debugShowCheckedModeBanner: false,
       routes: routes,
-      home: SplashScreen(),
-      //home: NavigationMenu(),
+      //home: SplashScreen(),
+      home: LoginView(),
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.system,
       darkTheme: AppTheme.darkTheme,

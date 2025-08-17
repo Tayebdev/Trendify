@@ -37,6 +37,7 @@ class ForgetPasswordView extends StatelessWidget {
             ),
             SizedBox(height: AppSizes.spaceBtwSections * 2),
             AppTextField(
+              validator: (p0) {return null;},
               icon: Iconsax.direct_right,
               text: AppTexts.email,
               textEditingController: controller.email,

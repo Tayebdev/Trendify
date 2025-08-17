@@ -20,12 +20,14 @@ class AddNewAddressView extends StatelessWidget {
             child: Column(
               children: [
                 AppTextField(
+                  validator: (p0) {return null;},
                   icon: Iconsax.user,
                   text: "Name",
                   textEditingController: TextEditingController(),
                 ),
                 SizedBox(height: AppSizes.spaceBtwInputFields),
                 AppTextField(
+                  validator: (p0) {return null;},
                   icon: Iconsax.mobile,
                   text: "Phone Number",
                   textEditingController: TextEditingController(),
@@ -35,6 +37,7 @@ class AddNewAddressView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: AppTextField(
+                        validator: (p0) {return null;},
                         icon: Iconsax.building_31,
                         text: "Street",
                         textEditingController: TextEditingController(),
@@ -43,6 +46,7 @@ class AddNewAddressView extends StatelessWidget {
                     SizedBox(width: AppSizes.spaceBtwInputFields / 2),
                     Expanded(
                       child: AppTextField(
+                        validator: (p0) {return null;},
                         icon: Iconsax.code,
                         text: "Postal Code",
                         textEditingController: TextEditingController(),
@@ -55,6 +59,7 @@ class AddNewAddressView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: AppTextField(
+                        validator: (p0) {return null;},
                         icon: Iconsax.building,
                         text: "City",
                         textEditingController: TextEditingController(),
@@ -63,6 +68,7 @@ class AddNewAddressView extends StatelessWidget {
                     SizedBox(width: AppSizes.spaceBtwInputFields / 2),
                     Expanded(
                       child: AppTextField(
+                        validator: (p0) {return null;},
                         icon: Iconsax.activity,
                         text: "State",
                         textEditingController: TextEditingController(),
@@ -72,6 +78,7 @@ class AddNewAddressView extends StatelessWidget {
                 ),
                 SizedBox(height: AppSizes.spaceBtwInputFields),
                 AppTextField(
+                  validator: (p0) {return null;},
                   icon: Iconsax.global,
                   text: "Country",
                   textEditingController: TextEditingController(),

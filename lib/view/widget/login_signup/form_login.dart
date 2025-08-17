@@ -21,9 +21,11 @@ class AppFormLogin extends StatelessWidget {
     return Column(
       children: [
         AppTextField(
+          validator: (p0) {return null;},
           icon: Iconsax.direct_right,
           text: AppTexts.email,
           textEditingController: controller.email,
+          value: false,
         ),
         SizedBox(height: AppSizes.spaceBtwInputFields),
         AppTextFieldPasswordLogin(),
