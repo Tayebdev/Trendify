@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
+import 'package:trendify_app/core/functions/app_validator.dart';
 
 import '../../../controller/auth/login_controller.dart';
 
@@ -14,6 +15,7 @@ class AppTextFieldPasswordLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<LoginControllerImp>(
       builder: (controller) => TextFormField(
+        validator: (value) => AppValidator.validatePassword(value),
         controller: controller.password,
         obscureText: controller.obscureText!,
         cursorColor: AppColors.primary,
