@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      duration: 4000,
+      duration: 3000,
       splash: _buildSplashContent(),
       splashIconSize: double.infinity,
       backgroundColor: Colors.transparent,
@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF0046AE), Color(0xFF0262F2), Color(0xFF5C9DFF)],
+              colors: [Colors.white,Colors.white,Colors.white],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

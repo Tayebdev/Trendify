@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
 import '../../core/constant/app_colors.dart';
 import 'shopping_bags_logo.dart';
 
@@ -55,7 +54,6 @@ class _AnimatedLogoState extends State<AnimatedLogo>
 
   @override
   Widget build(BuildContext context) {
-    final dark = AppHelperFunctions.isDarkMode(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -75,14 +73,14 @@ class _AnimatedLogoState extends State<AnimatedLogo>
               width: 120,
               height: 120,
               decoration: BoxDecoration(
-                color: dark ? AppColors.black : AppColors.white,
+                color:  Colors.transparent,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 30,
                     // ignore: deprecated_member_use
-                    color: Colors.black.withOpacity(0.2),
-                    offset: const Offset(0, 10),
+                    color: AppColors.black.withOpacity(0.2),
+                    offset: const Offset(0, 20),
                   ),
                 ],
               ),

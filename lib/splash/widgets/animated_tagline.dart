@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
-
 import '../../core/constant/app_colors.dart';
 
 class AnimatedTagline extends StatefulWidget {
@@ -37,7 +35,6 @@ class _AnimatedTaglineState extends State<AnimatedTagline>
 
   @override
   Widget build(BuildContext context) {
-    final dark = AppHelperFunctions.isDarkMode(context);
     return SlideTransition(
       position: _offset,
       child: FadeTransition(
@@ -46,7 +43,7 @@ class _AnimatedTaglineState extends State<AnimatedTagline>
           'happy shop',
           style: TextStyle(
             fontSize: 22,
-            color: dark ? AppColors.black : AppColors.white,
+            color: AppColors.primary,
             letterSpacing: 2,
             shadows: [Shadow(blurRadius: 8, color: Colors.white38)],
           ),

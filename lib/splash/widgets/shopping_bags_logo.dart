@@ -13,7 +13,7 @@ class ShoppingBagsLogo extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            child: Image.asset(AppImages.product),
+            child: Image.asset(AppImages.logo),
           )
         ],
       ),
