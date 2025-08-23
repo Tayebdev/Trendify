@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/auth/signup_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
+import '../../../core/functions/app_validator.dart';
 
 
 // ignore: must_be_immutable
@@ -15,6 +16,7 @@ class AppTextFieldPasswordSignup extends StatelessWidget {
     return GetBuilder<SignupControllerImp>(
       builder: (controller) => TextFormField(
         controller: controller.password,
+        validator: (value) => AppValidator.validatePassword(value),
         obscureText: controller.obscureText!,
         cursorColor: AppColors.primary,
         decoration: InputDecoration(

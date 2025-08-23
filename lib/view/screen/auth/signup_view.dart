@@ -30,13 +30,22 @@ class SignupView extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               SizedBox(height: AppSizes.spaceBtwSections),
-              AppFormSignup(),
-              SizedBox(height: AppSizes.spaceBtwInputFields),
-              AppPrivacyPolicy(),
-              SizedBox(height: AppSizes.spaceBtwSections / 2),
-              UElevatedButton(
-                onPressed: () {controller.goToVerifyEmail();},
-                child: Text(AppTexts.createAccount),
+              Form(
+                key: controller.formState,
+                child: Column(
+                  children: [
+                    AppFormSignup(),
+                    SizedBox(height: AppSizes.spaceBtwInputFields),
+                    AppPrivacyPolicy(),
+                    SizedBox(height: AppSizes.spaceBtwSections / 2),
+                    UElevatedButton(
+                      onPressed: () {
+                        controller.goToVerifyEmail();
+                      },
+                      child: Text(AppTexts.createAccount),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: AppSizes.spaceBtwSections / 2),
               AppFormDivider(),

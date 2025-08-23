@@ -4,7 +4,6 @@ import 'package:trendify_app/core/constant/app_routes.dart';
 
 abstract class SignupController extends GetxController {
   toggleObscureText();
-  signUp();
   goToLogin();
   goToVerifyEmail();
 }
@@ -16,6 +15,8 @@ class SignupControllerImp extends SignupController {
   late TextEditingController? firsName;
   late TextEditingController? confirmPassword;
   late TextEditingController? phone;
+  static SignupControllerImp get instance => Get.find();
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   bool? obscureText = true;
 
   @override
@@ -31,7 +32,7 @@ class SignupControllerImp extends SignupController {
     lastName = TextEditingController();
     firsName = TextEditingController();
     confirmPassword = TextEditingController();
-    phone=TextEditingController();
+    phone = TextEditingController();
     super.onInit();
   }
 
@@ -50,13 +51,13 @@ class SignupControllerImp extends SignupController {
   goToLogin() {
     Get.toNamed(AppRoutes.login);
   }
-  
-  @override
-  signUp() {
-  }
-  
+
   @override
   goToVerifyEmail() {
-    Get.offAllNamed(AppRoutes.verifyEmail);
+    if (formState.currentState!.validate()) {
+      Get.offAllNamed(AppRoutes.verifyEmail);
+    } else {
+      print('not validate');
+    }
   }
 }
