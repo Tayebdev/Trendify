@@ -47,7 +47,7 @@ class _AnimatedAppNameState extends State<AnimatedAppName>
           style: TextStyle(
             fontSize: 42,
             fontWeight: FontWeight.bold,
-            color: dark ? AppColors.black : AppColors.white,
+            color: dark ? AppColors.white : AppColors.black,
             letterSpacing: 3,
             shadows: [
               Shadow(

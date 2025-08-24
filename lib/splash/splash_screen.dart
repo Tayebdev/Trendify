@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:trendify_app/core/constant/app_colors.dart';
+import 'package:trendify_app/helpers/function_helpers.dart';
 import '../view/screen/onboarding_view.dart';
 import 'widgets/animated_app_name.dart';
 import 'widgets/animated_logo.dart';
@@ -12,8 +14,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      duration: 3000,
-      splash: _buildSplashContent(),
+      duration: 30000,
+      splash: _buildSplashContent(context),
       splashIconSize: double.infinity,
       backgroundColor: Colors.transparent,
       splashTransition: SplashTransition.fadeTransition,
@@ -22,17 +24,14 @@ class SplashScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSplashContent() {
+  Widget _buildSplashContent(BuildContext context) {
+    final dark=AppHelperFunctions.isDarkMode(context);
     return Stack(
       fit: StackFit.expand,
       children: [
         Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.white,Colors.white,Colors.white],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+          decoration:  BoxDecoration(
+            color: dark ? AppColors.black: AppColors.white
           ),
         ),
         Center(

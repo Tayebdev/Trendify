@@ -45,7 +45,7 @@ class _AnimatedTaglineState extends State<AnimatedTagline>
             fontSize: 22,
             color: AppColors.primary,
             letterSpacing: 2,
-            shadows: [Shadow(blurRadius: 8, color: Colors.white38)],
+            shadows: [Shadow(blurRadius: 8, color: AppColors.primary)],
           ),
         ),
       ),
