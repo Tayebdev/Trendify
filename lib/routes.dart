@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:trendify_app/navigation_menu.dart';
+import 'package:trendify_app/splash/splash_screen.dart';
 import 'package:trendify_app/view/screen/address/add_new_address_view.dart';
 import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';
@@ -7,6 +9,7 @@ import 'package:trendify_app/view/screen/cart/cart_view.dart';
 import 'package:trendify_app/view/screen/cart/order_review_view.dart';
 import 'package:trendify_app/view/screen/cart/payment_success_view.dart';
 import 'package:trendify_app/view/screen/home/sub_category_view.dart';
+import 'package:trendify_app/view/screen/onboarding_view.dart';
 import 'package:trendify_app/view/screen/product/all_product_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
@@ -21,25 +24,26 @@ import '../view/screen/auth/signup_view.dart';
 import '../core/constant/app_routes.dart';
 import '../view/screen/auth/login_view.dart';
 
-Map<String, Widget Function(BuildContext)> routes = {
-  AppRoutes.login: (context) => LoginView(),
-  AppRoutes.signUp:(context)=>SignupView(),
-  AppRoutes.forgetPassword:(context)=>ForgetPasswordView(),
-  AppRoutes.verifyEmail :(context)=>VerifyEmailView(),
-  AppRoutes.verifyCode :(context)=>VerifyCodeView(),
-  AppRoutes.successCreated:(context)=>SuccessCreatedView(),
-  AppRoutes.navigationMenu:(context)=>NavigationMenu(),
-  AppRoutes.profile:(context)=>ProfileView(),
-  AppRoutes.productDetails:(context)=>ProductDetailsView(),
-  AppRoutes.productReviews:(context)=>ProductReviews(),
-  AppRoutes.addressUser:(context)=>AddressView(),
-  AppRoutes.addNewAddress:(context)=>AddNewAddressView(),
-  AppRoutes.cart:(context)=>CartView(),
-  AppRoutes.orderReview:(context)=>OrderReviewView(),
-  AppRoutes.paymentSuccess:(context)=>PaymentSuccessView(),
-  AppRoutes.subCetgory:(context)=>SubCategoryView(),
-  AppRoutes.allProduct:(context)=>AllProductView(),
-  AppRoutes.allBrands:(context)=>AllBrandView(),
-  AppRoutes.brandProduct:(context)=>BrandProductView(),
-  AppRoutes.order:(context)=>OrderView(),
-};
+List<GetPage<dynamic>>? getPages = [
+  GetPage(name: AppRoutes.route, page: () => SplashScreen()),
+  GetPage(name: AppRoutes.login, page: () => LoginView()),
+  GetPage(name: AppRoutes.signUp, page: () => SignupView()),
+  GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
+  GetPage(name: AppRoutes.verifyEmail, page: () => VerifyEmailView()),
+  GetPage(name: AppRoutes.verifyCode, page: () => VerifyCodeView()),
+  GetPage(name: AppRoutes.successCreated, page: () => SuccessCreatedView()),
+  GetPage(name: AppRoutes.navigationMenu, page: () => NavigationMenu()),
+  GetPage(name: AppRoutes.profile, page: () => ProfileView()),
+  GetPage(name: AppRoutes.productDetails, page: () => ProductDetailsView()),
+  GetPage(name: AppRoutes.productReviews, page: () => ProductReviews()),
+  GetPage(name: AppRoutes.addressUser, page: () => AddressView()),
+  GetPage(name: AppRoutes.addNewAddress, page: () => AddNewAddressView()),
+  GetPage(name: AppRoutes.cart, page: () => CartView()),
+  GetPage(name: AppRoutes.orderReview, page: () => OrderReviewView()),
+  GetPage(name: AppRoutes.paymentSuccess, page: () => PaymentSuccessView()),
+  GetPage(name: AppRoutes.subCetgory, page: () => SubCategoryView()),
+  GetPage(name: AppRoutes.allProduct, page: () => AllProductView()),
+  GetPage(name: AppRoutes.allBrands, page: () => AllBrandView()),
+  GetPage(name: AppRoutes.brandProduct, page: () => BrandProductView()),
+  GetPage(name: AppRoutes.order, page: () => OrderView()),
+];
