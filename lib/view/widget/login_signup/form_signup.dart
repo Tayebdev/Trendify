@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/functions/app_validator.dart';
 import '../../../controller/auth/signup_controller.dart';
@@ -10,10 +11,10 @@ import '../text_field/text_field_password_signup.dart';
 // ignore: must_be_immutable
 class AppFormSignup extends StatelessWidget {
   AppFormSignup({super.key});
-  static final controller = SignupControllerImp.instance;
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return GetBuilder<SignupControllerImp>(
+      builder: (controller) =>Column(
       children: [
         Row(
           children: [
@@ -49,6 +50,7 @@ class AppFormSignup extends StatelessWidget {
         SizedBox(height: AppSizes.spaceBtwInputFields),
         AppTextField(
           validator: (value)=>AppValidator.validatePhoneNumber(value),
+          textInputPhone: true,
           icon: Iconsax.call,
           text: AppTexts.phoneNumber,
           textEditingController: controller.phone,
@@ -65,6 +67,6 @@ class AppFormSignup extends StatelessWidget {
           value: true,
         ),
       ],
-    );
+    ));
   }
 }

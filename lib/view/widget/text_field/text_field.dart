@@ -7,6 +7,7 @@ class AppTextField extends StatelessWidget {
   String? text;
   TextEditingController? textEditingController;
   bool? value;
+  bool? textInputPhone;
   String? Function(String?)? validator;
   AppTextField({
     super.key,
@@ -15,11 +16,13 @@ class AppTextField extends StatelessWidget {
     required this.textEditingController,
     required this.validator,
     this.value,
+    this.textInputPhone=false
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType:textInputPhone==true ?  TextInputType.phone :TextInputType.text,
       controller: textEditingController,
       validator: validator,
       cursorColor: AppColors.primary,

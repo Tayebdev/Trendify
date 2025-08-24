@@ -49,13 +49,16 @@ class SignupControllerImp extends SignupController {
 
   @override
   goToLogin() {
+    Get.delete<SignupControllerImp>();
     Get.toNamed(AppRoutes.login);
+
   }
 
   @override
   goToVerifyEmail() {
     if (formState.currentState!.validate()) {
       Get.offAllNamed(AppRoutes.verifyEmail);
+      Get.delete<SignupControllerImp>();
     } else {
       print('not validate');
     }
