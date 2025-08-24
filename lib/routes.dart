@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/splash/splash_screen.dart';
@@ -9,7 +8,6 @@ import 'package:trendify_app/view/screen/cart/cart_view.dart';
 import 'package:trendify_app/view/screen/cart/order_review_view.dart';
 import 'package:trendify_app/view/screen/cart/payment_success_view.dart';
 import 'package:trendify_app/view/screen/home/sub_category_view.dart';
-import 'package:trendify_app/view/screen/onboarding_view.dart';
 import 'package:trendify_app/view/screen/product/all_product_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
