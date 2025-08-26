@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/splash/splash_screen.dart';
 import 'package:trendify_app/view/screen/address/add_new_address_view.dart';
@@ -23,7 +24,11 @@ import '../core/constant/app_routes.dart';
 import '../view/screen/auth/login_view.dart';
 
 List<GetPage<dynamic>>? getPages = [
-  GetPage(name: AppRoutes.route, page: () => SplashScreen()),
+  GetPage(
+    name: AppRoutes.route,
+    page: () => SplashScreen(),
+    middlewares: [OnboardingMiddleware()],
+  ),
   GetPage(name: AppRoutes.login, page: () => LoginView()),
   GetPage(name: AppRoutes.signUp, page: () => SignupView()),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/data/static/static.dart';
 
+import '../core/services/app_services.dart';
+
 abstract class OnboardingController extends GetxController {
   nextPage();
   skipPage();
@@ -28,14 +30,18 @@ class OnboardingControllerImp extends OnboardingController {
 
   @override
   nextPage() {
-    if(currentPage.value==onboardingList.length-1) return Get.offAllNamed(AppRoutes.login);
+    AppServices? appServices = Get.find<AppServices>();
+    if (currentPage.value == onboardingList.length - 1) {
+      appServices.sharedPref.setBool("visited", true);
+      return Get.offAllNamed(AppRoutes.login);
+    }
     currentPage.value++;
     pageController.jumpToPage(currentPage.value);
   }
 
   @override
   skipPage() {
-    currentPage.value=onboardingList.length-1;
+    currentPage.value = onboardingList.length - 1;
     pageController.jumpToPage(currentPage.value);
   }
 }
