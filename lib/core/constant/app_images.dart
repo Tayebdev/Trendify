@@ -3,8 +3,13 @@ class AppImages {
   static const String onboarding1Animation = 'assets/animations/welcome.json';
   static const String onboarding2Animation = 'assets/animations/cart.json';
   static const String onboarding3Animation = 'assets/animations/delivery.json';
-  static const String loadingAnimation = 'assets/animations/loading.json';
+  // animation loading
+  static const String loadingAnimation = 'assets/animations/Loadinganimationblue.json';
+  static const String checkInternet='assets/animations/NoInternetConnection.json';
   static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
+  static const String serverFailure = 'assets/animations/CloudServer.json';
+  static const String failureAnimation = 'assets/animations/SadEmptyBox.json';
+  // logo
   static const String sport = 'assets/images/sports.png';
   static const String product = 'assets/images/product.png';
   static const String brand = "assets/images/bata.png";

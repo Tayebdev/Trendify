@@ -1,5 +1,5 @@
 class AppRoutes {
-  static const String route="/";
+  //static const String route="/";
   static const String login = "/login";
   static const String signUp = "/signup";
   static const String forgetPassword = '/forgetPasword';
@@ -20,4 +20,7 @@ class AppRoutes {
   static const String allBrands="/allBrands";
   static const String brandProduct="/brandProduct";
   static const String order="/order";
+
+  //test
+  static const String test="/";
 }

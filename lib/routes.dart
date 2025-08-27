@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:trendify_app/core/handle_data_view/widget/app_failure.dart';
+import 'package:trendify_app/core/handle_data_view/widget/app_loading.dart';
+import 'package:trendify_app/core/handle_data_view/widget/app_offline_failure.dart';
+import 'package:trendify_app/core/handle_data_view/widget/app_server_failure.dart';
 import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/splash/splash_screen.dart';
@@ -24,11 +28,11 @@ import '../core/constant/app_routes.dart';
 import '../view/screen/auth/login_view.dart';
 
 List<GetPage<dynamic>>? getPages = [
-  GetPage(
-    name: AppRoutes.route,
-    page: () => SplashScreen(),
-    middlewares: [OnboardingMiddleware()],
-  ),
+  // GetPage(
+  //   name: AppRoutes.route,
+  //   page: () => SplashScreen(),
+  //   middlewares: [OnboardingMiddleware()],
+  // ),
   GetPage(name: AppRoutes.login, page: () => LoginView()),
   GetPage(name: AppRoutes.signUp, page: () => SignupView()),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
@@ -49,4 +53,7 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.allBrands, page: () => AllBrandView()),
   GetPage(name: AppRoutes.brandProduct, page: () => BrandProductView()),
   GetPage(name: AppRoutes.order, page: () => OrderView()),
+
+  //test
+  GetPage(name: AppRoutes.test, page: () => AppFailure()),
 ];
