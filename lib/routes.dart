@@ -1,8 +1,4 @@
 import 'package:get/get.dart';
-import 'package:trendify_app/core/handle_data_view/widget/app_failure.dart';
-import 'package:trendify_app/core/handle_data_view/widget/app_loading.dart';
-import 'package:trendify_app/core/handle_data_view/widget/app_offline_failure.dart';
-import 'package:trendify_app/core/handle_data_view/widget/app_server_failure.dart';
 import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/splash/splash_screen.dart';
@@ -20,6 +16,7 @@ import 'package:trendify_app/view/screen/profile/order_view.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import 'package:trendify_app/view/screen/store/all_brand_view.dart';
 import 'package:trendify_app/view/screen/store/brand_product_view.dart';
+import 'package:trendify_app/view/test_view.dart';
 import '../view/screen/auth/verify_code_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
@@ -55,5 +52,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.order, page: () => OrderView()),
 
   //test
-  GetPage(name: AppRoutes.test, page: () => AppFailure()),
+  GetPage(name: AppRoutes.test, page: () => TestView()),
 ];

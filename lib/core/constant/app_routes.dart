@@ -1,5 +1,5 @@
 class AppRoutes {
-  //static const String route="/";
+ // static const String route="/";
   static const String login = "/login";
   static const String signUp = "/signup";
   static const String forgetPassword = '/forgetPasword';

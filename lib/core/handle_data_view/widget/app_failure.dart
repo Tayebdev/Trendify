@@ -8,25 +8,23 @@ class AppFailure extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Lottie.asset(AppImages.failureAnimation, width: 350, height: 350),
-            SizedBox(height: 30),
-            Text(
-              "No Check order here yet!",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            SizedBox(height: 15),
-            Text(
-              "Your order list is currently empty. Once you \n place an order, it will appear here.",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-          ],
-        ),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Lottie.asset(AppImages.failureAnimation, width: 350, height: 350),
+          SizedBox(height: 30),
+          Text(
+            "No Check order here yet!",
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Your order list is currently empty. Once you \n place an order, it will appear here.",
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ],
       ),
     );
   }

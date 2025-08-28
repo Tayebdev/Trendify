@@ -1,5 +1,6 @@
 class AppLinkApi {
-  static String server = "http://localhost:3000";
+  static const String server = "http://10.0.2.2:3000/api/v1";
 
-  static String authentification = "${server}/auth";
+  static const String authentification = "${server}/auth";
+  static const String  category="${server}/product";
 }
