@@ -41,6 +41,10 @@ class SignupView extends StatelessWidget {
                     UElevatedButton(
                       onPressed: () {
                         controller.goToVerifyEmail();
+                        print("password");
+                        print(controller.password!.text);
+                        print("confirm password");
+                        print(controller.confirmPassword!.text);
                       },
                       child: Text(AppTexts.createAccount),
                     ),

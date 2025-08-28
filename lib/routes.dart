@@ -25,11 +25,11 @@ import '../core/constant/app_routes.dart';
 import '../view/screen/auth/login_view.dart';
 
 List<GetPage<dynamic>>? getPages = [
-  // GetPage(
-  //   name: AppRoutes.route,
-  //   page: () => SplashScreen(),
-  //   middlewares: [OnboardingMiddleware()],
-  // ),
+  GetPage(
+    name: AppRoutes.route,
+    page: () => SplashScreen(),
+    middlewares: [OnboardingMiddleware()],
+  ),
   GetPage(name: AppRoutes.login, page: () => LoginView()),
   GetPage(name: AppRoutes.signUp, page: () => SignupView()),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
@@ -52,5 +52,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.order, page: () => OrderView()),
 
   //test
-  GetPage(name: AppRoutes.test, page: () => TestView()),
+  //GetPage(name: AppRoutes.test, page: () => TestView()),
 ];

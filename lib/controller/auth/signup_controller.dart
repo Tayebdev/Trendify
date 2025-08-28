@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
+import 'package:trendify_app/core/functions/is_same_password.dart';
 
 abstract class SignupController extends GetxController {
   toggleObscureText();
@@ -50,13 +51,15 @@ class SignupControllerImp extends SignupController {
   @override
   goToLogin() {
     Get.toNamed(AppRoutes.login);
-
   }
 
   @override
   goToVerifyEmail() {
     if (formState.currentState!.validate()) {
-      Get.offAllNamed(AppRoutes.verifyEmail);
+      if (isSamePassword(password!.text, confirmPassword!.text)) {
+        // Get.offAllNamed(AppRoutes.verifyEmail);
+        print("trie");
+      }
     } else {
       print('not validate');
     }
