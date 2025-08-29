@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
+import 'package:trendify_app/core/handle_data_view/handle_data_view.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import '../../../controller/auth/signup_controller.dart';
 import '../../../core/constant/app_sizes.dart';
@@ -18,7 +19,11 @@ class SignupView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
+      body: GetBuilder<SignupControllerImp>(
+        builder: (controller) => HandleDataView(
+          showLoading: false,
+          statusRequest: controller.statusRequest,
+          widget: SingleChildScrollView(
         child: Padding(
           padding: AppPadding.screenPadding,
           child: Column(
@@ -40,11 +45,7 @@ class SignupView extends StatelessWidget {
                     SizedBox(height: AppSizes.spaceBtwSections / 2),
                     UElevatedButton(
                       onPressed: () {
-                        controller.goToVerifyEmail();
-                        print("password");
-                        print(controller.password!.text);
-                        print("confirm password");
-                        print(controller.confirmPassword!.text);
+                        controller.signUp();
                       },
                       child: Text(AppTexts.createAccount),
                     ),
@@ -57,6 +58,8 @@ class SignupView extends StatelessWidget {
               AppSocialButton(),
             ],
           ),
+        ),
+      )
         ),
       ),
     );

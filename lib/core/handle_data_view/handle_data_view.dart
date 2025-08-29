@@ -9,22 +9,27 @@ import 'package:trendify_app/core/handle_data_view/widget/app_server_failure.dar
 class HandleDataView extends StatelessWidget {
   StatusRequest statusRequest;
   Widget widget;
+  bool showLoading;
+
   HandleDataView({
     super.key,
     required this.statusRequest,
     required this.widget,
+    this.showLoading = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return statusRequest == StatusRequest.loading
-        ? AppLoading()
-        : statusRequest == StatusRequest.failure
-        ? AppFailure()
-        : statusRequest == StatusRequest.serverfailure
-        ? AppServerFailure()
-        : statusRequest == StatusRequest.offlinefailure
-        ? AppOfflineFailure()
+    return showLoading == true
+        ? (statusRequest == StatusRequest.loading
+              ? AppLoading()
+              : (statusRequest == StatusRequest.failure
+                    ? AppFailure()
+                    : (statusRequest == StatusRequest.serverfailure
+                          ? AppServerFailure()
+                          : (statusRequest == StatusRequest.offlinefailure
+                                ? AppOfflineFailure()
+                                : widget))))
         : widget;
   }
 }

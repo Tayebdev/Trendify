@@ -5,7 +5,7 @@ class MyClass {
   Crud crud = Get.find<Crud>();
 
   postData(String url, Map<String, dynamic> data) async {
-    var result = await crud.postDataRequest(url, {});
+    var result = await crud.postDataRequest(url, data);
     return result.fold((left) => left, (right) => right);
   }
 

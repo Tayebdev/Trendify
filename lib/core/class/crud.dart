@@ -17,7 +17,7 @@ class Crud {
           headers: {"Content-Type": "application/json"},
           body: jsonEncode(body),
         );
-        if (response.statusCode == 200 || response.statusCode == 201) {
+        if (response.statusCode==200 || response.statusCode == 201) {
           return Right(jsonDecode(response.body));
         }
         if (response.statusCode == 404) {
