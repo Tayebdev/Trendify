@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 
-abstract class VerifyCodeController extends GetxController{
+abstract class VerifyCodeEmailController extends GetxController{
   goToForgetPassword();
   goToSuccesCreated();
 }
 
-class VerifyCodeControllerImp extends VerifyCodeController{
+class VerifyCodeEmailControllerImp extends VerifyCodeEmailController{
   @override
   goToForgetPassword() {
     Get.toNamed(AppRoutes.forgetPassword);

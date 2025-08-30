@@ -25,6 +25,12 @@ class AppTexts {
   static const String createAccount = 'Create Account';
   static const String orSignInWith = 'Or Sign In With';
 
+  // update password
+  static const String updatePasswordTitle = 'Set a new password';
+  static const String updatePasswordSubTitle =
+      'Create a new password. Ensure it differs from previous ones for security';
+  static const String updatePassword = "Update Password";
+
   // SignUp Screen
   static const String signupTitle = 'Let’s Get You Registered';
   static const String firstName = 'First Name';
@@ -57,8 +63,11 @@ class AppTexts {
   static const String uContinue = 'Continue';
   static const String resendEmail = 'Resend Email';
   static const String sendCode = 'Send Code';
-  static const String verifyCode =
+  static const String verifyCodeEmail =
       "We've sent a confirmation code to your email address. Enter the code below to verify your email and continue the process.";
+  static const String verifyCodePassword =
+      "We've sent a verification code to your email address. Enter the code below to verify your identity and reset your password.";
+
   // Account Created Successfully Screen
   static const String accountCreatedTitle = 'Account created successfully';
   static const String accountCreatedSubTitle =

@@ -4,16 +4,16 @@ import 'package:get/instance_manager.dart';
 import 'package:lottie/lottie.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
-import '../../../controller/auth/verify_code_controller.dart';
+import '../../../controller/auth/verify_code_email_controller.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_texts.dart';
 import '../../widget/button/elevated_button.dart';
 
 // ignore: must_be_immutable
-class VerifyCodeView extends StatelessWidget {
-  VerifyCodeView({super.key});
-  VerifyCodeControllerImp controller = Get.put(VerifyCodeControllerImp());
+class VerifyCodeEmailView extends StatelessWidget {
+  VerifyCodeEmailView({super.key});
+  VerifyCodeEmailControllerImp controller = Get.put(VerifyCodeEmailControllerImp());
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class VerifyCodeView extends StatelessWidget {
               ),
               SizedBox(height: AppSizes.spaceBtwItems),
               Text(
-                AppTexts.verifyCode,
+                AppTexts.verifyCodeEmail,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodySmall,
               ),

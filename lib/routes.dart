@@ -5,6 +5,8 @@ import 'package:trendify_app/splash/splash_screen.dart';
 import 'package:trendify_app/view/screen/address/add_new_address_view.dart';
 import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';
+import 'package:trendify_app/view/screen/auth/update_password_view.dart';
+import 'package:trendify_app/view/screen/auth/verify_code_password_view.dart';
 import 'package:trendify_app/view/screen/cart/cart_view.dart';
 import 'package:trendify_app/view/screen/cart/order_review_view.dart';
 import 'package:trendify_app/view/screen/cart/payment_success_view.dart';
@@ -17,7 +19,7 @@ import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import 'package:trendify_app/view/screen/store/all_brand_view.dart';
 import 'package:trendify_app/view/screen/store/brand_product_view.dart';
 import 'package:trendify_app/view/test_view.dart';
-import '../view/screen/auth/verify_code_view.dart';
+import 'view/screen/auth/verify_code_email_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
 import '../view/screen/auth/signup_view.dart';
@@ -34,7 +36,9 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.signUp, page: () => SignupView()),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
   GetPage(name: AppRoutes.verifyEmail, page: () => VerifyEmailView()),
-  GetPage(name: AppRoutes.verifyCode, page: () => VerifyCodeView()),
+  GetPage(name: AppRoutes.verifyCodeEmail, page: () => VerifyCodeEmailView()),
+  GetPage(name: AppRoutes.verifyCodePassword, page: ()=>VerifyCodePasswordView()),
+  GetPage(name: AppRoutes.updatePassword, page: ()=>UpdatePasswordView()),
   GetPage(name: AppRoutes.successCreated, page: () => SuccessCreatedView()),
   GetPage(name: AppRoutes.navigationMenu, page: () => NavigationMenu()),
   GetPage(name: AppRoutes.profile, page: () => ProfileView()),

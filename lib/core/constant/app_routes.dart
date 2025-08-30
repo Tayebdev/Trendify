@@ -4,7 +4,9 @@ class AppRoutes {
   static const String signUp = "/signup";
   static const String forgetPassword = '/forgetPasword';
   static const String verifyEmail = '/verifyEmail';
-  static const String verifyCode = '/verifyCode';
+  static const String verifyCodeEmail = '/verifyCodeEmail';
+  static const String verifyCodePassword = '/verifyCodePassword';
+  static const String updatePassword='/updatePassword';
   static const String successCreated = '/successCreated';
   static const String navigationMenu = '/navigationMenu';
   static const String profile = "/profile";

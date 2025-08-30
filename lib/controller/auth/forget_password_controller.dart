@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trendify_app/core/constant/app_routes.dart';
+
+import '../../core/constant/app_routes.dart';
 
 abstract class ForgetPasswordController extends GetxController {
   goToVerifyCode();
@@ -25,7 +26,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   @override
   goToVerifyCode() {
     if (formState.currentState!.validate()) {
-      Get.offAllNamed(AppRoutes.verifyCode);
+      Get.offAllNamed(AppRoutes.verifyCodePassword);
     }
     
   }
