@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/product_controller.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/app_rounded_image.dart';
 import 'package:trendify_app/view/widget/product/app_product_title_text.dart';
 import 'package:trendify_app/view/widget/rounded_container/rounded_container.dart';

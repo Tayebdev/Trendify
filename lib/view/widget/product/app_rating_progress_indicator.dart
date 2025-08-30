@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 
 class AppRatingProgressIndicator extends StatelessWidget {
   const AppRatingProgressIndicator({

@@ -3,7 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/section_header.dart';
 
 import '../../../core/constant/app_colors.dart';

@@ -3,7 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import '../../../controller/onboarding_controller.dart';
 import '../../../data/static/static.dart';
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 
 class OnboardingDotNavigation extends StatelessWidget {
   const OnboardingDotNavigation({super.key});

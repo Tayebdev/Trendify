@@ -5,7 +5,7 @@ import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_texts.dart';
 import '../../../core/style/app_padding.dart';
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 import '../../widget/button/elevated_button.dart';
 
 class SuccessCreatedView extends StatelessWidget {

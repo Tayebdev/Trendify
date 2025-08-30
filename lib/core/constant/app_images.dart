@@ -9,6 +9,7 @@ class AppImages {
   static const String sentEmailAnimation = 'assets/animations/EmailSent.json';
   static const String serverFailure = 'assets/animations/CloudServer.json';
   static const String failureAnimation = 'assets/animations/SadEmptyBox.json';
+  static const String docerAnimation='assets/animations/animation-of-docer.json';
   // logo
   static const String sport = 'assets/images/sports.png';
   static const String product = 'assets/images/product.png';

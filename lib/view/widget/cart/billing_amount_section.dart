@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../home/section_header.dart';
 import '../rounded_container/rounded_container.dart';
 

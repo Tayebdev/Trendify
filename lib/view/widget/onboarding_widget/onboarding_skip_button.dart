@@ -5,7 +5,7 @@ import 'package:get/route_manager.dart';
 import 'package:trendify_app/data/static/static.dart';
 import '../../../controller/onboarding_controller.dart';
 import '../../../core/constant/app_colors.dart';
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 
 class OnboardingSkipButton extends StatelessWidget {
   const OnboardingSkipButton({super.key});

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../controller/home_controller.dart';
 import '../../../core/constant/app_colors.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 // ignore: must_be_immutable
 class AppCartCounterItem extends StatelessWidget {

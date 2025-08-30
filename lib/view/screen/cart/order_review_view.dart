@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:trendify_app/controller/order_review_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import '../../widget/button/elevated_button.dart';
 import '../../widget/rounded_container/rounded_container.dart';
 import '../../../core/constant/app_sizes.dart';

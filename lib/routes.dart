@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
-import 'package:trendify_app/splash/splash_screen.dart';
+import 'package:trendify_app/utils/splash/splash_screen.dart';
 import 'package:trendify_app/view/screen/address/add_new_address_view.dart';
 import 'package:trendify_app/view/screen/address/address_view.dart';
 import 'package:trendify_app/view/screen/auth/success_created_view.dart';

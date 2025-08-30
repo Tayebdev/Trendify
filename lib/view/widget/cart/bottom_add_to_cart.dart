@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/circular_icon/circular_icon.dart';
 
 class BottomAddToCart extends StatelessWidget {

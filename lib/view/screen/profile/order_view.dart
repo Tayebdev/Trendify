@@ -3,7 +3,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 
 class OrderView extends StatelessWidget {
   const OrderView({super.key});

@@ -3,7 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../appbar/appbar.dart';
 import '../circular_icon/circular_icon.dart';
 import '../home/app_rounded_image.dart';

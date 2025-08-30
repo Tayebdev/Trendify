@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 class AppNotificationItem extends StatelessWidget {
   const AppNotificationItem({super.key});

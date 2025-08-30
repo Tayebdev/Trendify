@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 import 'shopping_bags_logo.dart';
 
 class AnimatedLogo extends StatefulWidget {

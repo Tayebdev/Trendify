@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/data/static/static.dart';
 import '../../../controller/onboarding_controller.dart';
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingPageView extends StatelessWidget {

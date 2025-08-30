@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 class AppShimmerEffect extends StatelessWidget {
   final double width, height, radius;

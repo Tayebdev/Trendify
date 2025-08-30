@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
-import '../../../helpers/device_helpers.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 class UAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UAppBar({

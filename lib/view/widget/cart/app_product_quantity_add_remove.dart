@@ -3,7 +3,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../circular_icon/circular_icon.dart';
 
 class AppProductQuantityAddRemove extends StatelessWidget {

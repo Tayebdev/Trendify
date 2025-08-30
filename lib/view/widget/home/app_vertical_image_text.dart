@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../circular_contianer/circular_container.dart';
 
 // ignore: must_be_immutable

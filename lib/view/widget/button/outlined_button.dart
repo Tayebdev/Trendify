@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../helpers/device_helpers.dart';
+import '../../../utils/helpers/device_helpers.dart';
 
 class UOutlinedButton extends StatelessWidget {
   final VoidCallback onPressed;

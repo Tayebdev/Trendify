@@ -4,7 +4,7 @@ import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../home/app_rounded_image.dart';
 import '../rounded_container/rounded_container.dart';
 import '../store/brand_title_with_icon.dart';

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 
-import 'helpers/function_helpers.dart';
+import 'utils/helpers/function_helpers.dart';
 import 'view/screen/home/home_view.dart';
 import 'view/screen/profile/setting_view.dart';
 import 'view/screen/store/store_view.dart';

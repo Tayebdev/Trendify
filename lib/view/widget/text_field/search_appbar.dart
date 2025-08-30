@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_texts.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 class SearchAppbar extends StatelessWidget {
   const SearchAppbar({super.key});

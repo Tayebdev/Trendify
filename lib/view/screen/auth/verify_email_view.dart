@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
-import 'package:trendify_app/helpers/device_helpers.dart';
+import 'package:trendify_app/utils/helpers/device_helpers.dart';
 import '../../../controller/auth/verify_email_controller.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../widget/button/elevated_button.dart';
@@ -54,6 +54,7 @@ class VerifyEmailView extends StatelessWidget {
               SizedBox(height: AppSizes.spaceBtwSections),
               UElevatedButton(
                 onPressed: () {
+                  controller.email=Get.arguments["email"];
                   controller.goToVerifyCode();
                 },
                 child: Text(AppTexts.uContinue),

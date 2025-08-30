@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';

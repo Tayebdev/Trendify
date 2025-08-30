@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
-import 'package:trendify_app/helpers/device_helpers.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/device_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 
 class AppTabBar extends StatelessWidget implements PreferredSizeWidget {
   const AppTabBar({super.key, required this.lisTab});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
-import '../../helpers/function_helpers.dart';
+import '../../utils/helpers/function_helpers.dart';
 
 abstract class VerifyEmailController extends GetxController {
   goToLogin();
@@ -9,6 +9,7 @@ abstract class VerifyEmailController extends GetxController {
 }
 
 class VerifyEmailControllerImp extends VerifyEmailController {
+  String? email;
   @override
   goToLogin() {
     Get.toNamed(AppRoutes.login);
@@ -16,7 +17,7 @@ class VerifyEmailControllerImp extends VerifyEmailController {
 
   @override
   goToVerifyCode() {
-    Get.toNamed(AppRoutes.verifyCodeEmail);
+    Get.offAllNamed(AppRoutes.verifyCodeEmail,arguments: {"email":email});
   }
 
   @override

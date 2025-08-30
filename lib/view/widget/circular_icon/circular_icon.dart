@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 
 class AppCircularIcon extends StatelessWidget {
   const AppCircularIcon({

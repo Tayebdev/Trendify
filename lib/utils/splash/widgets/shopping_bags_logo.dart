@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant/app_images.dart';
+import '../../../core/constant/app_images.dart';
 
 class ShoppingBagsLogo extends StatelessWidget {
   const ShoppingBagsLogo({super.key});

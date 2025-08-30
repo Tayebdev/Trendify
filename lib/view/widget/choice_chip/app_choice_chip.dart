@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trendify_app/helpers/function_helpers.dart';
+import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/circular_contianer/circular_container.dart';
 
 import '../../../core/constant/app_colors.dart';

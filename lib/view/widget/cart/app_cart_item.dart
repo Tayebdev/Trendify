@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import '../home/app_rounded_image.dart';
 import '../product/app_product_title_text.dart';
 import '../store/brand_title_with_icon.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
-import '../../../helpers/function_helpers.dart';
+import '../../../utils/helpers/function_helpers.dart';
 import 'shimmer_effect.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
