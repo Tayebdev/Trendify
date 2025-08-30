@@ -89,7 +89,7 @@ class AppHelperFunctions {
     );
   }
 
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = 5}) {
     Get.snackbar(
       title,
       message,

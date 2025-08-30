@@ -87,9 +87,8 @@ Future<void> signUp() async {
     };
     final response = await myClass.postData(AppLinkApi.signUp, body);
     statusRequest = handlingData(response);
-    print(statusRequest);
     if (statusRequest == StatusRequest.success) {
-      Get.offAllNamed(AppRoutes.verifyEmail, arguments: {"email": email});
+      Get.offAllNamed(AppRoutes.verifyEmail, arguments: {"email": email!.text});
     } else if (statusRequest == StatusRequest.failure) {
       AppHelperFunctions.warningSnackBar(
         title: "Oops!",

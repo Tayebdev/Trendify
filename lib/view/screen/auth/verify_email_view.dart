@@ -27,37 +27,39 @@ class VerifyEmailView extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: AppPadding.screenPadding,
-        child: Column(
-          children: [
-            Image.asset(
-              AppImages.mailSentImage,
-              height: UDeviceHelper.getScreenHeight(context) * 0.4,
-            ),
-            Text(
-              AppTexts.verifyEmailTitle,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            SizedBox(height: AppSizes.spaceBtwItems),
-            Text(
-              "ttayeb769@gmail.com",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            SizedBox(height: AppSizes.spaceBtwItems),
-            Text(
-              AppTexts.verifyEmailSubTitle,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            SizedBox(height: AppSizes.spaceBtwSections),
-            UElevatedButton(
-              onPressed: () {
-                controller.goToVerifyCode();
-              },
-              child: Text(AppTexts.uContinue),
-            ),
-          ],
+      body: GetBuilder<VerifyEmailControllerImp>(
+        builder: (controller) => Padding(
+          padding: AppPadding.screenPadding,
+          child: Column(
+            children: [
+              Image.asset(
+                AppImages.mailSentImage,
+                height: UDeviceHelper.getScreenHeight(context) * 0.4,
+              ),
+              Text(
+                AppTexts.verifyEmailTitle,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              SizedBox(height: AppSizes.spaceBtwItems),
+              Text(
+                "${Get.arguments["email"]}",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              SizedBox(height: AppSizes.spaceBtwItems),
+              Text(
+                AppTexts.verifyEmailSubTitle,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              SizedBox(height: AppSizes.spaceBtwSections),
+              UElevatedButton(
+                onPressed: () {
+                  controller.goToVerifyCode();
+                },
+                child: Text(AppTexts.uContinue),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -24,10 +24,11 @@ class AppValidator {
     if (value == null || value.isEmpty) {
       return 'Phone is required';
     }
-    final phoneRegExp = RegExp(r'^\d{10}$');
+    final phoneRegExp = RegExp(r'^(05|06|07)\d{8}$');
     if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
+      return 'Invalid phone number. Must start with 05, 06, or 07 and be 10 digits.';
     }
+
     return null;
   }
 
