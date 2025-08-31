@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:lottie/lottie.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
