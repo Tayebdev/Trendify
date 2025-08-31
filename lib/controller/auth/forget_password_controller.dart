@@ -17,10 +17,11 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   late TextEditingController? email;
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   MyClass myClass = Get.find<MyClass>();
-  StatusRequest statusRequest = StatusRequest.init;
+  late StatusRequest statusRequest;
 
   @override
   void onInit() {
+    statusRequest = StatusRequest.init;
     email = TextEditingController();
     super.onInit();
   }

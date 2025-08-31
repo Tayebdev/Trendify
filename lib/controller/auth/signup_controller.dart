@@ -9,6 +9,7 @@ import 'package:trendify_app/core/functions/handling_data.dart';
 import 'package:trendify_app/core/functions/is_same_password.dart';
 import 'package:trendify_app/utils/helpers/function_helpers.dart';
 
+import '../../core/services/app_services.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class SignupController extends GetxController {
@@ -27,7 +28,9 @@ class SignupControllerImp extends SignupController {
   static SignupControllerImp get instance => Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   bool? obscureText = true;
+  bool signedUp = false;
   MyClass myClass = Get.find<MyClass>();
+  AppServices? appServices = Get.find<AppServices>();
   late StatusRequest statusRequest;
 
   @override
@@ -96,6 +99,25 @@ class SignupControllerImp extends SignupController {
       statusRequest = handlingData(response);
       AppFullScreenLoader.stopLoading();
       if (statusRequest == StatusRequest.success) {
+        signedUp = true;
+        await appServices!.sharedPref.setBool("signedUp", signedUp);
+        await appServices!.sharedPref.setString("token", response['token']);
+        await appServices!.sharedPref.setString(
+          "userId",
+          response['data']['_id'],
+        );
+        await appServices!.sharedPref.setString(
+          "firstName",
+          response['data']['firstName'],
+        );
+        await appServices!.sharedPref.setString(
+          "lastName",
+          response['data']['lastName'],
+        );
+        await appServices!.sharedPref.setString(
+          "email",
+          response['data']['email'],
+        );
         Get.offAllNamed(
           AppRoutes.verifyEmail,
           arguments: {"email": email!.text.trim()},

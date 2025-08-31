@@ -7,4 +7,6 @@ class AppLinkApi {
   static const String forgetPassword = "${server}/auth/forgotPassword";
   static const String verifyPasswordResetCode =
       "${server}/auth/passwordResetCode";
+  static const String resetPassword = "${server}/auth/resetPassword";
+  static const String logIn="${server}/auth/login";
 }

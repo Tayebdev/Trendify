@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:trendify_app/core/middleware/login_middlware.dart';
+import 'package:trendify_app/core/middleware/signup_middlware.dart';
 import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/utils/splash/splash_screen.dart';
@@ -18,7 +20,6 @@ import 'package:trendify_app/view/screen/profile/order_view.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import 'package:trendify_app/view/screen/store/all_brand_view.dart';
 import 'package:trendify_app/view/screen/store/brand_product_view.dart';
-import 'package:trendify_app/view/test_view.dart';
 import 'view/screen/auth/verify_code_email_view.dart';
 import '../view/screen/auth/verify_email_view.dart';
 import '../view/screen/auth/forget_password_view.dart';
@@ -32,13 +33,24 @@ List<GetPage<dynamic>>? getPages = [
     page: () => SplashScreen(),
     middlewares: [OnboardingMiddleware()],
   ),
-  GetPage(name: AppRoutes.login, page: () => LoginView()),
-  GetPage(name: AppRoutes.signUp, page: () => SignupView()),
+  GetPage(
+    name: AppRoutes.login,
+    page: () => LoginView(),
+    middlewares: [LoginMiddleware()]
+  ),
+  GetPage(
+    name: AppRoutes.signUp,
+    page: () => SignupView(),
+    middlewares: [SignupMiddleware()],
+  ),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
   GetPage(name: AppRoutes.verifyEmail, page: () => VerifyEmailView()),
   GetPage(name: AppRoutes.verifyCodeEmail, page: () => VerifyCodeEmailView()),
-  GetPage(name: AppRoutes.verifyCodePassword, page: ()=>VerifyCodePasswordView()),
-  GetPage(name: AppRoutes.updatePassword, page: ()=>UpdatePasswordView()),
+  GetPage(
+    name: AppRoutes.verifyCodePassword,
+    page: () => VerifyCodePasswordView(),
+  ),
+  GetPage(name: AppRoutes.updatePassword, page: () => UpdatePasswordView()),
   GetPage(name: AppRoutes.successCreated, page: () => SuccessCreatedView()),
   GetPage(name: AppRoutes.navigationMenu, page: () => NavigationMenu()),
   GetPage(name: AppRoutes.profile, page: () => ProfileView()),
@@ -54,7 +66,4 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.allBrands, page: () => AllBrandView()),
   GetPage(name: AppRoutes.brandProduct, page: () => BrandProductView()),
   GetPage(name: AppRoutes.order, page: () => OrderView()),
-
-  //test
-  //GetPage(name: AppRoutes.test, page: () => TestView()),
 ];

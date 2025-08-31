@@ -22,7 +22,4 @@ class AppRoutes {
   static const String allBrands = "/allBrands";
   static const String brandProduct = "/brandProduct";
   static const String order = "/order";
-
-  //test
-  //static const String test="/";
 }

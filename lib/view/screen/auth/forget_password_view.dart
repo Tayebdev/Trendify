@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/auth/forget_password_controller.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/core/functions/app_validator.dart';
+import 'package:trendify_app/core/handle_data_view/handle_data_view.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 
 import '../../../core/constant/app_sizes.dart';
@@ -21,34 +22,42 @@ class ForgetPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: AppPadding.screenPadding,
-        child: Form(
-          key: controller.formState,
-          child: Column(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    AppTexts.forgetPasswordTitle,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                  SizedBox(height: AppSizes.sm),
-                  Text(AppTexts.forgetPasswordSubTitle),
-                ],
-              ),
-              SizedBox(height: AppSizes.spaceBtwSections * 2),
-              AppTextField(
-                validator: (value)=> AppValidator.validateEmail(value),
-                icon: Iconsax.direct_right,
-                text: AppTexts.email,
-                textEditingController: controller.email,
-                value: false,
-              ),
-              SizedBox(height: AppSizes.spaceBtwSections),
-              UElevatedButton(onPressed: () {controller.goToVerifyCode();}, child: Text(AppTexts.submit)),
-            ],
+      body: HandleDataView(
+        statusRequest: controller.statusRequest,
+        widget: Padding(
+          padding: AppPadding.screenPadding,
+          child: Form(
+            key: controller.formState,
+            child: Column(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      AppTexts.forgetPasswordTitle,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                    SizedBox(height: AppSizes.sm),
+                    Text(AppTexts.forgetPasswordSubTitle),
+                  ],
+                ),
+                SizedBox(height: AppSizes.spaceBtwSections * 2),
+                AppTextField(
+                  validator: (value) => AppValidator.validateEmail(value),
+                  icon: Iconsax.direct_right,
+                  text: AppTexts.email,
+                  textEditingController: controller.email,
+                  value: false,
+                ),
+                SizedBox(height: AppSizes.spaceBtwSections),
+                UElevatedButton(
+                  onPressed: () {
+                    controller.goToVerifyCode();
+                  },
+                  child: Text(AppTexts.submit),
+                ),
+              ],
+            ),
           ),
         ),
       ),

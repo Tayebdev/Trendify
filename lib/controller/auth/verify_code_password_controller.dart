@@ -47,7 +47,7 @@ class VerifyCodePasswordControllerImp extends VerifyCodePasswordController {
       statusRequest = handlingData(response);
       AppFullScreenLoader.stopLoading();
       if (statusRequest == StatusRequest.success) {
-        Get.offAllNamed(AppRoutes.updatePassword);
+        Get.offAllNamed(AppRoutes.updatePassword,arguments: {"email":email});
       } else {
         AppHelperFunctions.warningSnackBar(
           title: "Invalid Code",
