@@ -3,8 +3,8 @@ class AppValidator {
     if (value == null || value.isEmpty) {
       return '$fieldName is required';
     }
-    if (value.length < 8) {
-      return '$fieldName must be at least 8 characters long.';
+    if (value.length < 5) {
+      return '$fieldName must be at least 5 characters long.';
     }
     return null;
   }

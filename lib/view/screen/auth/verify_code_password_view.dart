@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:lottie/lottie.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
@@ -37,7 +38,7 @@ class VerifyCodePasswordView extends StatelessWidget {
               ),
               SizedBox(height: AppSizes.spaceBtwItems),
               Text(
-                "mitayeb10@gmail.com",
+                "${controller.email}",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(height: AppSizes.spaceBtwItems),
@@ -62,7 +63,7 @@ class VerifyCodePasswordView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 onSubmit: (String verificationCode) {
-                  // handle submission
+                  controller.verifyCode = verificationCode;
                 },
               ),
               SizedBox(height: AppSizes.spaceBtwSections),
@@ -73,21 +74,38 @@ class VerifyCodePasswordView extends StatelessWidget {
                 child: Text(AppTexts.uContinue),
               ),
               SizedBox(height: AppSizes.spaceBtwItems),
-              TextButton(
-                onPressed: () {
-                  //controller.goToForgetPassword();
-                },
-                child: Text(
-                  AppTexts.sendCode,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.w600,
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColors.primary,
-                  ),
-                ),
-              ),
+              Obx(() {
+                if (controller.remainingSeconds.value == 0) {
+                  return TextButton(
+                    onPressed: controller.goToForgetPassword(),
+                    child: Text(
+                      "Resend Code",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.underline,
+                        decorationColor: AppColors.primary,
+                      ),
+                    ),
+                  );
+                } else {
+                  final minutes = (controller.remainingSeconds.value ~/ 60)
+                      .toString()
+                      .padLeft(2, '0');
+                  final seconds = (controller.remainingSeconds.value % 60)
+                      .toString()
+                      .padLeft(2, '0');
+                  return Text(
+                    "Resend available in $minutes:$seconds",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  );
+                }
+              }),
             ],
           ),
         ),
