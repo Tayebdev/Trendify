@@ -24,7 +24,7 @@ class LoginControllerImp extends LoginController {
   late StatusRequest statusRequest;
   late TextEditingController? email;
   late TextEditingController? password;
-  AppServices? appServices = Get.find<AppServices>();
+  AppServices? appServices = Get.put(AppServices());
   bool? obscureText = true;
   bool isLoggedIn = false;
 

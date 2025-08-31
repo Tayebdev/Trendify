@@ -36,7 +36,7 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(
     name: AppRoutes.login,
     page: () => LoginView(),
-    middlewares: [LoginMiddleware()]
+    middlewares: [LoginMiddleware()],
   ),
   GetPage(
     name: AppRoutes.signUp,

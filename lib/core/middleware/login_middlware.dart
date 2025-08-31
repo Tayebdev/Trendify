@@ -9,9 +9,8 @@ class LoginMiddleware extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
     final token = appServices.sharedPref.getString("token");
-    final isLoggedIn = appServices.sharedPref.getBool('isLoggedIn') ?? false;
-
-    if (isLoggedIn && token != null) {
+    final isLoggedIn = appServices.sharedPref.getBool('isLoggedIn');
+    if (isLoggedIn==true && token != null) {
       return const RouteSettings(name: AppRoutes.navigationMenu);
     }
     return null;
