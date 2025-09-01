@@ -39,7 +39,7 @@ class VerifyCodeEmailView extends StatelessWidget {
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems),
                   Text(
-                    "${Get.arguments["email"]}",
+                    "${controller.email}",
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems),

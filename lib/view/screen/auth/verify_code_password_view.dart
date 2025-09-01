@@ -22,6 +22,7 @@ class VerifyCodePasswordView extends StatelessWidget {
       appBar: AppBar(),
       body: GetBuilder<VerifyCodePasswordControllerImp>(
         builder: (controller) => HandleDataView(
+          showLoading: false,
           statusRequest: controller.statusRequest,
           widget: SingleChildScrollView(
             child: Padding(

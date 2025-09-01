@@ -28,7 +28,6 @@ class SignupControllerImp extends SignupController {
   static SignupControllerImp get instance => Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   bool? obscureText = true;
-  bool signedUp = false;
   MyClass myClass = Get.find<MyClass>();
   AppServices? appServices = Get.find<AppServices>();
   late StatusRequest statusRequest;
@@ -99,8 +98,7 @@ class SignupControllerImp extends SignupController {
       statusRequest = handlingData(response);
       AppFullScreenLoader.stopLoading();
       if (statusRequest == StatusRequest.success) {
-        signedUp = true;
-        await appServices!.sharedPref.setBool("signedUp", signedUp);
+        await appServices!.sharedPref.setBool("signedUp", true);
         await appServices!.sharedPref.setString("token", response['token']);
         await appServices!.sharedPref.setString(
           "userId",

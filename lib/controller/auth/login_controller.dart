@@ -24,9 +24,8 @@ class LoginControllerImp extends LoginController {
   late StatusRequest statusRequest;
   late TextEditingController? email;
   late TextEditingController? password;
-  AppServices? appServices = Get.put(AppServices());
+  AppServices? appServices = Get.find<AppServices>();
   bool? obscureText = true;
-  bool isLoggedIn = false;
 
   @override
   void toggleObscureText() {
@@ -79,8 +78,8 @@ class LoginControllerImp extends LoginController {
       AppFullScreenLoader.stopLoading();
       if (statusRequest == StatusRequest.success &&
           response['data']?['role'] == "user") {
-        isLoggedIn = true;
-        await appServices!.sharedPref.setBool("isLoggedIn", isLoggedIn);
+        await appServices!.sharedPref.setBool("isLoggedIn", true);
+        await appServices!.sharedPref.setBool("visited", true);
         await appServices!.sharedPref.setString("token", response['token']);
         await appServices!.sharedPref.setString(
           "userId",

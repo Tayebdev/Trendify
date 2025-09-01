@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:trendify_app/core/middleware/login_middlware.dart';
-import 'package:trendify_app/core/middleware/signup_middlware.dart';
 import 'package:trendify_app/core/middleware/onboarding_middleware.dart';
 import 'package:trendify_app/navigation_menu.dart';
 import 'package:trendify_app/utils/splash/splash_screen.dart';
@@ -36,12 +34,10 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(
     name: AppRoutes.login,
     page: () => LoginView(),
-    middlewares: [LoginMiddleware()],
   ),
   GetPage(
     name: AppRoutes.signUp,
     page: () => SignupView(),
-    middlewares: [SignupMiddleware()],
   ),
   GetPage(name: AppRoutes.forgetPassword, page: () => ForgetPasswordView()),
   GetPage(name: AppRoutes.verifyEmail, page: () => VerifyEmailView()),
