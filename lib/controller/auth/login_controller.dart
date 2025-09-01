@@ -79,7 +79,6 @@ class LoginControllerImp extends LoginController {
       if (statusRequest == StatusRequest.success &&
           response['data']?['role'] == "user") {
         await appServices!.sharedPref.setBool("isLoggedIn", true);
-        await appServices!.sharedPref.setBool("visited", true);
         await appServices!.sharedPref.setString("token", response['token']);
         await appServices!.sharedPref.setString(
           "userId",

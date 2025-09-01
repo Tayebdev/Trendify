@@ -98,7 +98,6 @@ class SignupControllerImp extends SignupController {
       statusRequest = handlingData(response);
       AppFullScreenLoader.stopLoading();
       if (statusRequest == StatusRequest.success) {
-        await appServices!.sharedPref.setBool("signedUp", true);
         await appServices!.sharedPref.setString("token", response['token']);
         await appServices!.sharedPref.setString(
           "userId",
