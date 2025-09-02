@@ -9,12 +9,14 @@ import '../circular_contianer/circular_container.dart';
 class AppVerticalImageText extends StatelessWidget {
   const AppVerticalImageText({
     super.key,
-    required this.image,
+    this.image,
     required this.title,
     required this.onTap,
     this.backgroundColor,
     this.textColor,
+    this.isAsset = true,
   });
+  final bool isAsset;
   final String? title;
   final String? image;
   final VoidCallback onTap;
@@ -23,7 +25,7 @@ class AppVerticalImageText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark=AppHelperFunctions.isDarkMode(context);
+    final dark = AppHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -32,8 +34,11 @@ class AppVerticalImageText extends StatelessWidget {
             height: 56,
             width: 56,
             padding: EdgeInsets.all(AppSizes.sm),
-            backgroundColor: backgroundColor ?? (dark ? AppColors.dark :AppColors.light),
-            child: Image.asset(image!, fit: BoxFit.cover),
+            backgroundColor:
+                backgroundColor ?? (dark ? AppColors.dark : AppColors.light),
+            child: isAsset
+                ? Image.asset(image!, fit: BoxFit.cover)
+                : Image.network(image!, fit: BoxFit.cover,),
           ),
           SizedBox(height: AppSizes.spaceBtwItems / 2),
           SizedBox(

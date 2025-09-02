@@ -1,13 +1,15 @@
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trendify_app/core/constant/app_images.dart';
+import 'package:trendify_app/core/class/status_request.dart';
+import 'package:trendify_app/core/constant/app_link_api.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
+import '../../../controller/home_controller.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_texts.dart';
+import '../shimmer/category_shimmer.dart';
 import 'app_vertical_image_text.dart';
 
 class AppCategoryHome extends StatelessWidget {
@@ -27,25 +29,39 @@ class AppCategoryHome extends StatelessWidget {
             ).textTheme.headlineSmall!.apply(color: AppColors.white),
           ),
           SizedBox(height: AppSizes.spaceBtwItems),
-          SizedBox(
-            height: 90,
-            child: ListView.separated(
-              separatorBuilder: (context, index) =>
-                  SizedBox(width: AppSizes.spaceBtwItems),
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return AppVerticalImageText(
-                  title: "Sport",
-                  image: AppImages.sport,
-                  onTap: () {
-                    // go to sub Category
-                    Get.toNamed(AppRoutes.subCetgory);
-                  },
-                  textColor: AppColors.white,
-                );
-              },
-            ),
+          GetBuilder<HomeControllerImp>(
+            builder: (controller) =>
+                controller.statusRequest == StatusRequest.loading
+                ? AppCategoryShimmer()
+                : SizedBox(
+                    height: 90,
+                    child: ListView.separated(
+                      separatorBuilder: (context, index) =>
+                          SizedBox(width: AppSizes.spaceBtwItems),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: controller.categoryList.length,
+                      itemBuilder: (context, index) {
+                        return AppVerticalImageText(
+                          title: "${controller.categoryList[index].nameAr}",
+                          isAsset: false,
+                          image:
+                              '${AppLinkApi.imageCategory}/${controller.categoryList[index].image}',
+                          onTap: () {
+                            Get.toNamed(
+                              AppRoutes.subCetgory,
+                              arguments: {
+                                "categoryId":
+                                    controller.categoryList[index].sId,
+                                "nameCategory":
+                                    controller.categoryList[index].name,
+                              },
+                            );
+                          },
+                          textColor: AppColors.white,
+                        );
+                      },
+                    ),
+                  ),
           ),
         ],
       ),
