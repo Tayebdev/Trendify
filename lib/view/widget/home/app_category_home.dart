@@ -42,7 +42,7 @@ class AppCategoryHome extends StatelessWidget {
                       itemCount: controller.categoryList.length,
                       itemBuilder: (context, index) {
                         return AppVerticalImageText(
-                          title: "${controller.categoryList[index].nameAr}",
+                          title: "${controller.categoryList[index].name}",
                           isAsset: false,
                           image:
                               '${AppLinkApi.imageCategory}/${controller.categoryList[index].image}',
