@@ -6,10 +6,10 @@ import 'package:trendify_app/data/static/static.dart';
 import '../core/services/app_services.dart';
 
 abstract class OnboardingController extends GetxController {
-  nextPage();
-  skipPage();
-  upadtePageIndicator(int index);
-  dotNavigationClick(int index);
+  Future<void> nextPage();
+  void skipPage();
+  void upadtePageIndicator(int index);
+  void dotNavigationClick(int index);
 }
 
 class OnboardingControllerImp extends OnboardingController {
@@ -29,14 +29,19 @@ class OnboardingControllerImp extends OnboardingController {
   }
 
   @override
-  nextPage() {
-    AppServices? appServices = Get.find<AppServices>();
+  nextPage() async {
+    AppServices appServices = Get.find<AppServices>();
+
     if (currentPage.value == onboardingList.length - 1) {
-      appServices.sharedPref.setBool("visited", true);
-      return Get.offAllNamed(AppRoutes.login);
+      await appServices.sharedPref.setBool("visited", true);
+      await Get.offAllNamed(AppRoutes.login);
+      return;
     }
+
     currentPage.value++;
     pageController.jumpToPage(currentPage.value);
+
+    return;
   }
 
   @override

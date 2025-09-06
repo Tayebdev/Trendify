@@ -9,7 +9,7 @@ import '../utils/helpers/function_helpers.dart';
 import '../utils/popups/full_screen_loader.dart';
 
 abstract class SubCategoryController extends GetxController {
-  getAllSubCategory();
+  void getAllSubCategory();
 }
 
 class SubCategoryControllerImp extends SubCategoryController {
@@ -17,7 +17,7 @@ class SubCategoryControllerImp extends SubCategoryController {
   late String categoryId;
   MyClass myClass = Get.find<MyClass>();
   StatusRequest statusRequest = StatusRequest.init;
-  List<subCategoryModel> subCategoryList = [];
+  List<SubCategoryModel> subCategoryList = [];
   @override
 @override
 getAllSubCategory() async {
@@ -32,7 +32,7 @@ getAllSubCategory() async {
       subCategoryList.clear();
       subCategoryList.addAll(
         (response['data'] as List)
-            .map((value) => subCategoryModel.fromJson(value))
+            .map((value) => SubCategoryModel.fromJson(value))
             .toList(),
       );
     }else{

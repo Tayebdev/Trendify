@@ -10,7 +10,7 @@ import '../../utils/helpers/function_helpers.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class ForgetPasswordController extends GetxController {
-  goToVerifyCode();
+  void goToVerifyCode();
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {

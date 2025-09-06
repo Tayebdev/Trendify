@@ -10,7 +10,7 @@ import '../text_field/text_field_password_signup.dart';
 
 // ignore: must_be_immutable
 class AppFormSignup extends StatelessWidget {
-  AppFormSignup({super.key});
+  const AppFormSignup({super.key});
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SignupControllerImp>(

@@ -7,7 +7,7 @@ class ChangeTranslation extends GetxController {
 
   AppServices appServices = Get.find();
 
-  changeLang(String langCode) async {
+  Future<void> changeLang(String langCode) async {
     Locale locale = Locale(langCode);
     await appServices.sharedPref.setString('langCode', langCode);
     Get.updateLocale(locale);

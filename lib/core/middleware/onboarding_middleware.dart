@@ -8,13 +8,16 @@ class OnboardingMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    final hasVisited = appServices.sharedPref.getBool('visited');
-    if (hasVisited == true) {
-      if(appServices.sharedPref.getBool('isLoggedIn') == true){
+    final hasVisited = appServices.sharedPref.getBool('visited') ?? false;
+    final isLoggedIn = appServices.sharedPref.getBool('isLoggedIn') ?? false;
+
+    if (hasVisited) {
+      if (isLoggedIn) {
         return const RouteSettings(name: AppRoutes.navigationMenu);
+      } else {
+        return const RouteSettings(name: AppRoutes.login);
       }
     }
-
     return null;
   }
 }

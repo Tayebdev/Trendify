@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:trendify_app/utils/helpers/function_helpers.dart';
-
 import '../../../core/constant/app_colors.dart';
 
 class AnimatedAppName extends StatefulWidget {
+  const AnimatedAppName({super.key});
+
   @override
-  _AnimatedAppNameState createState() => _AnimatedAppNameState();
+  AnimatedAppNameState createState() => AnimatedAppNameState();
 }
 
-class _AnimatedAppNameState extends State<AnimatedAppName>
+class AnimatedAppNameState extends State<AnimatedAppName>
     with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
   late final Animation<Offset> _offset;

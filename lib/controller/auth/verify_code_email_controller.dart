@@ -12,9 +12,9 @@ import '../../utils/helpers/function_helpers.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class VerifyCodeEmailController extends GetxController {
-  goToForgetPassword();
-  goToSuccesCreated();
-  startTimer();
+  void goToForgetPassword();
+  void goToSuccesCreated();
+  void startTimer();
 }
 
 class VerifyCodeEmailControllerImp extends VerifyCodeEmailController {
@@ -64,7 +64,6 @@ class VerifyCodeEmailControllerImp extends VerifyCodeEmailController {
       });
       statusRequest = handlingData(response);
       AppFullScreenLoader.stopLoading();
-      print(statusRequest);
       if (statusRequest == StatusRequest.success) {
         Get.offAllNamed(AppRoutes.successCreated);
       } else {

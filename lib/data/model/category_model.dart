@@ -1,12 +1,17 @@
-class categoryModel {
+class CategoryModel {
   String? sId;
   String? name;
   String? nameAr;
   String? image;
 
-  categoryModel({this.sId, this.name, this.nameAr, this.image});
+  CategoryModel({
+    this.sId,
+    this.name,
+    this.nameAr,
+    this.image,
+  });
 
-  categoryModel.fromJson(Map<String, dynamic> json) {
+  CategoryModel.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     name = json['name'];
     nameAr = json['name_ar'];
@@ -14,11 +19,11 @@ class categoryModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['name'] = this.name;
-    data['name_ar'] = this.nameAr;
-    data['image'] = this.image;
+    final data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['name'] = name;
+    data['name_ar'] = nameAr;
+    data['image'] = image;
     return data;
   }
 }

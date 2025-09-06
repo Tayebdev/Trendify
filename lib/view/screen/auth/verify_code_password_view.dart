@@ -13,7 +13,7 @@ import '../../widget/button/elevated_button.dart';
 
 // ignore: must_be_immutable
 class VerifyCodePasswordView extends StatelessWidget {
-  VerifyCodePasswordView({super.key});
+  const VerifyCodePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class VerifyCodePasswordView extends StatelessWidget {
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems),
                   Text(
-                    "${controller.email}",
+                    "$controller.email",
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems),
@@ -81,7 +81,7 @@ class VerifyCodePasswordView extends StatelessWidget {
                   Obx(() {
                     if (controller.remainingSeconds.value == 0) {
                       return TextButton(
-                        onPressed: controller.goToForgetPassword(),
+                        onPressed:()=> controller.goToForgetPassword(),
                         child: Text(
                           "Resend Code",
                           style: TextStyle(

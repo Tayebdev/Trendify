@@ -46,7 +46,7 @@ class AppHelperFunctions {
     }
   }
 
-  static customToast({required message}) {
+  static void customToast({required String message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
@@ -74,7 +74,7 @@ class AppHelperFunctions {
     );
   }
 
-  static warningSnackBar({required title, message = ''}) {
+  static void  warningSnackBar({required String title, message = ''}) {
     Get.snackbar(
       title,
       message,
@@ -89,7 +89,7 @@ class AppHelperFunctions {
     );
   }
 
-  static successSnackBar({required title, message = '', duration = 5}) {
+  static void successSnackBar({required String title, message = '', duration = 5}) {
     Get.snackbar(
       title,
       message,
@@ -104,7 +104,7 @@ class AppHelperFunctions {
     );
   }
 
-  static errorSnackBar({required title, message = ''}) {
+  static void  errorSnackBar({required String title, message = ''}) {
     Get.snackbar(
       title,
       message,

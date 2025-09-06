@@ -12,10 +12,10 @@ import '../../utils/helpers/function_helpers.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class LoginController extends GetxController {
-  toggleObscureText();
-  onLogin();
-  goToSignUp();
-  goToForgetPassword();
+  void toggleObscureText();
+  void onLogin();
+  void goToSignUp();
+  void goToForgetPassword();
 }
 
 class LoginControllerImp extends LoginController {

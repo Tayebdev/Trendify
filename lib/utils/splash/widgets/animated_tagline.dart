@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../core/constant/app_colors.dart';
 
 class AnimatedTagline extends StatefulWidget {
+  const AnimatedTagline({super.key});
+
   @override
-  _AnimatedTaglineState createState() => _AnimatedTaglineState();
+  AnimatedTaglineState createState() => AnimatedTaglineState();
 }
 
-class _AnimatedTaglineState extends State<AnimatedTagline>
+class AnimatedTaglineState extends State<AnimatedTagline>
     with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
   late final Animation<Offset> _offset;
@@ -39,7 +41,7 @@ class _AnimatedTaglineState extends State<AnimatedTagline>
       position: _offset,
       child: FadeTransition(
         opacity: _opacity,
-        child: Text(
+        child: const Text(
           'happy shop',
           style: TextStyle(
             fontSize: 22,

@@ -12,10 +12,10 @@ import '../utils/helpers/function_helpers.dart';
 import '../utils/popups/full_screen_loader.dart';
 
 abstract class HomeController extends GetxController {
-  dotNavigationClick(int index);
-  goToCart();
-  goToAllProduct();
-  getAllCategory();
+  void dotNavigationClick(int index);
+  void goToCart();
+  void goToAllProduct();
+  void getAllCategory();
 }
 
 class HomeControllerImp extends HomeController {
@@ -27,7 +27,7 @@ class HomeControllerImp extends HomeController {
   AppServices appServices = Get.find<AppServices>();
   MyClass myClass = Get.find<MyClass>();
   StatusRequest statusRequest=StatusRequest.init;
-  List<categoryModel> categoryList = [];
+  List<CategoryModel> categoryList = [];
 
   @override
   dotNavigationClick(index) {
@@ -61,7 +61,7 @@ class HomeControllerImp extends HomeController {
       if (statusRequest == StatusRequest.success && category["result"] > 0) {
         categoryList.addAll(
           (category['data'] as List)
-              .map((value) => categoryModel.fromJson(value))
+              .map((value) => CategoryModel.fromJson(value))
               .toList(),
         );
       }

@@ -5,8 +5,8 @@ import 'package:trendify_app/core/constant/app_routes.dart';
 import '../../utils/helpers/function_helpers.dart';
 
 abstract class VerifyEmailController extends GetxController {
-  goToLogin();
-  goToVerifyCode();
+  void goToLogin();
+  void goToVerifyCode();
 }
 
 class VerifyEmailControllerImp extends VerifyEmailController {

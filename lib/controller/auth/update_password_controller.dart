@@ -12,8 +12,8 @@ import '../../utils/helpers/function_helpers.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class UpdatePasswordController extends GetxController {
-  toggleObscureText();
-  goToHome();
+  void toggleObscureText();
+  void goToHome();
 }
 
 class UpdatePasswordControllerImp extends UpdatePasswordController {

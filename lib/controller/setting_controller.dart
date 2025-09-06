@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 
 abstract class SettingController extends GetxController {
-  goToProfile();
-  toggleTheme(bool value);
-  goToAddressUser();
-  goToCart();
+  void goToProfile();
+  void toggleTheme(bool value);
+  void goToAddressUser();
+  void goToCart();
 }
 
 class SettingControllerImp extends SettingController {

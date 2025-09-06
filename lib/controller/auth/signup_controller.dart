@@ -13,9 +13,9 @@ import '../../core/services/app_services.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 abstract class SignupController extends GetxController {
-  toggleObscureText();
-  goToLogin();
-  signUp();
+  void toggleObscureText();
+  void goToLogin();
+  void signUp();
 }
 
 class SignupControllerImp extends SignupController {

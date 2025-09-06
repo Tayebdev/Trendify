@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 
 abstract class CartController extends GetxController {
-  goToOrderReview();
+  void goToOrderReview();
 }
 
 class CartControllerImp extends CartController {

@@ -12,7 +12,7 @@ import '../../widget/text_field/text_field.dart';
 import '../../widget/text_field/text_field_password_updated.dart';
 
 class UpdatePasswordView extends StatelessWidget {
-  UpdatePasswordView({super.key});
+  const UpdatePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {

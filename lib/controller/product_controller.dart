@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 
 abstract class ProductController extends GetxController {
-  goToDetailsProduct();
-  goToReviewsProduct();
+  void goToDetailsProduct();
+  void goToReviewsProduct();
 }
 
 class ProductControllerImp extends ProductController {
