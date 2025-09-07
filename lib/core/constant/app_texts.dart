@@ -84,6 +84,7 @@ class AppTexts {
   static const String youMightLike = "You might like";
   static const String account = "Account";
   static const String profile = "Profile";
+  static const String editProfile = "Edit Profile";
   static const String acountSetting = "Account Settings";
   static const String address = "My Addresses";
   static const String subTitleAddress = "Set shopping delivery address";
@@ -113,6 +114,7 @@ class AppTexts {
   static const String subTitleSafeMode = "Search result is safe for all ages";
   static const String logout = "Logout";
   static const String payment = "Payment Success!";
+  static const String updateEmailAndPhone="Update your phone number and email to stay reachable, receive important notifications, and keep your account secure and up to date.";
   static const String subTitlePayment =
       'Thank you for shopping with Trendify! Your payment was successful, and your order is now being processed. We’ll notify you in the app when your package is on its way. Happy shopping!';
 }

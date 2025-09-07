@@ -80,22 +80,22 @@ class LoginControllerImp extends LoginController {
           response['data']?['role'] == "user") {
         await appServices!.sharedPref.setBool("isLoggedIn", true);
         await appServices!.sharedPref.setString("token", response['token']);
-        await appServices!.sharedPref.setString(
-          "userId",
-          response['data']['_id'],
-        );
-        await appServices!.sharedPref.setString(
-          "firstName",
-          response['data']['firstName'],
-        );
-        await appServices!.sharedPref.setString(
-          "lastName",
-          response['data']['lastName'],
-        );
-        await appServices!.sharedPref.setString(
-          "email",
-          response['data']['email'],
-        );
+        // await appServices!.sharedPref.setString(
+        //   "userId",
+        //   response['data']['_id'],
+        // );
+        // await appServices!.sharedPref.setString(
+        //   "firstName",
+        //   response['data']['firstName'],
+        // );
+        // await appServices!.sharedPref.setString(
+        //   "lastName",
+        //   response['data']['lastName'],
+        // );
+        // await appServices!.sharedPref.setString(
+        //   "email",
+        //   response['data']['email'],
+        // );
         Get.offAllNamed(AppRoutes.navigationMenu);
       } else {
         AppHelperFunctions.warningSnackBar(

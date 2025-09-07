@@ -15,12 +15,12 @@ class MyClass {
   }
 
   Future<dynamic> deleteData(String url, Map<String, dynamic> data) async {
-    var result = await crud.putDataRequest(url, {});
+    var result = await crud.deleteDataRequest(url);
     return result.fold((left) => left, (right) => right);
   }
 
   Future<dynamic> putData(String url, Map<String, dynamic> data) async {
-    var result = await crud.deleteDataRequest(url);
+    var result = await crud.putDataRequest(url, data);
     return result.fold((left) => left, (right) => right);
   }
 }

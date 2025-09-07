@@ -14,6 +14,8 @@ import 'package:trendify_app/view/screen/home/sub_category_view.dart';
 import 'package:trendify_app/view/screen/product/all_product_view.dart';
 import 'package:trendify_app/view/screen/product/product_details_view.dart';
 import 'package:trendify_app/view/screen/product/product_reviews.dart';
+import 'package:trendify_app/view/screen/profile/edit_profile_information_view.dart';
+import 'package:trendify_app/view/screen/profile/edit_profile_personal_view.dart';
 import 'package:trendify_app/view/screen/profile/order_view.dart';
 import 'package:trendify_app/view/screen/profile/profile_view.dart';
 import 'package:trendify_app/view/screen/store/all_brand_view.dart';
@@ -62,4 +64,6 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoutes.allBrands, page: () => AllBrandView()),
   GetPage(name: AppRoutes.brandProduct, page: () => BrandProductView()),
   GetPage(name: AppRoutes.order, page: () => OrderView()),
+  GetPage(name: AppRoutes.editProfile, page: () => EditProfileViewInformation()),
+ GetPage(name: AppRoutes.editPersonal, page: () => EditProfilePersonalView()),
 ];
