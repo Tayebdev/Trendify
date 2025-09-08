@@ -33,6 +33,7 @@ class BrandCard extends StatelessWidget {
           children: [
             Flexible(
               child: AppRoundedImage(
+                isNetworkImage: true,
                 imageUrl: imageUrl,
                 backgroundColor: Colors.transparent,
               ),

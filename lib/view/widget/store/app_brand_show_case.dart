@@ -28,6 +28,7 @@ class AppBrandShowCase extends StatelessWidget {
             imageUrl: AppImages.brand,
             numberProduct: "172 product",
             title: "Bata",
+      
           ),
           SizedBox(
             height: 100,

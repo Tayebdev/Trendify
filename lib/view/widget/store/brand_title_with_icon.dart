@@ -22,8 +22,14 @@ class BrandTitleWithIcon extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(width: AppSizes.xs),
-        Icon(Iconsax.verify5, color: AppColors.primary, size: AppSizes.iconXs),
+        Padding(
+          padding: const EdgeInsets.only(left: AppSizes.sm),
+          child: Icon(
+            Iconsax.verify5,
+            color: AppColors.primary,
+            size: AppSizes.iconXs,
+          ),
+        ),
       ],
     );
   }
