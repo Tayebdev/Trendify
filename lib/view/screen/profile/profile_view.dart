@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/profile/profile_controller.dart';
+import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/handle_data_view/handle_data_view.dart';
@@ -50,7 +51,7 @@ class ProfileView extends StatelessWidget {
                           AppCircularImage(
                             image: controller.user?.image != null
                                 ? '${AppLinkApi.imageUser}/${controller.user!.image}'
-                                : 'assets/images/default_profile.png',
+                                : AppImages.user,
                             width: 80,
                             height: 80,
                             isNetworkImage: controller.user?.image != null,

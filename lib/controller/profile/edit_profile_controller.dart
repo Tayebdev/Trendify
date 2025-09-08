@@ -9,6 +9,7 @@ import '../../core/functions/handling_data.dart';
 import '../../core/services/app_services.dart';
 import '../../utils/helpers/function_helpers.dart';
 import '../../utils/popups/full_screen_loader.dart';
+import '../setting_controller.dart';
 import 'profile_controller.dart';
 
 abstract class EditProfileController extends GetxController {
@@ -37,7 +38,7 @@ class EditProfileControllerImp extends EditProfileController {
         AppImages.docerAnimation,
       );
       update();
-      var response = await myClass.putData("${AppLinkApi.user}/$userId", {
+      var response = await myClass.putData("${AppLinkApi.user}$userId", {
         "firstName": firstName.text.trim(),
         "lastName": lastName.text.trim(),
       });
@@ -54,6 +55,8 @@ class EditProfileControllerImp extends EditProfileController {
           );
           final profileController = Get.find<ProfileControllerImp>();
           profileController.getUser();
+          final settingController = Get.find<SettingControllerImp>();
+          settingController.onInit();
           Get.offAllNamed(AppRoutes.navigationMenu);
         } else {
           AppFullScreenLoader.stopLoading();

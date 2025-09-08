@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trendify_app/controller/setting_controller.dart';
 
 import '../../core/class/my_class.dart';
 import '../../core/class/status_request.dart';
@@ -37,7 +38,7 @@ class EditPersonalControllerImp extends EditPersonalController {
         AppImages.docerAnimation,
       );
       update();
-      var response = await myClass.putData("${AppLinkApi.user}/$userId", {
+      var response = await myClass.putData("${AppLinkApi.user}$userId", {
         "email": email.text.trim(),
         "phone": phone.text.trim(),
       });
@@ -53,6 +54,8 @@ class EditPersonalControllerImp extends EditPersonalController {
           );
           final profileController = Get.find<ProfileControllerImp>();
           profileController.getUser();
+          final settingController = Get.find<SettingControllerImp>();
+          settingController.onInit();
           Get.offAllNamed(AppRoutes.navigationMenu);
         }
       } else {

@@ -60,7 +60,7 @@ class SubCategoryView extends StatelessWidget {
                             SizedBox(width: AppSizes.spaceBtwItems),
                       ),
                     ),
-                    SizedBox(height: AppSizes.spaceBtwSections),
+                    SizedBox(height: AppSizes.spaceBtwSections/4),
                   ],
                 ],
               ],
