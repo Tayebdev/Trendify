@@ -12,7 +12,7 @@ class AppImages {
   static const String docerAnimation='assets/animations/animation-of-docer.json';
   // logo
   static const String sport = 'assets/images/sports.png';
-  static const String product = 'assets/images/product.png';
+  static const String product = 'assets/images/products-7f716097-3903-4b44-93f5-e83905326b9c-1757427782857.png';
   static const String brand = "assets/images/bata.png";
   static const String user = 'assets/images/user.png';
   static const String logo = 'assets/logo/logo_recolored_new.png';

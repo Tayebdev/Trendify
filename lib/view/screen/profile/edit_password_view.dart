@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/profile/edit_password_controller.dart';
+import 'package:trendify_app/core/handle_data_view/handle_data_view.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_texts.dart';
@@ -31,43 +32,48 @@ class EditPasswordView extends StatelessWidget {
         ),
       ),
       body: GetBuilder<EditPasswordControllerImp>(
-        builder: (controller) => SingleChildScrollView(
-          child: Padding(
-            padding: AppPadding.screenPadding,
-            child: Form(
-              key: controller.formState,
-              child: Column(
-                children: [
-                  Text(
-                    AppTexts.changePassword,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  SizedBox(height: AppSizes.spaceBtwInputFields),
-                  AppTextField(
-                    validator: (value) => AppValidator.validatePassword(value),
-                    icon: Iconsax.password_check,
-                    text: AppTexts.currentPassword,
-                    textEditingController: controller.currentPassword,
-                    value: true,
-                  ),
-                  SizedBox(height: AppSizes.spaceBtwInputFields / 2),
-                  TextFieldPasswordChanged(),
-                  SizedBox(height: AppSizes.spaceBtwInputFields / 2),
-                  AppTextField(
-                    validator: (value) => AppValidator.validatePassword(value),
-                    icon: Iconsax.password_check,
-                    text: AppTexts.confirmPassword,
-                    textEditingController: controller.confirmPassword,
-                    value: true,
-                  ),
-                  SizedBox(height: AppSizes.spaceBtwInputFields),
-                  UElevatedButton(
-                    onPressed: () {
-                      controller.editPassword();
-                    },
-                    child: Text("Save"),
-                  ),
-                ],
+        builder: (controller) => HandleDataView(
+          statusRequest: controller.statusRequest,
+          widget: SingleChildScrollView(
+            child: Padding(
+              padding: AppPadding.screenPadding,
+              child: Form(
+                key: controller.formState,
+                child: Column(
+                  children: [
+                    Text(
+                      AppTexts.changePassword,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    SizedBox(height: AppSizes.spaceBtwInputFields),
+                    AppTextField(
+                      validator: (value) =>
+                          AppValidator.validatePassword(value),
+                      icon: Iconsax.password_check,
+                      text: AppTexts.currentPassword,
+                      textEditingController: controller.currentPassword,
+                      value: true,
+                    ),
+                    SizedBox(height: AppSizes.spaceBtwInputFields / 2),
+                    TextFieldPasswordChanged(),
+                    SizedBox(height: AppSizes.spaceBtwInputFields / 2),
+                    AppTextField(
+                      validator: (value) =>
+                          AppValidator.validatePassword(value),
+                      icon: Iconsax.password_check,
+                      text: AppTexts.confirmPassword,
+                      textEditingController: controller.confirmPassword,
+                      value: true,
+                    ),
+                    SizedBox(height: AppSizes.spaceBtwInputFields),
+                    UElevatedButton(
+                      onPressed: () {
+                        controller.editPassword();
+                      },
+                      child: Text("Save"),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

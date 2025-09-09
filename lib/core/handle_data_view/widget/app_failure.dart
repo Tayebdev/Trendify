@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:trendify_app/core/constant/app_sizes.dart';
 
 import '../../constant/app_images.dart';
 
@@ -24,6 +25,7 @@ class AppFailure extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
+          SizedBox(height: AppSizes.spaceBtwSections,)
         ],
       ),
     );

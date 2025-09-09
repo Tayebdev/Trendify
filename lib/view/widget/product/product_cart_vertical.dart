@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/product_controller.dart';
-import 'package:trendify_app/core/constant/app_images.dart';
+import 'package:trendify_app/core/constant/app_link_api.dart';
 import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/app_rounded_image.dart';
 import 'package:trendify_app/view/widget/product/app_product_title_text.dart';
@@ -13,8 +12,9 @@ import '../circular_icon/circular_icon.dart';
 
 // ignore: must_be_immutable
 class ProductCartVertical extends StatelessWidget {
-  ProductCartVertical({super.key});
-  ProductControllerImp controller = Get.put(ProductControllerImp());
+  ProductCartVertical({super.key, this.index});
+  static final controller = ProductControllerImp.instance;
+  int? index;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,11 @@ class ProductCartVertical extends StatelessWidget {
               backgroundColor: dark ? AppColors.dark : AppColors.light,
               child: Stack(
                 children: [
-                  AppRoundedImage(imageUrl: AppImages.product),
+                  AppRoundedImage(
+                    imageUrl:
+                        "${AppLinkApi.imageProduct}/${controller.productList[index!].images![0].image}",
+                    isNetworkImage: true,
+                  ),
                   Positioned(
                     top: 12.0,
                     child: AppRoundedContainer(
@@ -56,7 +60,7 @@ class ProductCartVertical extends StatelessWidget {
                         vertical: AppSizes.xs,
                       ),
                       child: Text(
-                        '20%',
+                        '${controller.productList[index!].sold} %',
                         style: Theme.of(
                           context,
                         ).textTheme.labelLarge!.apply(color: AppColors.black),
@@ -77,19 +81,19 @@ class ProductCartVertical extends StatelessWidget {
             ),
             SizedBox(height: AppSizes.spaceBtwItems / 2),
             Padding(
-              padding: const EdgeInsets.only(left: AppSizes.sm),
+              padding: const EdgeInsets.only(left: AppSizes.sm / 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppProductTitleText(
-                    title: "Blue INDURE Shoes",
+                    title: "${controller.productList[index!].title}",
                     smallSize: true,
                   ),
                   SizedBox(height: AppSizes.spaceBtwItems / 2),
                   Row(
                     children: [
                       Text(
-                        "Bata",
+                        controller.productList[index!].brand?.name ?? '',
                         style: Theme.of(context).textTheme.labelMedium,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -106,13 +110,14 @@ class ProductCartVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$76",
+                        "\$${controller.productList[index!].price} ",
                         style: Theme.of(context).textTheme.headlineSmall,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
+                      SizedBox(width: AppSizes.sm / 8),
                       Text(
-                        "\$100",
+                        " \$${controller.productList[index!].priceAfterDiscount}",
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           decoration: TextDecoration.lineThrough,
                           decorationThickness: 2, // thickness of the line
@@ -123,7 +128,7 @@ class ProductCartVertical extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(width: AppSizes.xl),
+                      SizedBox(width: AppSizes.sm),
                       Container(
                         width: AppSizes.iconLg * 1.2,
                         height: AppSizes.iconLg * 1.2,

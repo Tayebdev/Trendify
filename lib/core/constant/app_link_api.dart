@@ -6,6 +6,7 @@ class AppLinkApi {
   static const String imageCategory = "$serverImage/categories";
   static const String imageBrand = "$serverImage/brands";
   static const String imageUser = "$serverImage/users";
+  static const String imageProduct = "$serverImage/products";
 
   static const String signUp = "$server/auth/signup";
   static const String category = "$server/category";
@@ -19,4 +20,5 @@ class AppLinkApi {
   static const String logIn = "$server/auth/login";
   static const String user = '$server/user/id/';
   static const String editPassword='$server/user/changePassword';
+  static const String product='$server/product';
 }

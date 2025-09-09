@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/controller/home_controller.dart';
+import 'package:trendify_app/controller/product_controller.dart';
+import 'package:trendify_app/core/class/status_request.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
 import 'package:trendify_app/core/handle_data_view/handle_data_view.dart';
+import 'package:trendify_app/core/handle_data_view/widget/app_failure.dart';
 import '../../widget/home/app_category_home.dart';
 import '../../widget/home/app_primary_header_container.dart';
 import '../../widget/home/appbar_home.dart';
@@ -20,6 +23,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
+    Get.put(ProductControllerImp());
     return Scaffold(
       body: GetBuilder<HomeControllerImp>(
         builder: (controller) => HandleDataView(
@@ -65,10 +69,20 @@ class HomeView extends StatelessWidget {
                         textButton: AppTexts.viewAll,
                       ),
                       SizedBox(height: AppSizes.spaceBtwItems / 2),
-                      GridLayout(
-                        itemCount: 10,
-                        mainAxisCount: 261.5,
-                        itemBuilder: (context, index) => ProductCartVertical(),
+                      GetBuilder<ProductControllerImp>(
+                        builder: (controller) =>
+                            controller.statusRequest == StatusRequest.failure
+                            ? AppFailure(
+                                title: "No Product Found!",
+                                subtitle:
+                                    "Currently, there are no popular products available. Please check back later.",
+                              )
+                            : GridLayout(
+                                itemCount: controller.productList.length,
+                                mainAxisCount: 261.5,
+                                itemBuilder: (context, index) =>
+                                    ProductCartVertical(index: index),
+                              ),
                       ),
                     ],
                   ),
