@@ -34,6 +34,8 @@ class AppTexts {
   // SignUp Screen
   static const String signupTitle = 'Let’s Get You Registered';
   static const String firstName = 'First Name';
+  static const String currentPassword = 'Current Password';
+  static const String newPassword = 'New Password';
   static const String lastName = 'Last Name';
   static const String phoneNumber = 'Phone Number';
   static const String iAgreeTo = 'I agree to';
@@ -114,7 +116,10 @@ class AppTexts {
   static const String subTitleSafeMode = "Search result is safe for all ages";
   static const String logout = "Logout";
   static const String payment = "Payment Success!";
-  static const String updateEmailAndPhone="Update your phone number and email to stay reachable, receive important notifications, and keep your account secure and up to date.";
+  static const String changePassword =
+      'Update your password to maintain account security and prevent unauthorized access.';
+  static const String updateEmailAndPhone =
+      "Update your phone number and email to stay reachable, receive important notifications, and keep your account secure and up to date.";
   static const String subTitlePayment =
       'Thank you for shopping with Trendify! Your payment was successful, and your order is now being processed. We’ll notify you in the app when your package is on its way. Happy shopping!';
 }

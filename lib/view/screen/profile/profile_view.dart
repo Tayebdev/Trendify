@@ -142,7 +142,7 @@ class ProfileView extends StatelessWidget {
                       iconData: Iconsax.arrow_right_34,
                       title: "Password",
                       subTitle: "●●●●●●●●",
-                      onTap: () {},
+                      onTap: () => Get.toNamed(AppRoutes.editPassword),
                     ),
                     ProfileMenu(
                       iconData: Iconsax.arrow_right_34,

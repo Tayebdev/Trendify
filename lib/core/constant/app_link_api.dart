@@ -18,4 +18,5 @@ class AppLinkApi {
   static const String resetPassword = "$server/auth/resetPassword";
   static const String logIn = "$server/auth/login";
   static const String user = '$server/user/id/';
+  static const String editPassword='$server/user/changePassword';
 }

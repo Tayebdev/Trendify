@@ -43,7 +43,7 @@ class EditProfileViewInformation extends StatelessWidget {
                   children: [
                     Text(
                       "Update your name to keep your profile accurate and personalized",
-                      
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                     SizedBox(height: AppSizes.spaceBtwInputFields),
                     AppTextField(

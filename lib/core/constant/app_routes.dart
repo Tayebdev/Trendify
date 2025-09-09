@@ -24,4 +24,5 @@ class AppRoutes {
   static const String order = "/order";
   static const String editProfile='/editProfile';
   static const String editPersonal='/editPersonal';
+  static const String editPassword='/editPassword';
 }
