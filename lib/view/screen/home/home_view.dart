@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/controller/home_controller.dart';
-import 'package:trendify_app/controller/product_controller.dart';
+import 'package:trendify_app/controller/product/product_controller.dart';
 import 'package:trendify_app/core/class/status_request.dart';
 import 'package:trendify_app/core/constant/app_images.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
@@ -79,11 +79,12 @@ class HomeView extends StatelessWidget {
                               )
                             : GridLayout(
                                 itemCount: controller.productList.length,
-                                mainAxisCount: 261.5,
+                                mainAxisCount: 300,
                                 itemBuilder: (context, index) =>
                                     ProductCartVertical(index: index),
                               ),
                       ),
+                      SizedBox(height: AppSizes.spaceBtwItems,)
                     ],
                   ),
                 ),

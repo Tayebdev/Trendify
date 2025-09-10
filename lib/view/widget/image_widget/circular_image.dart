@@ -39,17 +39,20 @@ class AppCircularImage extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
-        child: Center(
-          child: isNetworkImage
-              ? CachedNetworkImage(
-                  fit: fit,
-                  color: overlayColor,
-                  imageUrl: image,
-                  progressIndicatorBuilder: (context, url, progress) =>
-                      const AppShimmerEffect(width: 55, height: 55),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                )
-              : Image(fit: fit, image: AssetImage(image), color: overlayColor),
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Center(
+            child: isNetworkImage
+                ? CachedNetworkImage(
+                    fit: fit,
+                    color: overlayColor,
+                    imageUrl: image,
+                    progressIndicatorBuilder: (context, url, progress) =>
+                        const AppShimmerEffect(width: 55, height: 55),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                  )
+                : Image(fit: fit, image: AssetImage(image), color: overlayColor),
+          ),
         ),
       ),
     );

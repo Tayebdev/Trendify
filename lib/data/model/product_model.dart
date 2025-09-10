@@ -10,7 +10,7 @@ class ProductModel {
   List<String>? sizes;
   Category? category;
   Category? subCategory;
-  Category? brand;
+  Brand? brand;
   int? ratingAverage;
   int? quantityResidents;
   String? createdAt;
@@ -45,20 +45,47 @@ class ProductModel {
     sold = json['sold'];
     price = json['price'];
     priceAfterDiscount = json['priceAfterDiscount'];
+
+    // Images
     if (json['images'] != null) {
       images = <Images>[];
       json['images'].forEach((v) {
         images!.add(Images.fromJson(v));
       });
     }
-    sizes = json['sizes'].cast<String>();
-    category = json['category'] != null
-        ? Category.fromJson(json['category'])
-        : null;
-    subCategory = json['subCategory'] != null
-        ? Category.fromJson(json['subCategory'])
-        : null;
-    brand = json['brand'] != null ? Category.fromJson(json['brand']) : null;
+
+    // Sizes
+    if (json['sizes'] != null) {
+      sizes = List<String>.from(json['sizes']);
+    }
+
+    // Category (can be string or object)
+    if (json['category'] != null) {
+      if (json['category'] is String) {
+        category = Category(name: json['category']);
+      } else if (json['category'] is Map) {
+        category = Category.fromJson(json['category']);
+      }
+    }
+
+    // SubCategory (can be string or object)
+    if (json['subCategory'] != null) {
+      if (json['subCategory'] is String) {
+        subCategory = Category(name: json['subCategory']);
+      } else if (json['subCategory'] is Map) {
+        subCategory = Category.fromJson(json['subCategory']);
+      }
+    }
+
+    // Brand (can be string, null, or object)
+    if (json['brand'] != null) {
+      if (json['brand'] is String) {
+        brand = Brand(name: json['brand']);
+      } else if (json['brand'] is Map) {
+        brand = Brand.fromJson(json['brand']);
+      }
+    }
+
     ratingAverage = json['ratingAverage'];
     quantityResidents = json['quantityResidents'];
     createdAt = json['createdAt'];
@@ -75,10 +102,13 @@ class ProductModel {
     data['sold'] = sold;
     data['price'] = price;
     data['priceAfterDiscount'] = priceAfterDiscount;
+
     if (images != null) {
       data['images'] = images!.map((v) => v.toJson()).toList();
     }
-    data['sizes'] = sizes;
+    if (sizes != null) {
+      data['sizes'] = sizes;
+    }
     if (category != null) {
       data['category'] = category!.toJson();
     }
@@ -88,6 +118,7 @@ class ProductModel {
     if (brand != null) {
       data['brand'] = brand!.toJson();
     }
+
     data['ratingAverage'] = ratingAverage;
     data['quantityResidents'] = quantityResidents;
     data['createdAt'] = createdAt;
@@ -131,6 +162,25 @@ class Category {
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['name'] = name;
+    return data;
+  }
+}
+
+class Brand {
+  String? name;
+  String? image;
+
+  Brand({this.name, this.image});
+
+  Brand.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    image = json['image'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final data = <String, dynamic>{};
+    data['name'] = name;
+    data['image'] = image;
     return data;
   }
 }

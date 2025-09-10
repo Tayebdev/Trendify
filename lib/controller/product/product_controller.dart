@@ -2,14 +2,13 @@ import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/data/model/product_model.dart';
 
-import '../core/class/my_class.dart';
-import '../core/class/status_request.dart';
-import '../core/constant/app_link_api.dart';
-import '../core/functions/handling_data.dart';
+import '../../core/class/my_class.dart';
+import '../../core/class/status_request.dart';
+import '../../core/constant/app_link_api.dart';
+import '../../core/functions/handling_data.dart';
 
 abstract class ProductController extends GetxController {
-  void goToDetailsProduct();
-  void goToReviewsProduct();
+  void goToDetailsProduct(String productId);
   void getAllProduct();
 }
 
@@ -20,13 +19,8 @@ class ProductControllerImp extends ProductController {
   List<ProductModel> productList = [];
 
   @override
-  goToDetailsProduct() {
-    Get.toNamed(AppRoutes.productDetails);
-  }
-
-  @override
-  goToReviewsProduct() {
-    Get.toNamed(AppRoutes.productReviews);
+  goToDetailsProduct(productId) {
+    Get.toNamed(AppRoutes.productDetails, arguments: {"productId": productId});
   }
 
   @override
@@ -42,15 +36,15 @@ class ProductControllerImp extends ProductController {
               .toList(),
         );
       }
-      print(statusRequest);
       update();
     } catch (e) {
       statusRequest = StatusRequest.serverfailure;
       update();
     }
   }
+
   @override
-  void onInit() {
+  void onInit() async {
     getAllProduct();
     super.onInit();
   }

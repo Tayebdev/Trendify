@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trendify_app/controller/product_controller.dart';
+import 'package:trendify_app/controller/product/product_controller.dart';
 import 'package:trendify_app/core/constant/app_link_api.dart';
 import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/app_rounded_image.dart';
@@ -21,7 +21,7 @@ class ProductCartVertical extends StatelessWidget {
     final dark = AppHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: () {
-        controller.goToDetailsProduct();
+        controller.goToDetailsProduct(controller.productList[index!].sId!);
       },
       child: Container(
         width: 180,
@@ -40,15 +40,19 @@ class ProductCartVertical extends StatelessWidget {
         child: Column(
           children: [
             AppRoundedContainer(
+              height: 210,
               width: 180,
               padding: EdgeInsets.all(AppSizes.sm),
               backgroundColor: dark ? AppColors.dark : AppColors.light,
               child: Stack(
                 children: [
-                  AppRoundedImage(
-                    imageUrl:
-                        "${AppLinkApi.imageProduct}/${controller.productList[index!].images![0].image}",
-                    isNetworkImage: true,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: AppRoundedImage(
+                      imageUrl:
+                          "${AppLinkApi.imageProduct}/${controller.productList[index!].images![0].image}",
+                      isNetworkImage: true,
+                    ),
                   ),
                   Positioned(
                     top: 12.0,
@@ -110,20 +114,21 @@ class ProductCartVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$${controller.productList[index!].price} ",
+                        " \$${controller.productList[index!].priceAfterDiscount}",
                         style: Theme.of(context).textTheme.headlineSmall,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
+
                       SizedBox(width: AppSizes.sm / 8),
                       Text(
-                        " \$${controller.productList[index!].priceAfterDiscount}",
+                        "\$${controller.productList[index!].price} ",
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           decoration: TextDecoration.lineThrough,
-                          decorationThickness: 2, // thickness of the line
+                          decorationThickness: 2,
                           decorationColor: dark
                               ? AppColors.light
-                              : AppColors.black, // color of the line
+                              : AppColors.black,
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,

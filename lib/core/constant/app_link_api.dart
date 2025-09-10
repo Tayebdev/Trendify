@@ -10,7 +10,7 @@ class AppLinkApi {
 
   static const String signUp = "$server/auth/signup";
   static const String category = "$server/category";
-  static const String brand="$server/brand";
+  static const String brand = "$server/brand";
   static const String subCategory = "$server/subCategory/category";
   static const String verifyEmail = "$server/auth/verifyEmail";
   static const String forgetPassword = "$server/auth/forgotPassword";
@@ -19,6 +19,7 @@ class AppLinkApi {
   static const String resetPassword = "$server/auth/resetPassword";
   static const String logIn = "$server/auth/login";
   static const String user = '$server/user/id/';
-  static const String editPassword='$server/user/changePassword';
-  static const String product='$server/product';
+  static const String editPassword = '$server/user/changePassword';
+  static const String product = '$server/product';
+  static const String productDetails = '$server/product/id';
 }
