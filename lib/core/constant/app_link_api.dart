@@ -22,4 +22,5 @@ class AppLinkApi {
   static const String editPassword = '$server/user/changePassword';
   static const String product = '$server/product';
   static const String productDetails = '$server/product/id';
+  static const String productBySubCategory = "$server/product/subCategoryId";
 }

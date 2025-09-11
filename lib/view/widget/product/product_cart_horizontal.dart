@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
-import 'package:trendify_app/core/constant/app_images.dart';
+import 'package:trendify_app/core/constant/app_link_api.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
-
+import 'package:trendify_app/data/model/product_model.dart';
 import '../../../utils/helpers/function_helpers.dart';
 import '../home/app_rounded_image.dart';
 import '../rounded_container/rounded_container.dart';
@@ -11,15 +11,18 @@ import '../store/brand_title_with_icon.dart';
 import 'app_product_title_text.dart';
 import 'product_card_add_to_cart_button.dart';
 
+// ignore: must_be_immutable
 class AppProductCardHorizontal extends StatelessWidget {
-  const AppProductCardHorizontal({super.key});
+  AppProductCardHorizontal({super.key, this.productModel});
+
+  ProductModel? productModel;
 
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunctions.isDarkMode(context);
 
     return Container(
-      width: 280,
+      width: 300,
       padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
@@ -36,9 +39,16 @@ class AppProductCardHorizontal extends StatelessWidget {
                 SizedBox(
                   width: 120,
                   height: 120,
-                  child: AppRoundedImage(
-                    imageUrl: AppImages.product,
-                    applayImageRadius: true,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Center(
+                      child: AppRoundedImage(
+                        isNetworkImage: true,
+                        imageUrl:
+                            "${AppLinkApi.imageProduct}/${productModel!.images![0].image}",
+                        applayImageRadius: true,
+                      ),
+                    ),
                   ),
                 ),
                 AppRoundedContainer(
@@ -50,7 +60,7 @@ class AppProductCardHorizontal extends StatelessWidget {
                     vertical: AppSizes.xs,
                   ),
                   child: Text(
-                    '20',
+                    '${productModel!.sold}%',
                     style: Theme.of(
                       context,
                     ).textTheme.labelLarge!.apply(color: AppColors.black),
@@ -61,7 +71,7 @@ class AppProductCardHorizontal extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 142,
+            width: 162,
             child: Padding(
               padding: const EdgeInsets.only(
                 top: AppSizes.sm,
@@ -70,8 +80,11 @@ class AppProductCardHorizontal extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppProductTitleText(title: "product", smallSize: true),
-                  const SizedBox(height: AppSizes.spaceBtwItems / 2),
+                  AppProductTitleText(
+                    title: "${productModel!.title}",
+                    smallSize: true,
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwItems ),
                   BrandTitleWithIcon(title: "Nike"),
                   const Spacer(),
                   Row(
@@ -82,9 +95,11 @@ class AppProductCardHorizontal extends StatelessWidget {
                         child: Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: AppSizes.sm),
+                              padding: const EdgeInsets.only(
+                                left: AppSizes.sm / 4,
+                              ),
                               child: Text(
-                                "\$76",
+                                "\$${productModel!.priceAfterDiscount} ",
                                 style: Theme.of(
                                   context,
                                 ).textTheme.headlineSmall,
@@ -93,9 +108,11 @@ class AppProductCardHorizontal extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: AppSizes.sm),
+                              padding: const EdgeInsets.only(
+                                left: AppSizes.sm / 4,
+                              ),
                               child: Text(
-                                "\$100",
+                                "\$${productModel!.price}",
                                 style: Theme.of(context).textTheme.bodyLarge
                                     ?.copyWith(
                                       decoration: TextDecoration.lineThrough,
