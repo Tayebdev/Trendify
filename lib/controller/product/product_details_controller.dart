@@ -25,7 +25,7 @@ class ProductDetailsControllerImp extends ProductDetailsController {
 
   @override
   goToReviewsProduct() {
-    Get.toNamed(AppRoutes.productReviews);
+    Get.toNamed(AppRoutes.productReviews,arguments: {"productId":product?.sId});
   }
 
   @override

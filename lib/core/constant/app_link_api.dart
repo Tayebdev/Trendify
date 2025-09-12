@@ -23,4 +23,6 @@ class AppLinkApi {
   static const String product = '$server/product';
   static const String productDetails = '$server/product/id';
   static const String productBySubCategory = "$server/product/subCategoryId";
+  static const String review="$server/review/product";
+  static const String rate="$server/review";
 }
