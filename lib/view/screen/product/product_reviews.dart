@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/core/constant/app_sizes.dart';
 import 'package:trendify_app/core/style/app_padding.dart';
 import 'package:trendify_app/view/widget/appbar/appbar.dart';
+import '../../../core/constant/app_colors.dart';
 import '../../widget/product/app_overall_product_rating.dart';
 import '../../widget/product/app_rating_bar_indicator.dart';
 import '../../widget/product/app_user_review_card.dart';
+import 'rate_product_view.dart';
 
 class ProductReviews extends StatelessWidget {
   const ProductReviews({super.key});
@@ -12,6 +15,20 @@ class ProductReviews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          color: AppColors.primary,
+          borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
+        ),
+        child: IconButton(
+          onPressed: () {
+            _showRateExperienceModal(context);
+          },
+          icon: Icon(Iconsax.message_text, color: Colors.white),
+        ),
+      ),
       appBar: UAppBar(showBackArrow: true, title: Text("Reviews & Ratings")),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,6 +60,14 @@ class ProductReviews extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+  void _showRateExperienceModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => RateProductView(),
     );
   }
 }
