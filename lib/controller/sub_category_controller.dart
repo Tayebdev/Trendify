@@ -5,6 +5,7 @@ import 'package:trendify_app/data/model/sub_category_model.dart';
 import '../core/class/my_class.dart';
 import '../core/class/status_request.dart';
 import '../core/constant/app_link_api.dart';
+import '../core/constant/app_routes.dart';
 import '../core/functions/handling_data.dart';
 import '../utils/helpers/function_helpers.dart';
 import '../utils/popups/full_screen_loader.dart';
@@ -14,6 +15,7 @@ abstract class SubCategoryController extends GetxController {
   Future<List<ProductModel>> getProductBySubCategory(String subCatId);
   Future<void> getAllProductbySubCategory();
   Future<void> loadData();
+  void goToDetailsProduct(String productId);
 }
 
 class SubCategoryControllerImp extends SubCategoryController {
@@ -113,5 +115,10 @@ class SubCategoryControllerImp extends SubCategoryController {
       allListProduct.add(products);
     }
     update();
+  }
+  
+  @override
+  goToDetailsProduct(productId) {
+    Get.toNamed(AppRoutes.productDetails, arguments: {"productId": productId});
   }
 }
