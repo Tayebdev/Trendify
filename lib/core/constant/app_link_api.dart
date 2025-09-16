@@ -25,4 +25,6 @@ class AppLinkApi {
   static const String productBySubCategory = "$server/product/subCategoryId";
   static const String review="$server/review/product";
   static const String rate="$server/review";
+  static const String favoriteAdd="$server/favorite";
+  static const String favoriteDelete="$server/favorite/productId";
 }

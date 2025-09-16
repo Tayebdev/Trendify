@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify_app/controller/product/product_controller.dart';
 import 'package:trendify_app/core/constant/app_link_api.dart';
@@ -74,11 +75,23 @@ class ProductCartVertical extends StatelessWidget {
                   Positioned(
                     top: 0,
                     right: 0,
-                    child: AppCircularIcon(
-                      color: dark ? AppColors.light : AppColors.dark,
-                      icon: Iconsax.heart,
-                      onPressed: () {},
-                    ),
+                    child: Obx(() {
+                      final isFav = controller.isFavorite(
+                        controller.productList[index!].sId.toString(),
+                      );
+                      return AppCircularIcon(
+                        color: isFav
+                            ? AppColors.error
+                            : dark
+                            ? AppColors.light
+                            : AppColors.dark,
+                        //icon:  Iconsax.heart,
+                        icon: isFav ? Icons.favorite : Iconsax.heart,
+                        onPressed: () => controller.toggleFavorite(
+                          controller.productList[index!].sId.toString(),
+                        ),
+                      );
+                    }),
                   ),
                 ],
               ),

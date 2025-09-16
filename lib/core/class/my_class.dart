@@ -14,7 +14,7 @@ class MyClass {
     return result.fold((left) => left, (right) => right);
   }
 
-  Future<dynamic> deleteData(String url, Map<String, dynamic> data) async {
+  Future<dynamic> deleteData(String url) async {
     var result = await crud.deleteDataRequest(url);
     return result.fold((left) => left, (right) => right);
   }

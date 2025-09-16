@@ -87,10 +87,22 @@ class AppProductImageSlider extends StatelessWidget {
                 UAppBar(
                   showBackArrow: true,
                   actions: [
-                    AppCircularIcon(
-                      icon: Iconsax.heart,
-                      color: dark ? AppColors.light : AppColors.dark,
-                    ),
+                    Obx(() {
+                      final isFav = controller.isFavorite(
+                        controller.productId.toString(),
+                      );
+                      return AppCircularIcon(
+                        color: isFav
+                            ? AppColors.error
+                            : dark
+                            ? AppColors.light
+                            : AppColors.dark,
+                        icon: isFav ? Icons.favorite : Iconsax.heart,
+                        onPressed: () => controller.toggleFavorite(
+                          controller.productId.toString(),
+                        ),
+                      );
+                    }),
                   ],
                 ),
               ],

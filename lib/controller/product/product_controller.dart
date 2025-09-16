@@ -6,20 +6,28 @@ import '../../core/class/my_class.dart';
 import '../../core/class/status_request.dart';
 import '../../core/constant/app_link_api.dart';
 import '../../core/functions/handling_data.dart';
+import '../../core/services/app_services.dart';
+import '../../utils/helpers/function_helpers.dart';
+import '../../utils/popups/full_screen_loader.dart';
 
 abstract class ProductController extends GetxController {
   void goToDetailsProduct(String productId);
   void getAllProduct();
+  bool isFavorite(String productId);
+  void toggleFavorite(String productId);
 }
 
 class ProductControllerImp extends ProductController {
+  late String userId;
   static ProductControllerImp get instance => Get.find();
   MyClass myClass = Get.find<MyClass>();
   StatusRequest statusRequest = StatusRequest.init;
+  AppServices appServices = Get.find<AppServices>();
   List<ProductModel> productList = [];
+  var favorites = <String>{}.obs;
 
   @override
-  goToDetailsProduct(productId) {
+  void goToDetailsProduct(String productId) {
     Get.toNamed(AppRoutes.productDetails, arguments: {"productId": productId});
   }
 
@@ -27,25 +35,66 @@ class ProductControllerImp extends ProductController {
   void getAllProduct() async {
     try {
       statusRequest = StatusRequest.loading;
+      update();
+
       var product = await myClass.getData(AppLinkApi.product);
       statusRequest = handlingData(product);
+
       if (statusRequest == StatusRequest.success && product["result"] > 0) {
-        productList.addAll(
+        productList.assignAll(
           (product['data'] as List)
               .map((value) => ProductModel.fromJson(value))
               .toList(),
         );
       }
-      update();
     } catch (e) {
       statusRequest = StatusRequest.serverfailure;
-      update();
     }
+    update();
   }
 
   @override
-  void onInit() async {
+  void onInit() {
+    userId = appServices.sharedPref.getString("userId")!;
     getAllProduct();
     super.onInit();
+  }
+
+  @override
+  bool isFavorite(String productId) {
+    return favorites.contains(productId);
+  }
+
+  @override
+  void toggleFavorite(String productId) async {
+    try {
+      if (favorites.contains(productId)) {
+        favorites.remove(productId);
+        final response = await myClass.deleteData(
+          "${AppLinkApi.favoriteDelete}/$productId",
+        );
+        var statusRequestFav = handlingData(response);
+        if (statusRequestFav == StatusRequest.success) {
+          AppHelperFunctions.customToast(message: "Removed from favorites");
+        }
+      } else {
+        favorites.add(productId);
+        final response = await myClass.postData(AppLinkApi.favoriteAdd, {
+          "userId": userId,
+          "productId": productId,
+        });
+
+        var statusRequestFav = handlingData(response);
+        if (statusRequestFav == StatusRequest.success) {
+          AppHelperFunctions.customToast(message: "Added to favorites");
+        }
+      }
+    } catch (e) {
+      AppFullScreenLoader.stopLoading();
+      AppHelperFunctions.errorSnackBar(
+        title: "Error",
+        message: "Something went wrong. Please try again later.",
+      );
+    }
   }
 }
