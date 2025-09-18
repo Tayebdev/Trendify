@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:trendify_app/controller/wish_list_controller.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/data/model/product_model.dart';
 
@@ -39,12 +40,14 @@ class ProductControllerImp extends ProductController {
 
       var product = await myClass.getData(AppLinkApi.product);
       statusRequest = handlingData(product);
-
       if (statusRequest == StatusRequest.success && product["result"] > 0) {
         productList.assignAll(
           (product['data'] as List)
               .map((value) => ProductModel.fromJson(value))
               .toList(),
+        );
+        favorites.addAll(
+          productList.where((p) => p.isFavorite == true).map((p) => p.sId!),
         );
       }
     } catch (e) {
@@ -68,8 +71,14 @@ class ProductControllerImp extends ProductController {
   @override
   void toggleFavorite(String productId) async {
     try {
+      final index = productList.indexWhere((p) => p.sId == productId);
+      if (index == -1) return;
+
       if (favorites.contains(productId)) {
         favorites.remove(productId);
+        productList[index].isFavorite = false;
+        update();
+
         final response = await myClass.deleteData(
           "${AppLinkApi.favoriteDelete}/$productId",
         );
@@ -79,16 +88,20 @@ class ProductControllerImp extends ProductController {
         }
       } else {
         favorites.add(productId);
+        productList[index].isFavorite = true;
+        update();
+
         final response = await myClass.postData(AppLinkApi.favoriteAdd, {
           "userId": userId,
           "productId": productId,
         });
-
         var statusRequestFav = handlingData(response);
         if (statusRequestFav == StatusRequest.success) {
           AppHelperFunctions.customToast(message: "Added to favorites");
         }
       }
+      final controller = Get.put(WishListControllerImp());
+      controller.getAllfavoritefavorite();
     } catch (e) {
       AppFullScreenLoader.stopLoading();
       AppHelperFunctions.errorSnackBar(

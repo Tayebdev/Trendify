@@ -80,13 +80,18 @@ class ProductCartVertical extends StatelessWidget {
                         controller.productList[index!].sId.toString(),
                       );
                       return AppCircularIcon(
-                        color: isFav
+                        color: controller.productList[index!].isFavorite == true
+                            ? AppColors.error
+                            : isFav
                             ? AppColors.error
                             : dark
                             ? AppColors.light
                             : AppColors.dark,
-                        //icon:  Iconsax.heart,
-                        icon: isFav ? Icons.favorite : Iconsax.heart,
+                        icon: controller.productList[index!].isFavorite == true
+                            ? Icons.favorite
+                            : isFav
+                            ? Icons.favorite
+                            : Iconsax.heart,
                         onPressed: () => controller.toggleFavorite(
                           controller.productList[index!].sId.toString(),
                         ),

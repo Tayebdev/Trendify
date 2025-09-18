@@ -27,4 +27,5 @@ class AppLinkApi {
   static const String rate="$server/review";
   static const String favoriteAdd="$server/favorite";
   static const String favoriteDelete="$server/favorite/productId";
+  static const String favoriteList="$server/favorite/userId";
 }

@@ -13,6 +13,7 @@ class ProductModel {
   Brand? brand;
   int? ratingAverage;
   int? quantityResidents;
+  bool? isFavorite;
   String? createdAt;
   String? updatedAt;
   int? iV;
@@ -32,6 +33,7 @@ class ProductModel {
     this.brand,
     this.ratingAverage,
     this.quantityResidents,
+    this.isFavorite,
     this.createdAt,
     this.updatedAt,
     this.iV,
@@ -59,7 +61,7 @@ class ProductModel {
       sizes = List<String>.from(json['sizes']);
     }
 
-    // Category (can be string or object)
+    // Category
     if (json['category'] != null) {
       if (json['category'] is String) {
         category = Category(name: json['category']);
@@ -67,8 +69,6 @@ class ProductModel {
         category = Category.fromJson(json['category']);
       }
     }
-
-    // SubCategory (can be string or object)
     if (json['subCategory'] != null) {
       if (json['subCategory'] is String) {
         subCategory = Category(name: json['subCategory']);
@@ -76,8 +76,6 @@ class ProductModel {
         subCategory = Category.fromJson(json['subCategory']);
       }
     }
-
-    // Brand (can be string, null, or object)
     if (json['brand'] != null) {
       if (json['brand'] is String) {
         brand = Brand(name: json['brand']);
@@ -88,6 +86,7 @@ class ProductModel {
 
     ratingAverage = json['ratingAverage'];
     quantityResidents = json['quantityResidents'];
+    isFavorite = json['isFavorite'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     iV = json['__v'];
@@ -121,6 +120,7 @@ class ProductModel {
 
     data['ratingAverage'] = ratingAverage;
     data['quantityResidents'] = quantityResidents;
+    data['isFavorite'] = isFavorite;
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['__v'] = iV;
