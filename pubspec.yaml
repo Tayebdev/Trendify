@@ -57,6 +57,7 @@ dependencies:
   redacted: ^1.0.13
   connectivity_plus: ^6.1.5
   intl: ^0.20.2
+  flutter_slidable: ^4.0.1
 
 dev_dependencies:
   flutter_test:

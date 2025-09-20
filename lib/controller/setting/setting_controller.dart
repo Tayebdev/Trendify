@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 
-import '../core/services/app_services.dart';
+import '../../core/services/app_services.dart';
 
 abstract class SettingController extends GetxController {
   void goToProfile();

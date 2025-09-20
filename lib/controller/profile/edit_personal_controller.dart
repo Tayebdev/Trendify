@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trendify_app/controller/setting_controller.dart';
+import 'package:trendify_app/controller/setting/setting_controller.dart';
 
 import '../../core/class/my_class.dart';
 import '../../core/class/status_request.dart';

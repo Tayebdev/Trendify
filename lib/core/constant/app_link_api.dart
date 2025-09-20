@@ -23,9 +23,12 @@ class AppLinkApi {
   static const String product = '$server/product';
   static const String productDetails = '$server/product/id';
   static const String productBySubCategory = "$server/product/subCategoryId";
-  static const String review="$server/review/product";
-  static const String rate="$server/review";
-  static const String favoriteAdd="$server/favorite";
-  static const String favoriteDelete="$server/favorite/productId";
-  static const String favoriteList="$server/favorite/userId";
+  static const String review = "$server/review/product";
+  static const String rate = "$server/review";
+  static const String favoriteAdd = "$server/favorite";
+  static const String favoriteDelete = "$server/favorite/productId";
+  static const String favoriteList = "$server/favorite/userId";
+  static const String address = '$server/address/user';
+  static const String addressRemoved = '$server/address/id';
+  static const String addressAdd = "$server/address";
 }

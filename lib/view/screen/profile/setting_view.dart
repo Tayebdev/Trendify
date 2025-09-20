@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trendify_app/controller/setting_controller.dart';
+import 'package:trendify_app/controller/setting/setting_controller.dart';
 import 'package:trendify_app/core/constant/app_colors.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/core/constant/app_texts.dart';
