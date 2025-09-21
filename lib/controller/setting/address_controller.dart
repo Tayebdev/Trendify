@@ -16,6 +16,7 @@ abstract class AddressController extends GetxController {
   void getAllAddressForUser();
   void deleteAddressUser(String addressId);
   void addAddress();
+  void selectedAddress(String addressId);
 }
 
 class AddressControllerImp extends AddressController {
@@ -159,6 +160,30 @@ class AddressControllerImp extends AddressController {
       update();
     } catch (e) {
       AppFullScreenLoader.stopLoading();
+      AppHelperFunctions.errorSnackBar(
+        title: "Error",
+        message: "Something went wrong. Please try again later.",
+      );
+    }
+  }
+
+  @override
+  void selectedAddress(addressId) async {
+    try {
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await myClass.putData(
+        "${AppLinkApi.addressSelected}/$addressId",
+        {},
+      );
+      statusRequest = handlingData(response);
+      if (statusRequest == StatusRequest.success) {
+        getAllAddressForUser();
+      }
+      update();
+    } catch (e) {
+      statusRequest = StatusRequest.serverfailure;
+      update();
       AppHelperFunctions.errorSnackBar(
         title: "Error",
         message: "Something went wrong. Please try again later.",

@@ -31,4 +31,6 @@ class AppLinkApi {
   static const String address = '$server/address/user';
   static const String addressRemoved = '$server/address/id';
   static const String addressAdd = "$server/address";
+  static const String addressSelected="$server/address/selectedAddress";
+  static const String addProductToCart="$server/cart";
 }

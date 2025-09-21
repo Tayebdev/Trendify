@@ -46,11 +46,11 @@ class AppHelperFunctions {
     }
   }
 
-  static void customToast({required String message}) {
+  static void customToast({required String message, duration = 3}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
-        duration: const Duration(seconds: 3),
+        duration: Duration(seconds: duration),
         backgroundColor: Colors.transparent,
         content: Container(
           padding: const EdgeInsets.all(12.0),
@@ -74,7 +74,7 @@ class AppHelperFunctions {
     );
   }
 
-  static void  warningSnackBar({required String title, message = ''}) {
+  static void warningSnackBar({required String title, message = ''}) {
     Get.snackbar(
       title,
       message,
@@ -89,7 +89,11 @@ class AppHelperFunctions {
     );
   }
 
-  static void successSnackBar({required String title, message = '', duration = 5}) {
+  static void successSnackBar({
+    required String title,
+    message = '',
+    duration = 5,
+  }) {
     Get.snackbar(
       title,
       message,
@@ -104,7 +108,7 @@ class AppHelperFunctions {
     );
   }
 
-  static void  errorSnackBar({required String title, message = ''}) {
+  static void errorSnackBar({required String title, message = ''}) {
     Get.snackbar(
       title,
       message,

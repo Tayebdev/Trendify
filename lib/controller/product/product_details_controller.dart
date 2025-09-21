@@ -25,6 +25,8 @@ class ProductDetailsControllerImp extends ProductDetailsController {
   late String productId;
   RxInt item = 0.obs;
   RxInt itemSize = 0.obs;
+  RxString color = "".obs;
+  RxString size = "".obs;
   MyClass myClass = Get.find<MyClass>();
   AppServices appServices = Get.find<AppServices>();
   StatusRequest statusRequest = StatusRequest.init;
@@ -54,6 +56,14 @@ class ProductDetailsControllerImp extends ProductDetailsController {
         } else if (response['data'] is List && response['data'].isNotEmpty) {
           product = ProductModel.fromJson(response['data'][0]);
         }
+        if (product != null) {
+          if (product!.images != null && product!.images!.isNotEmpty) {
+            color.value = product!.images![0].color ?? "";
+          }
+          if (product!.sizes != null && product!.sizes!.isNotEmpty) {
+            size.value = product!.sizes![0];
+          }
+        }
       }
       update();
     } catch (e) {
@@ -73,11 +83,13 @@ class ProductDetailsControllerImp extends ProductDetailsController {
   @override
   void changeSelectedIndex(int index) {
     item.value = index;
+    color.value = product!.images![index].color!;
   }
 
   @override
   void changeSelectedSize(int index) {
     itemSize.value = index;
+    size.value = product!.sizes![index];
   }
 
   @override

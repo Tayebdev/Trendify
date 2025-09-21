@@ -46,8 +46,10 @@ class AddressView extends StatelessWidget {
                   ListView.separated(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) =>
-                        AppSingleAddress(selected: false, index: index),
+                    itemBuilder: (context, index) => AppSingleAddress(
+                      selected: controller.addressList[index].isSelected!,
+                      index: index,
+                    ),
                     separatorBuilder: (context, index) => SizedBox(height: 0),
                     itemCount: controller.addressList.length,
                   ),

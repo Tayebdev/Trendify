@@ -93,8 +93,6 @@ class WishListView extends StatelessWidget {
                                           isNetworkImage: true,
                                         ),
                                       ),
-
-                                      /// discount label
                                       Positioned(
                                         top: 12.0,
                                         child: AppRoundedContainer(

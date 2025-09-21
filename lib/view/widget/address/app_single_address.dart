@@ -30,7 +30,7 @@ class AppSingleAddress extends StatelessWidget {
           child: const Icon(Iconsax.trash, color: Colors.white),
         ),
         child: GestureDetector(
-          onTap: (){},
+          onTap: () => controller.selectedAddress(controller.addressList[index!].sId!),
           child: AppRoundedContainer(
             showBorder: true,
             width: double.infinity,

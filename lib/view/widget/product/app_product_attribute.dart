@@ -52,7 +52,6 @@ class AppProductAttribute extends StatelessWidget {
                 Column(
                   children: [
                     Wrap(
-                      //AppChoiceChip(text: 'EU 34', selected: true),
                       spacing: 8,
                       children: [
                         for (
@@ -64,8 +63,9 @@ class AppProductAttribute extends StatelessWidget {
                             () => AppChoiceChip(
                               text: '${controller.product?.sizes![i]}',
                               selected: i == controller.itemSize.value,
-                              onSelected: (_) =>
-                                  controller.changeSelectedSize(i),
+                              onSelected: (value) {
+                                controller.changeSelectedSize(i);
+                              },
                             ),
                           ),
                       ],

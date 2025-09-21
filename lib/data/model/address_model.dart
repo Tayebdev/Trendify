@@ -11,6 +11,7 @@ class AddressModel {
   String? createdAt;
   String? updatedAt;
   int? iV;
+  bool? isSelected;
 
   AddressModel({
     this.sId,
@@ -25,6 +26,7 @@ class AddressModel {
     this.createdAt,
     this.updatedAt,
     this.iV,
+    this.isSelected,
   });
 
   AddressModel.fromJson(Map<String, dynamic> json) {
@@ -40,6 +42,7 @@ class AddressModel {
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     iV = json['__v'];
+    isSelected = json['isSelected'];
   }
 
   Map<String, dynamic> toJson() {
@@ -56,6 +59,7 @@ class AddressModel {
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['__v'] = iV;
+    data['isSelected'] = isSelected;
     return data;
   }
 }
