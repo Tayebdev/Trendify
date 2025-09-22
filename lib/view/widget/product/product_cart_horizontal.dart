@@ -91,7 +91,7 @@ class AppProductCardHorizontal extends StatelessWidget {
                         smallSize: true,
                       ),
                       const SizedBox(height: AppSizes.spaceBtwItems),
-                      BrandTitleWithIcon(title: "Nike"),
+                      BrandTitleWithIcon(title: "${productModel!.brand!.name}"),
                       const Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

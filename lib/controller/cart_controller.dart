@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trendify_app/core/constant/app_routes.dart';
 import 'package:trendify_app/core/services/app_services.dart';
+import 'package:trendify_app/data/model/cart_model.dart';
 
 import '../core/class/my_class.dart';
 import '../core/class/status_request.dart';
@@ -14,6 +15,7 @@ abstract class CartController extends GetxController {
   void increaseCartItemQuantity();
   void decreaseCartItemQuantity();
   void addProductToCart(String color, String size, String productId);
+  void getLoggedUserCart();
 }
 
 class CartControllerImp extends CartController {
@@ -22,6 +24,7 @@ class CartControllerImp extends CartController {
   AppServices appServices = Get.find<AppServices>();
   MyClass myClass = Get.find<MyClass>();
   StatusRequest statusRequest = StatusRequest.init;
+  List<CartModel> cartList = [];
 
   @override
   goToOrderReview() {
@@ -45,6 +48,7 @@ class CartControllerImp extends CartController {
   @override
   void onInit() {
     userId = appServices.sharedPref.getString("userId")!;
+    getLoggedUserCart();
     super.onInit();
   }
 
@@ -78,6 +82,7 @@ class CartControllerImp extends CartController {
           quantitySelected.value = 1;
           resetSelection?.call();
           Get.toNamed(AppRoutes.navigationMenu);
+          getLoggedUserCart();
         } else {
           AppHelperFunctions.warningSnackBar(
             title: "Oops!",
@@ -97,6 +102,31 @@ class CartControllerImp extends CartController {
         title: "Error",
         message: "Something went wrong. Please try again later.",
       );
+    }
+  }
+
+  @override
+  void getLoggedUserCart() async {
+    try {
+      statusRequest = StatusRequest.loading;
+      update();
+
+      var response = await myClass.getData(
+        "${AppLinkApi.getLoggedUserCart}/$userId",
+      );
+      statusRequest = handlingData(response);
+      if (statusRequest == StatusRequest.success) {
+        cartList.clear();
+        cartList.add(CartModel.fromJson(response['data']));
+      }
+      update();
+    } catch (e) {
+      statusRequest = StatusRequest.serverfailure;
+      AppHelperFunctions.errorSnackBar(
+        title: "Error",
+        message: "Something went wrong. Please try again later.",
+      );
+      update();
     }
   }
 }

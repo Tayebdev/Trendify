@@ -69,6 +69,7 @@ class ProductModel {
         category = Category.fromJson(json['category']);
       }
     }
+
     if (json['subCategory'] != null) {
       if (json['subCategory'] is String) {
         subCategory = Category(name: json['subCategory']);
@@ -76,9 +77,10 @@ class ProductModel {
         subCategory = Category.fromJson(json['subCategory']);
       }
     }
+
     if (json['brand'] != null) {
       if (json['brand'] is String) {
-        brand = Brand(name: json['brand']);
+        brand = Brand(sId: json['brand']); // only id
       } else if (json['brand'] is Map) {
         brand = Brand.fromJson(json['brand']);
       }
@@ -167,18 +169,21 @@ class Category {
 }
 
 class Brand {
+  String? sId;
   String? name;
   String? image;
 
-  Brand({this.name, this.image});
+  Brand({this.sId, this.name, this.image});
 
   Brand.fromJson(Map<String, dynamic> json) {
+    sId = json['_id'];
     name = json['name'];
     image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
+    data['_id'] = sId;
     data['name'] = name;
     data['image'] = image;
     return data;

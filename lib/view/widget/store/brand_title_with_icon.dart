@@ -16,7 +16,7 @@ class BrandTitleWithIcon extends StatelessWidget {
         Flexible(
           child: Text(
             title,
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: Theme.of(context).textTheme.bodyLarge,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
