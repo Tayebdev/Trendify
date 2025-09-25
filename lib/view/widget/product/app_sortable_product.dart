@@ -13,6 +13,7 @@ class AppSortableProduct extends StatelessWidget {
     return Column(
       children: [
         DropdownButtonFormField(
+          borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
           items:
               [
                     "Name",

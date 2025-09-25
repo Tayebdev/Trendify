@@ -45,6 +45,7 @@ class ProductDetailsControllerImp extends ProductDetailsController {
   void getProductDetails() async {
     try {
       statusRequest = StatusRequest.loading;
+      product=null;
       update();
       var response = await myClass.getData(
         "${AppLinkApi.productDetails}/$productId",

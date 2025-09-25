@@ -59,10 +59,12 @@ class AppCartItem extends StatelessWidget {
                             ' ${controller.cartList[0].cartItems![index!].product!.images![0].color}',
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
-                      TextSpan(
-                        text: '  Size : ',
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
+                      controller.cartList[0].cartItems![index!].size == " "
+                          ? TextSpan()
+                          : TextSpan(
+                              text: '  Size : ',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
                       TextSpan(
                         text:
                             '${controller.cartList[0].cartItems![index!].size}',

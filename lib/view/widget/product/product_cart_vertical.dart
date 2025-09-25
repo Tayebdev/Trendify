@@ -7,6 +7,7 @@ import 'package:trendify_app/utils/helpers/function_helpers.dart';
 import 'package:trendify_app/view/widget/home/app_rounded_image.dart';
 import 'package:trendify_app/view/widget/product/app_product_title_text.dart';
 import 'package:trendify_app/view/widget/rounded_container/rounded_container.dart';
+import '../../../controller/product/product_details_controller.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../circular_icon/circular_icon.dart';
@@ -22,6 +23,9 @@ class ProductCartVertical extends StatelessWidget {
     final dark = AppHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: () {
+        if (Get.isRegistered<ProductDetailsControllerImp>()) {
+          Get.delete<ProductDetailsControllerImp>();
+        }
         controller.goToDetailsProduct(controller.productList[index!].sId!);
       },
       child: Container(

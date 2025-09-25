@@ -19,6 +19,7 @@ abstract class CartController extends GetxController {
 }
 
 class CartControllerImp extends CartController {
+  static CartControllerImp get instance => Get.find();
   RxInt quantitySelected = 1.obs;
   late String userId;
   AppServices appServices = Get.find<AppServices>();
@@ -63,11 +64,12 @@ class CartControllerImp extends CartController {
       statusRequest = StatusRequest.loading;
       update();
 
+      final productSize = (size.isEmpty) ? " " : size;
       final response = await myClass.postData(AppLinkApi.addProductToCart, {
         "userId": userId,
         "productId": productId,
         "color": color,
-        "size": size,
+        "size": productSize,
         "quantity": quantitySelected.value,
       });
 

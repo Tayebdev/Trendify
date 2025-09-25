@@ -28,7 +28,7 @@ class OrderReviewView extends StatelessWidget {
           onPressed: () {
             controller.goToPaymentSuccess();
           },
-          child: Text("Checkout : \$256"),
+          child: Text("Checkout : \$${OrderReviewControllerImp.controllerCart.cartList[0].totalPriceAfterDiscount}"),
         ),
       ),
       appBar: UAppBar(showBackArrow: true, title: Text("Order Review")),
@@ -42,9 +42,9 @@ class OrderReviewView extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 separatorBuilder: (context, index) =>
                     SizedBox(height: AppSizes.spaceBtwSections / 2),
-                itemCount: 2,
+                itemCount: controller.lengthCart!,
                 itemBuilder: (context, index) {
-                  return AppCartItem();
+                  return AppCartItem(index: index,);
                 },
               ),
               SizedBox(height: AppSizes.spaceBtwSections / 2),
