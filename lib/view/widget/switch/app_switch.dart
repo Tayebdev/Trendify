@@ -11,7 +11,7 @@ class AppSwitch extends StatelessWidget {
     return Switch(
       value: changed,
       onChanged: onChanged,
-      activeColor: AppColors.primary,
+      activeThumbColor: AppColors.primary,
       // ignore: deprecated_member_use
       activeTrackColor: AppColors.primary.withOpacity(0.5),
       inactiveThumbColor: Colors.grey,

@@ -65,6 +65,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
                 alignment: Alignment.center,
                 transform: Matrix4.identity()
                   ..rotateZ(_rotate.value)
+                  // ignore: deprecated_member_use
                   ..scale(_scale.value),
                 child: child,
               );
